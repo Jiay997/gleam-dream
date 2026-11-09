@@ -45,6 +45,7 @@ frontend/.vite/
 
 # ---- 测试/截图/演示产物 ----
 frontend/e2e-verify/
+frontend/scripts/e2e-verify/
 frontend/public/derived/
 frontend/src/assets/**/*.bak.*
 测试报告/artifacts/
