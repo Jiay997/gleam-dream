@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#e6defc","secondary-fixed":"#e6deff","secondary-fixed-dim":"#cabeff","surface":"#fdf8ff","error":"#ba1a1a","on-secondary-fixed":"#1c0062","on-tertiary-container":"#faf3ff","on-background":"#1d192e","on-surface":"#1d192e","primary-container":"#6d5ae6","primary-fixed":"#e5deff","on-error-container":"#93000a","surface-container-lowest":"#ffffff","tertiary-fixed":"#e8ddff","tertiary":"#6044ae","on-error":"#ffffff","surface-dim":"#ded6f3","primary-fixed-dim":"#c7bfff","on-secondary-container":"#fffbff","on-tertiary-fixed-variant":"#4f319c","on-surface-variant":"#474554","surface-container-high":"#ece4ff","surface-container":"#f2ebff","on-primary":"#ffffff","surface-container-low":"#f7f1ff","outline":"#787586","primary":"#543ecc","on-secondary-fixed-variant":"#4816cb","outline-variant":"#c9c4d7","on-tertiary":"#ffffff","secondary-container":"#7757fa","secondary":"#5e39e0","tertiary-container":"#795ec9","tertiary-fixed-dim":"#cebdff","on-primary-container":"#f9f4ff","inverse-on-surface":"#f4eeff","surface-bright":"#fdf8ff","inverse-primary":"#c7bfff","on-tertiary-fixed":"#21005e","error-container":"#ffdad6","surface-tint":"#5b46d3","inverse-surface":"#322d44","on-secondary":"#ffffff","background":"#fdf8ff","on-primary-fixed":"#180065","on-primary-fixed-variant":"#4228ba","surface-container-highest":"#e6defc"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-lg":"1.5rem","space-md":"0.75rem","gutter":"1rem","space-xl":"2rem","margin-mobile":"1rem","margin-desktop":"2.5rem","space-xs":"0.25rem","space-lg":"1.25rem","space-sm":"0.375rem","margin":"1.5rem"},"fontFamily":{"headline-xl":["Noto Serif"],"body-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Noto Serif"],"headline-sm":["Noto Serif"],"code-timecode":["Space Grotesk"],"headline-lg":["Noto Serif"],"body-xl":["Plus Jakarta Sans"],"display-lg-mobile":["Noto Serif"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-lg":["Noto Serif"],"label-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Noto Serif"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"30px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"600"}],"code-timecode":["13px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"500"}],"body-xl":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"16px","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"58px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-md z-40 border-b border-outline-variant/30 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_2px_8px_rgba(109,90,230,0.25)]"><span class="material-symbols-outlined text-[20px]">auto_videocam</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">浮光造梦</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider scale-90 -ml-1 mt-0.5">GLEAMDREAM STUDIO</span></div></div><div class="h-5 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-xs font-label-md text-label-md"><span class="px-space-sm py-0.5 rounded bg-surface-container-high text-on-surface font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-primary">movie</span>赛博霓虹·第03幕</span><span class="text-outline-variant">/</span><span class="text-primary font-medium">P6 后期合成与多轨时间线工作台</span></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1 bg-surface-container-low rounded-full border border-outline-variant/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-1 px-2 py-0.5 rounded-full text-primary font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[14px]">check_circle</span>H1 剧本已定稿</div><span class="text-outline-variant text-[11px]">›</span><div class="flex items-center gap-1 px-2 py-0.5 rounded-full text-primary font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[14px]">check_circle</span>H2 资产已锁定</div><span class="text-outline-variant text-[11px]">›</span><div class="flex items-center gap-1 px-2 py-0.5 rounded-full text-primary font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[14px]">check_circle</span>H3 分镜已批准</div><span class="text-outline-variant text-[11px]">›</span><div class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-[0_2px_8px_rgba(109,90,230,0.3)] animate-pulse"><span class="material-symbols-outlined text-[14px]">hourglass_top</span>H4 成片终审中 ⏳</div><span class="text-outline-variant text-[11px]">›</span><div class="flex items-center gap-1 px-2 py-0.5 rounded-full text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>成片就绪</div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high border border-outline-variant/30 font-code-timecode text-code-timecode text-on-surface"><span class="material-symbols-outlined text-primary text-[16px]">token</span><span>8,210 可用</span><span class="text-outline text-[11px]">/ 冻结 240</span><button class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors ml-1" type="button"><span class="material-symbols-outlined text-[14px]">add</span></button></div><span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold tracking-wider">PRO</span><button class="relative p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_6px_rgba(84,62,204,0.3)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-16 bottom-8 w-60 bg-[#f7f3ec] border-r border-outline-variant/30 z-30 flex flex-col justify-between select-none"><div class="p-space-md overflow-y-auto"><div class="px-space-sm mb-space-sm flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">PIPELINE STAGES 流程管线</span><span class="font-code-timecode text-label-sm text-outline">8 阶段</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-[0_2px_12px_rgba(109,90,230,0.35)]"><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="p1-creator-bench" href="#"><span class="material-symbols-outlined text-[18px]">draw</span><span>P1 创作工作台</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="p2-script-forge" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span><span>P2 剧本工坊</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="p3-asset-matrix" href="#"><span class="material-symbols-outlined text-[18px]">perm_media</span><span>P3 资产矩阵</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="p4-smart-storyboard" href="#"><span class="material-symbols-outlined text-[18px]">view_carousel</span><span>P4 智能分镜</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="p5-batch-render" href="#"><span class="material-symbols-outlined text-[18px]">blur_on</span><span>P5 批量渲染</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 rounded-lg transition-all bg-primary-container text-on-primary-container font-semibold shadow-[0_2px_12px_rgba(109,90,230,0.35)]" data-path="p6-post-synthesis" href="#"><span class="material-symbols-outlined text-[18px]">movie_edit</span><span>P6 后期合成</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="p7-master-distribution" href="#"><span class="material-symbols-outlined text-[18px]">rocket_launch</span><span>P7 母版分发</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="p8-billing-budget" href="#"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span>P8 计费与预算</span></a></nav></div><div class="p-space-md border-t border-outline-variant/30 bg-[#f3efe6]"><div class="flex items-center gap-2 mb-1.5"><div class="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></div><span class="font-code-timecode text-label-sm font-semibold text-on-surface">Node 04 · 混流中</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">声音与合成混流中</p><div class="mt-2 pt-2 border-t border-outline-variant/20 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">group</span>4 位协作者</span><span class="font-code-timecode text-primary">ONLINE</span></div></div></aside><div class="pl-60 min-h-screen flex flex-col justify-between bg-surface"><main class="w-full pt-16 pb-28 bg-surface"><div class="flex flex-col w-full"><!-- TOPBAR & EPISODE TOOLBAR: Warm Paper Header -->
+<section class="w-full bg-[#fdf8ff] px-6 py-3.5 border-b border-outline-variant/30">
+<div class="max-w-[1720px] mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between gap-3">
+<!-- Episode Title & Metadata -->
+<div class="flex flex-wrap items-center gap-3 min-w-0">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-code-timecode text-[12px] font-semibold tracking-wider">EP.02</span>
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate font-semibold">潜龙受辱，黑金龙纹令</h1>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-code-timecode text-body-sm flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface text-[12px]">24 镜目</span>
+<span class="text-outline-variant">·</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface text-[12px]">01:52 总时长</span>
+<span class="text-outline-variant">·</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface text-[12px]">4 轨混流</span>
+<span class="text-outline-variant">·</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary font-medium text-[12px]">成片试看与终审</span>
+</div>
+</div>
+<!-- Quick Audio Status & Export Action Strip -->
+<div class="flex flex-wrap items-center gap-2.5 font-label-md text-label-md">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface border border-outline-variant/30 text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-medium text-primary">30s 样音已确认</span>
+<span class="text-on-surface-variant text-[11px]">(云希V3 + 婉儿千金音)</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest font-code-timecode text-[12px] text-on-surface border border-outline-variant/30">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">speed</span>
+<span class="font-semibold text-on-surface">-14.0 LUFS</span>
+<span class="text-on-surface-variant text-[11px]">真峰值 -1.1 dBTP</span>
+<span class="text-[#059669] font-bold">✓</span>
+</div>
+<div class="relative group/subtitles">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors border border-outline-variant/20 font-medium text-[13px]" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">grid_goldenratio</span>
+<span>字幕样式 (九宫格)</span>
+</button>
+<div class="absolute right-0 top-full mt-1.5 w-60 bg-surface-container-lowest p-3 rounded-xl shadow-xl border border-outline-variant/30 hidden group-hover/subtitles:flex flex-col gap-2 z-50">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">九宫格字幕安全锚点</span>
+<div class="grid grid-cols-3 gap-1.5 w-full aspect-video bg-[#0a0a12] p-2 rounded-lg border border-outline-variant/40">
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">TL</div>
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">TC</div>
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">TR</div>
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">ML</div>
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">MC</div>
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">MR</div>
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">BL</div>
+<div class="border-2 border-primary bg-primary/20 rounded flex items-center justify-center text-[10px] text-white font-bold">BC 推荐</div>
+<div class="border border-white/10 rounded flex items-center justify-center text-[10px] text-white/30">BR</div>
+</div>
+<span class="text-[11px] text-outline">已锁定下中居中 (Bottom-Center) · 描边加粗</span>
+</div>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors border border-outline-variant/20 font-medium text-[13px]" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">library_music</span>
+<span>BGM曲库替换</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all text-[13px] font-medium shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">output</span>
+<span>无损母版导出</span>
+</button>
+</div>
+</div>
+</section>
+<!-- UPPER SECTION: gd-night-window VIEWPORT & SOUND BENCH (#0a0a12) -->
+<section class="gd-night-window w-full bg-[#0a0a12] text-[#f7f3ec] px-6 py-5 relative overflow-hidden border-b border-white/5">
+<div class="absolute -top-32 left-1/4 w-[500px] h-[350px] rounded-full bg-[#7c5cff]/20 blur-[120px] pointer-events-none"></div>
+<div class="absolute -top-24 right-1/4 w-[420px] h-[320px] rounded-full bg-[#a78bfa]/15 blur-[100px] pointer-events-none"></div>
+<div class="max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 relative z-10">
+<!-- LEFT 42%: 9:16 Vertical Video Preview Monitor -->
+<div class="lg:col-span-5 flex flex-col items-center justify-between bg-[#11111d]/90 backdrop-blur-md rounded-xl p-4 shadow-xl border border-white/10">
+<!-- Player Meta Header -->
+<div class="w-full flex items-center justify-between pb-2.5 font-code-timecode text-body-sm text-[#b8b3d6] border-b border-white/10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping"></span>
+<span class="text-[#f7f3ec] font-semibold tracking-wider text-[12px]">PREVIEW_MONITOR · P6</span>
+<span class="px-2 py-0.5 rounded bg-primary/20 text-[#c7bfff] text-[11px] border border-primary/30">4K 降采样 1080p</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-[#1f1d2e] text-[#a78bfa] font-bold text-[11px] border border-white/10">24 FPS</span>
+<button class="text-[#b8b3d6] hover:text-[#ffffff] transition-colors p-0.5" title="画幅切换"><span class="material-symbols-outlined text-[17px]">aspect_ratio</span></button>
+<button class="text-[#b8b3d6] hover:text-[#ffffff] transition-colors p-0.5" title="全屏监看"><span class="material-symbols-outlined text-[17px]">fullscreen</span></button>
+</div>
+</div>
+<!-- 9:16 Phone/Vertical Stage Display Frame -->
+<div class="relative w-[240px] h-[370px] xl:w-[250px] xl:h-[390px] bg-[#05050a] rounded-lg overflow-hidden flex flex-col justify-between shadow-2xl my-2.5 group ring-1 ring-white/10">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cinematic vertical 9:16 movie shot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpcYz2odG2cfDArPVNCfGQlClOYCd92jN4y7cJbE8dR69JTy3wg2K8VrPwQCiizxypKimXiD3wpMAZP-xmlrFwNGBOWs5WpDlMzqsaPiDq8f9qSCv-eTzrC0LRlTMJcRUCShpCcIhhO1y43-ME6HGUvrCAgCS6IQdFbttxR-LFRqVAsBYS4DBFBXkVlA4xRWf3lWV4sEqQUmk9XXcZ-FQB8GiJ6NWIPJ_qos0gozMPG2wz0F3ie6qXTQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12]/95 via-transparent to-[#0a0a12]/60 pointer-events-none"></div>
+<!-- Safe Zone Overlay -->
+<div class="absolute inset-x-3 inset-y-4 rounded border-2 border-dashed border-[#a78bfa]/50 pointer-events-none flex flex-col justify-between p-2">
+<div class="flex justify-between items-center text-[9px] font-code-timecode text-[#a78bfa]/80 tracking-widest uppercase">
+<span>9:16 抖音/快手安全区</span>
+<span class="bg-black/40 px-1 rounded">8% MARGIN</span>
+</div>
+<div class="text-right text-[9px] font-code-timecode text-[#a78bfa]/60">SAFE_ZONE_OK</div>
+</div>
+<!-- Top Watermark & Shot Index -->
+<div class="relative z-10 px-3 pt-2.5 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-black/70 text-[#dcd6fa] text-[10px] font-code-timecode tracking-wider uppercase backdrop-blur-sm border border-white/10">PREVIEW_WATERMARK 试看版</span>
+<span class="px-2 py-0.5 rounded bg-primary/90 text-[#ffffff] font-code-timecode text-[11px] font-semibold shadow">SHOT #07</span>
+</div>
+<!-- Subtitle Overlay in Safe Zone Position -->
+<div class="relative z-10 px-3 pb-3 flex flex-col items-center text-center">
+<span class="font-code-timecode text-[11px] text-[#e6defc]/90 mb-1.5 tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-sm border border-white/10">陆长风 (配音: 云希V3 · 情绪: 压抑沉着)</span>
+<div class="bg-black/85 px-3 py-1.5 rounded-md shadow-xl backdrop-blur-md border border-white/15 w-full">
+<p class="font-headline-sm text-[14px] leading-relaxed text-[#ffffff] tracking-wide font-medium drop-shadow-md">
+              “严主！天策军三十万旧部已就绪，请龙纹令！”
+            </p>
+</div>
+</div>
+</div>
+<!-- Integrated Player Bar Under Monitor -->
+<div class="w-full bg-[#181726] rounded-lg px-3 py-2 flex items-center justify-between gap-2 border border-white/5">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-[#b8b3d6] hover:text-[#ffffff] hover:bg-white/5 transition-colors" title="上一帧 (Left)" type="button">
+<span class="material-symbols-outlined text-[18px]">skip_previous</span>
+</button>
+<button class="w-7 h-7 rounded-full bg-primary text-[#ffffff] flex items-center justify-center hover:bg-primary-container shadow-sm transition-transform active:scale-95" id="playBtn" title="播放/暂停 (Space)" type="button">
+<span class="material-symbols-outlined text-[18px]" id="playIcon">play_arrow</span>
+</button>
+<button class="p-1 rounded text-[#b8b3d6] hover:text-[#ffffff] hover:bg-white/5 transition-colors" title="下一帧 (Right)" type="button">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+<div class="flex items-center gap-1 ml-1">
+<button class="px-1.5 py-0.5 rounded text-[10px] font-code-timecode text-primary bg-primary/15 hover:bg-primary/25 border border-primary/30 transition-colors font-semibold" title="当前循环点 00:44 - 01:06" type="button">
+              A-B 循环
+            </button>
+<button class="px-1.5 py-0.5 rounded text-[10px] font-code-timecode text-[#b8b3d6] bg-white/5 hover:bg-white/10 transition-colors font-semibold" title="播放倍速" type="button">
+              1.0x
+            </button>
+</div>
+</div>
+<div class="flex items-center gap-1.5 font-code-timecode tracking-wider text-[13px]">
+<span class="text-[#ffffff] font-bold" id="currentTimecodeDisplay">00:54.18</span>
+<span class="text-[#787586] text-[11px]">/</span>
+<span class="text-[#a78bfa] text-[11px]">01:52.00</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-[#b8b3d6]">volume_up</span>
+<input class="w-14 h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="82"/>
+<span class="font-code-timecode text-[11px] text-[#93c5fd] font-semibold">-6dB</span>
+</div>
+</div>
+</div>
+<!-- RIGHT 58%: VOICE & BGM SOUND BENCH -->
+<div class="lg:col-span-7 flex flex-col justify-between bg-[#11111d]/90 backdrop-blur-md rounded-xl p-4 shadow-xl border border-white/10">
+<!-- Tab header strip -->
+<div class="flex flex-wrap items-center justify-between border-b border-white/10 pb-2.5 mb-2.5 gap-2">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-[13px] font-semibold transition-all shadow-md" id="tabBtn1" onclick="switchAudioTab(1)" type="button">
+<span class="material-symbols-outlined text-[17px]">record_voice_over</span>
+<span>逐角色 TTS 独立微调</span>
+<span class="px-1.5 py-0.2 rounded bg-black/30 text-[10px] font-code-timecode">3位角色</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[#b8b3d6] hover:bg-white/5 hover:text-[#ffffff] font-label-md text-[13px] transition-all" id="tabBtn2" onclick="switchAudioTab(2)" type="button">
+<span class="material-symbols-outlined text-[17px]">graphic_eq</span>
+<span>BGM 情绪卡点 &amp; 侧链闪避</span>
+<span class="px-1.5 py-0.2 rounded bg-[#10b981]/20 text-[10px] font-code-timecode text-[#6ee7b7] border border-[#10b981]/30">Ducking ON</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-[#10b981]/15 text-[#6ee7b7] font-code-timecode text-[11px] border border-[#10b981]/30">
+<span class="material-symbols-outlined text-[13px]">speed</span>
+<span>-14.0 LUFS · 真峰值 -1.1 dBTP ✓</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-code-timecode text-[#93c5fd]">
+<span class="material-symbols-outlined text-[13px] text-[#10b981]">verified</span>
+<span>Neural TTS v4.2</span>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 1: Character Cards -->
+<div class="flex flex-col gap-2.5 overflow-y-auto max-h-[360px] pr-1" id="tabContent1">
+<!-- Character 1: 陆长风 -->
+<div class="p-3 rounded-lg bg-[#181727] border border-white/5 hover:border-primary/40 transition-all flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-full bg-primary/25 text-[#c7bfff] border border-primary/40 flex items-center justify-center font-headline-sm text-[12px] font-bold">陆</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-md text-[#ffffff] font-semibold">陆长风</span>
+<span class="px-1.5 py-0.2 rounded bg-primary text-on-primary text-[10px] font-medium">男主 (14句)</span>
+<span class="text-[11px] text-[#c4bee2]">音色: <strong class="text-[#ffffff]">云希 V3 (磁性冷峻)</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-[#f7f3ec] text-[11px] font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[13px] text-primary">play_arrow</span>
+<span>试听该角色</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary text-[11px] font-medium hover:opacity-90 transition-opacity" type="button">
+                全剧同步应用 (14 句)
+              </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-0.5">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>语速 (Rate)</span>
+<span class="text-primary font-bold">1.05x</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-primary" max="150" min="80" type="range" value="105"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>音调 (Pitch)</span>
+<span class="text-[#93c5fd] font-bold">0 Semitone</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#93c5fd]" max="6" min="-6" type="range" value="0"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>情绪强度 (Emotion)</span>
+<span class="text-[#e879f9] font-bold">压抑暗沉 85%</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#e879f9]" max="100" min="0" type="range" value="85"/>
+</div>
+</div>
+</div>
+<!-- Character 2: 赵天豪 -->
+<div class="p-3 rounded-lg bg-[#181727] border border-white/5 hover:border-[#ef4444]/40 transition-all flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-full bg-[#ef4444]/25 text-[#fca5a5] border border-[#ef4444]/40 flex items-center justify-center font-headline-sm text-[12px] font-bold">赵</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-md text-[#ffffff] font-semibold">赵天豪</span>
+<span class="px-1.5 py-0.2 rounded bg-[#ef4444] text-[#ffffff] text-[10px] font-medium">反派 (8句)</span>
+<span class="text-[11px] text-[#c4bee2]">音色: <strong class="text-[#ffffff]">修远 V1 (狂妄暴戾)</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-[#f7f3ec] text-[11px] font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[13px] text-[#ef4444]">play_arrow</span>
+<span>试听该角色</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-[#ef4444]/80 hover:bg-[#ef4444] text-[#ffffff] text-[11px] font-medium transition-colors" type="button">
+                全剧同步应用 (8 句)
+              </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-0.5">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>语速 (快节奏爽感)</span>
+<span class="text-[#fca5a5] font-bold">1.15x</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#ef4444]" max="150" min="80" type="range" value="115"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>音调 (Pitch)</span>
+<span class="text-[#fca5a5] font-bold">+1 Semitone</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#ef4444]" max="6" min="-6" type="range" value="1"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>狂妄嘲讽情绪</span>
+<span class="text-[#fca5a5] font-bold">92%</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#ef4444]" max="100" min="0" type="range" value="92"/>
+</div>
+</div>
+</div>
+<!-- Character 3: 苏婉 -->
+<div class="p-3 rounded-lg bg-[#181727] border border-white/5 hover:border-[#10b981]/40 transition-all flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-full bg-[#10b981]/25 text-[#6ee7b7] border border-[#10b981]/40 flex items-center justify-center font-headline-sm text-[12px] font-bold">苏</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-md text-[#ffffff] font-semibold">苏婉</span>
+<span class="px-1.5 py-0.2 rounded bg-[#059669] text-[#ffffff] text-[10px] font-medium">女主 (2句)</span>
+<span class="text-[11px] text-[#c4bee2]">音色: <strong class="text-[#ffffff]">芷薇 V2 (悲悯千金)</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-[#f7f3ec] text-[11px] font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[13px] text-[#10b981]">play_arrow</span>
+<span>试听该角色</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-[#059669]/80 hover:bg-[#059669] text-[#ffffff] text-[11px] font-medium transition-colors" type="button">
+                全剧同步应用 (2 句)
+              </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-0.5">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>语速 (Rate)</span>
+<span class="text-[#6ee7b7] font-bold">0.95x</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#10b981]" max="150" min="80" type="range" value="95"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>音调 (Pitch)</span>
+<span class="text-[#6ee7b7] font-bold">0 Semitone</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#10b981]" max="6" min="-6" type="range" value="0"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-code-timecode text-[#b8b3d6]">
+<span>隐忍担忧情绪</span>
+<span class="text-[#6ee7b7] font-bold">70%</span>
+</div>
+<input class="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#10b981]" max="100" min="0" type="range" value="70"/>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 2: BGM Ducking & Recommendations -->
+<div class="hidden flex-col gap-space-sm overflow-y-auto max-h-[360px] pr-1" id="tabContent2">
+<div class="p-3.5 rounded-lg bg-[#181727] border border-white/5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary/30 flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">music_note</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-body-md text-[#ffffff] font-semibold">《暗潮逆流 · 赛博战栗》</h3>
+<span class="px-2 py-0.5 rounded-full bg-[#10b981]/20 text-[#6ee7b7] text-[10px] font-code-timecode flex items-center gap-1 border border-[#10b981]/30">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>全平台商用有效 (剩余180天)
+                  </span>
+</div>
+<p class="text-[11px] text-[#b8b3d6] mt-0.5">情绪弧线: 压抑蓄势 (00:00-00:52) → 鼓点卡点爆变 (00:53-01:30) → 悬念截断 (01:48)</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded bg-white/10 hover:bg-white/20 text-[#ffffff] text-[11px] font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">play_circle</span>试听整曲
+            </button>
+</div>
+<div class="p-2.5 rounded bg-[#11111d] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">graphic_eq</span>
+<div>
+<span class="text-body-sm text-[#ffffff] font-medium">智能对白闪避 (Ducking Sidechain)</span>
+<p class="text-[11px] text-[#c4bee2]">陆长风与反派台词发音时，BGM 背景音量自动平滑深潜 -8.0dB</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-code-timecode text-[#93c5fd]">闪避阈值: -6.0dB</span>
+<span class="px-2 py-0.5 rounded bg-[#10b981]/20 text-[#10b981] text-[11px] font-bold border border-[#10b981]/30">已激活</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[11px] uppercase tracking-wider text-[#a78bfa] font-bold">推荐同情绪高燃替代曲 (一键热替换无需重新对齐)</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+<div class="p-2.5 rounded bg-[#181727] hover:bg-[#1d1b30] border border-white/5 transition-colors flex flex-col justify-between gap-2">
+<div>
+<div class="font-medium text-body-sm text-[#ffffff]">《黑金降临 · 龙渊觉醒》</div>
+<div class="text-[10px] text-[#b8b3d6] font-code-timecode">132 BPM · 匹配 98%</div>
+</div>
+<div class="flex justify-between items-center pt-1">
+<button class="text-[11px] text-[#c7bfff] hover:underline flex items-center gap-0.5" type="button"><span class="material-symbols-outlined text-[13px]">play_arrow</span>试听</button>
+<button class="px-2 py-0.5 rounded bg-primary text-on-primary text-[11px] font-medium" type="button">应用替换</button>
+</div>
+</div>
+<div class="p-2.5 rounded bg-[#181727] hover:bg-[#1d1b30] border border-white/5 transition-colors flex flex-col justify-between gap-2">
+<div>
+<div class="font-medium text-body-sm text-[#ffffff]">《斩龙台 · 重瞳现世》</div>
+<div class="text-[10px] text-[#b8b3d6] font-code-timecode">128 BPM · 匹配 94%</div>
+</div>
+<div class="flex justify-between items-center pt-1">
+<button class="text-[11px] text-[#c7bfff] hover:underline flex items-center gap-0.5" type="button"><span class="material-symbols-outlined text-[13px]">play_arrow</span>试听</button>
+<button class="px-2 py-0.5 rounded bg-primary text-on-primary text-[11px] font-medium" type="button">应用替换</button>
+</div>
+</div>
+<div class="p-2.5 rounded bg-[#181727] hover:bg-[#1d1b30] border border-white/5 transition-colors flex flex-col justify-between gap-2">
+<div>
+<div class="font-medium text-body-sm text-[#ffffff]">《无尽深渊 · 杀伐之印》</div>
+<div class="text-[10px] text-[#b8b3d6] font-code-timecode">140 BPM · 匹配 91%</div>
+</div>
+<div class="flex justify-between items-center pt-1">
+<button class="text-[11px] text-[#c7bfff] hover:underline flex items-center gap-0.5" type="button"><span class="material-symbols-outlined text-[13px]">play_arrow</span>试听</button>
+<button class="px-2 py-0.5 rounded bg-primary text-on-primary text-[11px] font-medium" type="button">应用替换</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom BGM Card in Sound Bench -->
+<div class="mt-2 p-2 rounded-lg bg-[#181727] border border-white/10 flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-7 h-7 rounded bg-secondary/30 text-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">music_note</span>
+</div>
+<div class="truncate">
+<div class="flex items-center gap-2">
+<span class="font-code-timecode text-[12px] font-semibold text-white truncate">《暗潮逆流 · 赛博战栗》</span>
+<span class="px-1.5 py-0.2 rounded bg-white/10 text-[#a78bfa] font-code-timecode text-[10px]">128 BPM</span>
+</div>
+<span class="text-[11px] text-[#b8b3d6] block truncate">全局正版商用授权 · 侧链闪避已联动 (-8dB 自动下潜)</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="w-24 h-4 text-secondary flex items-center">
+<svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 16">
+<path d="M0 8 Q10 2, 20 8 T40 8 C50 6, 60 6, 70 8 Q80 1, 90 15 T100 8"></path>
+</svg>
+</div>
+<button class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-[11px] font-label-md text-white transition-colors" type="button">
+            调音台
+          </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- THE FOG JUNCTION: 柔光辉光雾带 (.gd-fog-junction，高度 26px，实色紫垂直精密播放头贯穿) -->
+<div class="gd-fog-junction relative w-full h-[26px] z-20 select-none overflow-visible" style="background: linear-gradient(180deg, #0a0a12 0%, #302652 35%, #9b89cc 65%, #fdf8ff 100%);">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#a78bfa]/25 to-transparent blur-md"></div>
+<!-- CRITICAL PLAYHEAD PENETRATING LINE (00:54.18 positioned at ~48.2%) -->
+<div class="absolute top-0 bottom-0 left-[48.2%] -translate-x-1/2 w-0.5 bg-[#6d5ae6] z-30 flex flex-col items-center pointer-events-none" id="playheadFocal" style="filter: drop-shadow(0 0 6px #6d5ae6);">
+<div class="w-3.5 h-3.5 bg-[#6d5ae6] rounded-full -top-1.5 absolute flex items-center justify-center shadow-lg ring-2 ring-white/50">
+<div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+</div>
+<div class="w-full h-full bg-[#6d5ae6]"></div>
+</div>
+</div>
+<!-- LOWER SECTION: WARM PAPER MULTI-TRACK TIMELINE -->
+<section class="w-full bg-[#fdf8ff] px-6 py-4 relative min-h-[440px]">
+<div class="max-w-[1720px] mx-auto flex flex-col shadow-sm rounded-xl bg-surface-container-lowest border border-outline-variant/30 overflow-hidden">
+<!-- Timeline Control Header & Time Scale Ruler -->
+<div class="grid grid-cols-12 bg-surface-container-low select-none border-b border-outline-variant/30">
+<!-- Left Track Actions Toolbar -->
+<div class="col-span-12 md:col-span-2 p-2.5 flex items-center justify-between bg-surface-container border-r border-outline-variant/30">
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">view_timeline</span>
+<span>多轨时间线 (4 Tracks)</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<button class="p-1 rounded bg-surface-container-high text-primary hover:bg-surface-variant transition-colors" title="磁吸附激活 (6px 吸附阈值)"><span class="material-symbols-outlined text-[16px]">qr_code_2</span></button>
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors" title="切分选定轨道 (快捷键 S)"><span class="material-symbols-outlined text-[16px]">content_cut</span></button>
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors" title="删除片段 (快捷键 Del)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- Right Ruler -->
+<div class="col-span-12 md:col-span-10 relative h-9 flex items-end px-4 font-code-timecode text-[11px] text-on-surface-variant overflow-x-hidden">
+<div class="w-full flex justify-between items-end pb-1 relative z-10">
+<div class="flex flex-col items-center"><span class="h-2 w-px bg-outline-variant"></span><span>00:00</span></div>
+<div class="flex flex-col items-center"><span class="h-1.5 w-px bg-outline-variant/60"></span><span class="text-[10px] text-outline">00:15</span></div>
+<div class="flex flex-col items-center"><span class="h-2 w-px bg-outline-variant"></span><span>00:30</span></div>
+<div class="flex flex-col items-center"><span class="h-1.5 w-px bg-outline-variant/60"></span><span class="text-[10px] text-outline">00:45</span></div>
+<div class="flex flex-col items-center font-bold text-primary"><span class="h-3 w-0.5 bg-primary"></span><span>00:54</span></div>
+<div class="flex flex-col items-center"><span class="h-2 w-px bg-outline-variant"></span><span>01:15</span></div>
+<div class="flex flex-col items-center"><span class="h-1.5 w-px bg-outline-variant/60"></span><span class="text-[10px] text-outline">01:30</span></div>
+<div class="flex flex-col items-center"><span class="h-2 w-px bg-outline-variant"></span><span>01:45</span></div>
+<div class="flex flex-col items-center text-error font-semibold"><span class="h-3 w-0.5 bg-error"></span><span>01:52</span></div>
+</div>
+<!-- Cliffhanger hook marker -->
+<div class="absolute right-[3.5%] top-1 flex items-center gap-1 bg-[#fef08a] text-[#854d0e] px-2 py-0.5 rounded shadow-xs z-20 font-label-sm text-[10px] font-bold border border-[#ca8a04]/30">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+<span>01:48 黄金钩子卡点爆点</span>
+</div>
+<!-- Playhead Top Needle -->
+<div class="absolute left-[48.2%] top-0 bottom-0 -translate-x-1/2 w-0.5 bg-[#6d5ae6] z-30 pointer-events-none">
+<div class="px-1.5 py-0.5 bg-[#6d5ae6] text-white font-code-timecode text-[10px] rounded -translate-x-1/2 left-1/2 absolute top-0 shadow">00:54.18</div>
+</div>
+</div>
+</div>
+<!-- Tracks Container -->
+<div class="flex flex-col relative divide-y divide-outline-variant/20">
+<!-- ================= TRACK 1: 视频剪辑轨 ================= -->
+<div class="grid grid-cols-12 min-h-[68px] bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="col-span-12 md:col-span-2 p-2.5 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">movie</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">V1 视频剪辑轨</span>
+</div>
+<span class="text-[10px] font-code-timecode text-on-surface-variant font-medium">24 镜头连续</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-code-timecode text-on-surface-variant">
+<button class="px-1.5 py-0.2 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-bold" title="静音此轨">M</button>
+<button class="px-1.5 py-0.2 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-bold" title="独奏此轨">S</button>
+<button class="p-0.5 text-on-surface-variant hover:text-on-surface" title="锁定轨道"><span class="material-symbols-outlined text-[13px]">lock</span></button>
+<span class="text-[10px] text-outline ml-auto">1080x1920 24FPS</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-10 p-1.5 relative flex items-center gap-1 overflow-x-hidden">
+<div class="w-[9%] h-14 rounded-lg bg-surface-container-high border border-outline-variant/30 overflow-hidden shadow-xs flex flex-col justify-between p-1.5 relative hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-code-timecode font-bold text-on-surface truncate">#01 暴雨</span>
+<span class="text-[8px] px-1 rounded bg-black/10 text-on-surface-variant">远景</span>
+</div>
+<span class="text-[9px] font-code-timecode text-on-surface-variant">00:00-08</span>
+</div>
+<div class="w-[13%] h-14 rounded-lg bg-surface-container-high border border-outline-variant/30 overflow-hidden shadow-xs flex flex-col justify-between p-1.5 relative hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-code-timecode font-bold text-on-surface truncate">#02 豪车围堵</span>
+<span class="text-[8px] px-1 rounded bg-black/10 text-on-surface-variant">全景</span>
+</div>
+<span class="text-[9px] font-code-timecode text-on-surface-variant">00:08-22</span>
+</div>
+<div class="w-[20%] h-14 rounded-lg bg-surface-container-high border border-outline-variant/30 overflow-hidden shadow-xs flex flex-col justify-between p-1.5 relative hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-code-timecode font-bold text-on-surface truncate">#03-#04 赵少狂妄嘲讽</span>
+<span class="text-[8px] px-1 rounded bg-black/10 text-on-surface-variant">中景</span>
+</div>
+<span class="text-[9px] font-code-timecode text-on-surface-variant">00:22-44</span>
+</div>
+<div class="w-[9%] h-14 rounded-lg bg-surface-container-high border border-outline-variant/30 overflow-hidden shadow-xs flex flex-col justify-between p-1.5 relative hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-code-timecode font-bold text-on-surface truncate">#05 眼神微凝</span>
+<span class="text-[8px] px-1 rounded bg-black/10 text-on-surface-variant">特写</span>
+</div>
+<span class="text-[9px] font-code-timecode text-on-surface-variant">00:44-54</span>
+</div>
+<div class="w-[11%] h-14 rounded-lg bg-primary text-on-primary overflow-hidden shadow-md flex flex-col justify-between p-1.5 relative ring-2 ring-[#6d5ae6] ring-offset-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-code-timecode font-bold truncate">#07 龙纹令出鞘</span>
+<span class="px-1 py-0.2 rounded bg-white/20 text-[9px] font-code-timecode">特写</span>
+</div>
+<span class="text-[9px] font-code-timecode text-[#e6deff]">00:54-01:06</span>
+</div>
+<div class="w-[14%] h-14 rounded-lg bg-secondary-container text-on-secondary-container overflow-hidden shadow-xs flex flex-col justify-between p-1.5 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-code-timecode font-bold truncate">#08 膝行敬畏</span>
+<span class="text-[8px] px-1 rounded bg-white/20">近景</span>
+</div>
+<span class="text-[9px] font-code-timecode opacity-90">01:06-28</span>
+</div>
+<div class="w-[24%] h-14 rounded-lg bg-surface-container-high border border-outline-variant/30 overflow-hidden shadow-xs flex flex-col justify-between p-1.5 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-code-timecode font-bold text-on-surface truncate">#09-#24 跪拜 &amp; 终局断章</span>
+<span class="text-[8px] px-1 rounded bg-black/10 text-on-surface-variant">多视角</span>
+</div>
+<span class="text-[9px] font-code-timecode text-on-surface-variant">01:28-52</span>
+</div>
+</div>
+</div>
+<!-- ================= TRACK 2: A1 对白/配音轨 ================= -->
+<div class="grid grid-cols-12 min-h-[62px] bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="col-span-12 md:col-span-2 p-2.5 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">record_voice_over</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">A1 对白/配音轨</span>
+</div>
+<span class="text-[10px] font-code-timecode text-[#10b981] font-semibold">24句对齐</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-code-timecode text-on-surface-variant">
+<button class="px-1.5 py-0.2 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-bold">M</button>
+<button class="px-1.5 py-0.2 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-bold">S</button>
+<span class="text-[10px] text-[#059669] font-medium ml-auto">TTS 毫秒级零延迟</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-10 p-1.5 relative flex items-center gap-1 overflow-x-hidden">
+<div class="w-[22%] h-11 rounded bg-[#ffdad6] text-[#93000a] p-1.5 flex flex-col justify-between shadow-xs border border-[#ba1a1a]/20">
+<span class="text-[10px] font-code-timecode font-bold truncate">赵天豪: “凭你也配碰婉儿的一根手指头？”</span>
+<svg class="w-full h-2.5 text-[#ba1a1a]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 12">
+<path d="M0 6 Q5 1, 10 6 T20 6 T30 2 T40 10 T50 4 T60 8 T70 3 T80 9 T90 5 T100 6"></path>
+</svg>
+</div>
+<div class="w-[14%] h-11 rounded bg-[#d1fae5] text-[#065f46] p-1.5 flex flex-col justify-between shadow-xs border border-[#059669]/20">
+<span class="text-[10px] font-code-timecode font-bold truncate">苏婉: “长风，你快走…”</span>
+<svg class="w-full h-2.5 text-[#059669]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 80 12">
+<path d="M0 6 Q5 4, 10 6 T20 5 T30 7 T40 6 T50 5 T60 7 T70 6 T80 6"></path>
+</svg>
+</div>
+<div class="w-[18%] h-11 rounded bg-primary-container text-on-primary p-1.5 flex flex-col justify-between shadow-xs ring-1 ring-primary border border-white/20">
+<span class="text-[10px] font-code-timecode font-bold truncate">陆长风: “严主！天策军三十万旧部已就绪…”</span>
+<svg class="w-full h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 120 12">
+<path d="M0 6 Q5 0, 10 6 T20 6 T30 0 T40 12 T50 0 T60 12 T70 2 T80 10 T90 1 T100 11 T110 3 T120 6"></path>
+</svg>
+</div>
+<div class="w-[20%] h-11 rounded bg-[#fef3c7] text-[#92400e] p-1.5 flex flex-col justify-between shadow-xs border border-[#d97706]/20">
+<span class="text-[10px] font-code-timecode font-bold truncate">众军: “恭迎天策龙主归位！”</span>
+<svg class="w-full h-2.5 text-[#d97706]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 12">
+<path d="M0 6 Q4 2, 8 6 T16 2 T24 10 T32 1 T40 11 T48 2 T56 10 T64 3 T72 9 T80 4 T90 8 T100 6"></path>
+</svg>
+</div>
+<div class="w-[26%] h-11 rounded bg-surface-container-high text-on-surface-variant p-1.5 flex flex-col justify-between shadow-xs border border-outline-variant/30">
+<span class="text-[10px] font-code-timecode font-bold truncate">赵天豪 (颤抖声): “你…你究竟是何人…”</span>
+<svg class="w-full h-2.5 text-outline" fill="none" stroke="currentColor" stroke-width="1" viewbox="0 0 100 12">
+<path d="M0 6 Q10 5, 20 6 T40 5 T60 7 T80 6 T100 6"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- ================= TRACK 3: A2 BGM 音乐轨 ================= -->
+<div class="grid grid-cols-12 min-h-[62px] bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="col-span-12 md:col-span-2 p-2.5 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">music_note</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">A2 BGM 音乐轨</span>
+</div>
+<span class="text-[10px] font-code-timecode text-secondary font-semibold">Ducking -8dB</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-code-timecode text-on-surface-variant">
+<button class="px-1.5 py-0.2 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-bold">M</button>
+<button class="px-1.5 py-0.2 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-bold">S</button>
+<span class="text-[10px] text-on-surface ml-auto">暗潮逆流 · 128BPM</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-10 p-1.5 relative flex items-center overflow-x-hidden">
+<div class="w-full h-11 rounded bg-secondary-fixed/40 p-2 flex flex-col justify-between shadow-xs relative border border-secondary-fixed-dim/40">
+<div class="flex items-center justify-between z-10">
+<span class="text-[10px] font-code-timecode font-semibold text-on-secondary-fixed">BGM: 《暗潮逆流 · 赛博战栗》- 全局正版授权混流</span>
+<span class="text-[9px] font-code-timecode text-secondary font-bold">对白出现处音量自动闪避下沉 8dB (人声清透保护)</span>
+</div>
+<svg class="w-full h-3.5 text-secondary z-10" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 500 16">
+<path d="M 0 8 Q 10 2, 20 8 T 40 8 T 60 4 T 80 12 T 100 8 C 120 7, 140 7, 160 8 C 180 7, 200 7, 220 8 Q 240 1, 260 15 T 280 0 T 300 16 T 320 1 T 340 15 T 360 8 C 380 7, 400 7, 420 8 Q 440 2, 460 14 T 480 8 L 485 8 L 485 16 L 500 16"></path>
+</svg>
+<div class="absolute right-[3.5%] top-0 bottom-0 w-px bg-error z-20 flex items-center justify-center">
+<span class="text-[9px] font-code-timecode text-error bg-white px-1 shadow -rotate-90">MUTE 01:48</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= TRACK 4: T1 双语字幕轨 ================= -->
+<div class="grid grid-cols-12 min-h-[54px] bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="col-span-12 md:col-span-2 p-2.5 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">subtitles</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">T1 双语字幕轨</span>
+</div>
+<span class="text-[10px] font-code-timecode text-on-surface-variant font-medium">24 条目</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-code-timecode text-on-surface-variant">
+<span class="text-[10px] text-[#059669] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+              安全区合规 100% 达标
+            </span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-10 p-1.5 relative flex items-center gap-1 overflow-x-hidden">
+<div class="w-[22%] h-7 rounded bg-surface-container-high border border-outline-variant/30 px-2 py-0.5 flex items-center justify-between text-[11px] font-label-sm text-on-surface shadow-xs hover:bg-surface-variant cursor-pointer">
+<span class="truncate">“凭你也配碰婉儿的一根手指头？”</span>
+<span class="text-[9px] text-[#059669] font-bold">✓</span>
+</div>
+<div class="w-[14%] h-7 rounded bg-surface-container-high border border-outline-variant/30 px-2 py-0.5 flex items-center justify-between text-[11px] font-label-sm text-on-surface shadow-xs hover:bg-surface-variant cursor-pointer">
+<span class="truncate">“长风，你快走…”</span>
+<span class="text-[9px] text-[#059669] font-bold">✓</span>
+</div>
+<div class="w-[18%] h-7 rounded bg-primary text-on-primary px-2 py-0.5 flex items-center justify-between text-[11px] font-label-sm shadow-xs ring-1 ring-primary cursor-pointer">
+<span class="truncate font-semibold">“严主！天策军三十万旧部已就绪…”</span>
+<span class="text-[9px] bg-white/25 px-1 rounded">选中</span>
+</div>
+<div class="w-[20%] h-7 rounded bg-surface-container-high border border-outline-variant/30 px-2 py-0.5 flex items-center justify-between text-[11px] font-label-sm text-on-surface shadow-xs hover:bg-surface-variant cursor-pointer">
+<span class="truncate">“恭迎天策龙主归位！”</span>
+<span class="text-[9px] text-[#059669] font-bold">✓</span>
+</div>
+<div class="w-[26%] h-7 rounded bg-surface-container-high border border-outline-variant/30 px-2 py-0.5 flex items-center justify-between text-[11px] font-label-sm text-on-surface shadow-xs hover:bg-surface-variant cursor-pointer">
+<span class="truncate">“你…你究竟是何人…”</span>
+<span class="text-[9px] text-[#059669] font-bold">✓</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HITL GATE 4 REVIEW BAR (关口四终审确认栏) -->
+<section class="w-full bg-[#fdf8ff] px-6 py-3.5 border-t border-outline-variant/30 shadow-md">
+<div class="max-w-[1720px] mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 bg-surface-container-lowest p-3.5 rounded-xl shadow-xs border border-outline-variant/30">
+<!-- Left Inspection Stats Pills -->
+<div class="flex flex-wrap items-center gap-2 font-code-timecode text-body-sm">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface border border-outline-variant/20 text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-[#10b981]">sync</span>
+<span>音画同步误差: <strong class="text-[#059669]">24ms</strong></span>
+<span class="text-on-surface-variant text-[11px]">(&lt; 100ms 达标 ✓)</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface border border-outline-variant/20 text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-[#10b981]">check_circle</span>
+<span>黑帧检测: <strong class="text-[#059669]">0 处</strong></span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface border border-outline-variant/20 text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-[#10b981]">volume_off</span>
+<span>爆音/静音异常: <strong class="text-[#059669]">0 处</strong></span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#ecfdf5] text-[#065f46] border border-[#10b981]/30 text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">verified_user</span>
+<span class="font-bold">-14.0 LUFS 响度标准化完美合规</span>
+</div>
+</div>
+<!-- Right Action Decision Gate -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors border border-outline-variant/30 text-[13px]" type="button">
+<span class="material-symbols-outlined text-[17px] text-outline">history_edu</span>
+<span>退回后期微调 (输入打回意见)</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md font-semibold hover:bg-primary transition-all shadow-md active:scale-98 text-[13px]" type="button">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>✓ 批准成片并生成母版 (进入 P7 母版分发)</span>
+</button>
+</div>
+</div>
+</section></div>
+<!-- Inline JavaScript for Micro-interactions (Tabs & Play state) -->
+<script>
+  function switchAudioTab(tabNumber) {
+    const tab1Btn = document.getElementById('tabBtn1');
+    const tab2Btn = document.getElementById('tabBtn2');
+    const tab1Content = document.getElementById('tabContent1');
+    const tab2Content = document.getElementById('tabContent2');
+
+    if (tabNumber === 1) {
+      tab1Content.classList.remove('hidden');
+      tab1Content.classList.add('flex');
+      tab2Content.classList.add('hidden');
+      tab2Content.classList.remove('flex');
+
+      tab1Btn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shadow-md";
+      tab2Btn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[#b8b3d6] hover:bg-white/5 hover:text-[#ffffff] font-label-md text-label-md transition-all";
+    } else {
+      tab2Content.classList.remove('hidden');
+      tab2Content.classList.add('flex');
+      tab1Content.classList.add('hidden');
+      tab1Content.classList.remove('flex');
+
+      tab2Btn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shadow-md";
+      tab1Btn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[#b8b3d6] hover:bg-white/5 hover:text-[#ffffff] font-label-md text-label-md transition-all";
+    }
+  }
+
+  // Play button toggle micro-interaction
+  const playBtn = document.getElementById('playBtn');
+  const playIcon = document.getElementById('playIcon');
+  let isPlaying = false;
+
+  if (playBtn && playIcon) {
+    playBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      playIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+      if(isPlaying) {
+        playBtn.classList.add('animate-pulse');
+      } else {
+        playBtn.classList.remove('animate-pulse');
+      }
+    });
+  }
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-8 bg-surface-container-low border-t border-outline-variant/30 z-40 flex items-center justify-between px-gutter font-code-timecode text-code-timecode text-on-surface-variant select-none"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span><span class="text-on-surface font-medium">SSE / AudioMixer 18ms</span></div><span class="text-outline-variant">|</span><span class="text-primary font-semibold">[PROJECT_ACTIVE: POST_SYNTHESIS]</span><span class="text-outline-variant">|</span><span>Snapshot v12.5</span></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-1.5"><span>算力消耗: <strong class="text-on-surface font-semibold">2,140</strong> / 2,500 Credits</span><span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-primary text-[11px] font-bold">85%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1 text-on-surface"><span class="material-symbols-outlined text-[15px] text-primary">equalizer</span><span>全剧 -14 LUFS 响度标准化: <strong class="text-[#059669]">测量就绪</strong></span></div></div></footer></body></html>

@@ -1,0 +1,4427 @@
+[
+  {
+    "key": "auth",
+    "url": "http://127.0.0.1:5175/projects",
+    "loggedIn": true
+  },
+  {
+    "key": "create-flow",
+    "projectId": "1325",
+    "steps": [
+      {
+        "step": "fill-title",
+        "disabled": false
+      },
+      {
+        "step": "select-genre",
+        "ok": true
+      },
+      {
+        "step": "select-style",
+        "ok": true
+      },
+      {
+        "step": "submit",
+        "disabled": false
+      },
+      {
+        "step": "created",
+        "url": "http://127.0.0.1:5175/projects/1325/overview"
+      }
+    ]
+  },
+  {
+    "key": "projects",
+    "url": "/projects",
+    "title": "项目创作中心 · 浮光造梦",
+    "clickableCount": 38,
+    "disabledCount": 0,
+    "disabledWithoutTitle": [],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "所有项目 (1)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "进行中 (0)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "已交付 (0)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "从模板库导入",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "新建短剧项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "我创建",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "我参与",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "更多操作",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "项目快照历史",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "项目设置",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "进入智能分镜工作台",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "收起快捷生成器",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "新建短剧项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "以灵感新建项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "都市情感",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "悬疑逆袭",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "古装宫斗",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "科幻末世",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "查看流水报表",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "管理完整队列",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "浏览所有历史项目 (1)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "草稿共 10 集9:16交互审计-451442都市情感暂无简介 刚刚",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "更多操作",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [
+      {
+        "text": "查看流水报表",
+        "status": "responded",
+        "urlChanged": true,
+        "domChanged": true,
+        "apiCalled": false
+      },
+      {
+        "text": "查看流水报表",
+        "status": "click-failed"
+      }
+    ],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /src/api/render.ts?t=1793277359200",
+      "GET /api/v1/projects?scope=created&sort=-updated_at&page=1&page_size=12",
+      "GET /api/v1/billing/transactions?page=1&page_size=100&sort=-created_at&transaction_type=settle",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/projects/1325/render-tasks?page=1&page_size=50&sort=-created_at",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/plans",
+      "GET /api/v1/billing/transactions?page=1&page_size=20",
+      "GET /api/v1/projects?page=1&page_size=50&sort=-updated_at",
+      "GET /api/v1/billing/transactions?page=1&page_size=100&transaction_type=settle"
+    ]
+  },
+  {
+    "key": "project-create",
+    "url": "/projects/new",
+    "title": "新建项目 · 浮光造梦",
+    "clickableCount": 17,
+    "disabledCount": 2,
+    "disabledWithoutTitle": [
+      {
+        "tag": "button",
+        "text": "上一步",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "取消",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "上一步",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "下一步",
+        "disabled": true,
+        "title": "请先填写项目名（1~30 字）",
+        "role": ""
+      }
+    ],
+    "clickResults": [
+      {
+        "text": "取消",
+        "status": "responded",
+        "urlChanged": true,
+        "domChanged": true,
+        "apiCalled": true
+      }
+    ],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/billing/credit-account",
+      "GET /src/api/render.ts?t=1793277359200",
+      "GET /api/v1/projects?scope=created&sort=-updated_at&page=1&page_size=12",
+      "GET /api/v1/billing/transactions?page=1&page_size=100&sort=-created_at&transaction_type=settle",
+      "GET /api/v1/billing/credit-account"
+    ]
+  },
+  {
+    "key": "overview",
+    "url": "/projects/1325/overview",
+    "title": "项目总览 · 浮光造梦",
+    "clickableCount": 38,
+    "disabledCount": 0,
+    "disabledWithoutTitle": [],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "继续创作 →",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "1剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "2资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "3分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "4生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "5后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "6分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "查看",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "查看",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "查看",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "查看",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "前往配音轨 →",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [
+      {
+        "text": "查看",
+        "status": "responded",
+        "urlChanged": true,
+        "domChanged": true,
+        "apiCalled": true
+      },
+      {
+        "text": "查看",
+        "status": "click-failed"
+      }
+    ],
+    "apiRequests": [
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/approvals.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/events",
+      "GET /api/v1/projects/1325",
+      "GET /api/v1/projects/1325/snapshots",
+      "GET /api/v1/orchestration/approvals?project_id=1325&status=pending&page_size=50",
+      "GET /api/v1/projects/1325/events",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/script.ts?t=1793277359200",
+      "GET /api/v1/orchestration/approvals?project_id=1325&status=pending&page_size=50"
+    ]
+  },
+  {
+    "key": "script",
+    "url": "/projects/1325/script",
+    "title": "剧本编辑器 · 浮光造梦",
+    "clickableCount": 46,
+    "disabledCount": 8,
+    "disabledWithoutTitle": [
+      {
+        "tag": "button",
+        "text": "撤销 (Ctrl+Z)",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重做 (Ctrl+Shift+Z)",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "撤销（待接入）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重做（待接入）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "执行局部改写",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "撤销 (Ctrl+Z)",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重做 (Ctrl+Shift+Z)",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "一句话生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "长篇小说与剧本解析",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "自由创作",
+        "disabled": true,
+        "title": "自由创作模式开发中",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "Diff 对比",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "撤销（待接入）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重做（待接入）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "历史快照",
+        "disabled": true,
+        "title": "快照能力待接入",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "导出文档 (.docx/.md)",
+        "disabled": true,
+        "title": "导出能力待接入",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "收起 AI 编剧助手",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重试",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "✨ 先用一句话生成一份剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "收起 AI 编剧助手",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "智能任务",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "版本对比",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "执行局部改写",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "⚡ 强化黄金 3 秒戏剧冲突",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "🎯 压缩台词增强节奏感",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "💎 注入反转爽点",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/approvals.ts?t=1793277359200",
+      "GET /src/api/script.ts?t=1793277359200",
+      "GET /src/api/storyboard.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/events",
+      "GET /api/v1/orchestration/approvals?project_id=1325&status=pending&page_size=50",
+      "GET /api/v1/projects/1325/scripts/current",
+      "GET /api/v1/projects/1325/events"
+    ]
+  },
+  {
+    "key": "assets",
+    "url": "/projects/1325/assets",
+    "title": "资产设计 · 浮光造梦",
+    "clickableCount": 41,
+    "disabledCount": 1,
+    "disabledWithoutTitle": [
+      {
+        "tag": "button",
+        "text": "批量审核 (多选 0)",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "批量审核 (多选 0)",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "导出资产清单",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "智能规划资产",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全部资产 (0)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "角色 (0)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "场景 (0)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "道具 (0)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "音色",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全部",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "生成中",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "待确认",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "质检未过",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "已通过",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "已锁定",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "✨ 智能规划资产",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/assets.ts?t=1793277359200",
+      "GET /src/api/v6.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/events?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/projects/1325/assets?page=1&page_size=1",
+      "GET /api/v1/projects/1325/assets?page=1&page_size=60",
+      "GET /api/v1/projects/1325/assets?asset_type=character&page=1&page_size=100",
+      "GET /api/v1/projects/1325/assets?asset_type=scene&page=1&page_size=100",
+      "GET /api/v1/projects/1325/assets?asset_type=prop&page=1&page_size=100"
+    ]
+  },
+  {
+    "key": "voice",
+    "url": "/projects/1325/voice",
+    "title": "配音轨 · 浮光造梦",
+    "clickableCount": 33,
+    "disabledCount": 4,
+    "disabledWithoutTitle": [],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "刷新",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "生成整集配音",
+        "disabled": true,
+        "title": "本集没有可配音台词：请先在剧本页补充对白 / 旁白",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "去剧本编辑页 →",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "确认音色参数",
+        "disabled": true,
+        "title": "请先选择角色，再确认音色参数",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "保存",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "打回修改",
+        "disabled": true,
+        "title": "本集没有可配音台词，无法提交配音审批",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "通过并锁定",
+        "disabled": true,
+        "title": "本集没有可配音台词，无法提交配音审批",
+        "role": ""
+      }
+    ],
+    "clickResults": [
+      {
+        "text": "刷新",
+        "status": "click-failed"
+      }
+    ],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/assets.ts?t=1793277359200",
+      "GET /src/api/v6.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/assets?page=1&page_size=100",
+      "GET /api/v1/projects/1325/episodes/1/lines",
+      "GET /api/v1/projects/1325/episodes/1/voice/track",
+      "GET /api/v1/projects/1325/episodes/1/voice/report",
+      "PAGEERROR 集不存在"
+    ]
+  },
+  {
+    "key": "storyboard",
+    "url": "/projects/1325/storyboard",
+    "title": "分镜画布 · 浮光造梦",
+    "clickableCount": 42,
+    "disabledCount": 8,
+    "disabledWithoutTitle": [
+      {
+        "tag": "button",
+        "text": "播放本集预览",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "上一镜",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "下一镜",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "优化运镜词",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "✨ 生成分镜",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "批准分镜并送审（进入 F5）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "播放本集预览",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "单镜重出",
+        "disabled": true,
+        "title": "请先在镜头序列中选择一个镜头",
+        "role": ""
+      },
+      {
+        "tag": "figure",
+        "text": "LIVE9:16（本镜暂无台词）— · 0.0s",
+        "disabled": false,
+        "title": "",
+        "role": "button"
+      },
+      {
+        "tag": "button",
+        "text": "上一镜",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "播放分镜预览",
+        "disabled": false,
+        "title": "点击播放分镜预览",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "下一镜",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "循环播放整集预览",
+        "disabled": false,
+        "title": "循环播放整集预览",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "优化运镜词",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "快节奏爽剧 (2.4s/镜)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "均衡叙事 (3.2s/镜)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "悬疑压抑 (4.0s/镜)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "✨ 生成分镜",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "去写剧本 →",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "导演策略重拆（重新生成）",
+        "disabled": true,
+        "title": "重新发起 AI 导演拆镜（当前策略不满意时使用）",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "批准分镜并送审（进入 F5）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/script.ts?t=1793277359200",
+      "GET /src/api/storyboard.ts?t=1793277359200",
+      "GET /src/api/assets.ts?t=1793277359200",
+      "GET /src/api/v4.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/events?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/projects/1325/scripts/current",
+      "GET /api/v1/projects/1325/storyboards",
+      "GET /api/v1/projects/1325/assets?asset_type=scene&page_size=100",
+      "GET /api/v1/projects/1325/assets?asset_type=character&page_size=100"
+    ]
+  },
+  {
+    "key": "render",
+    "url": "/projects/1325/render-tasks",
+    "title": "生成任务中心 · 浮光造梦",
+    "clickableCount": 45,
+    "disabledCount": 1,
+    "disabledWithoutTitle": [],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "批量编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全批次挂起",
+        "disabled": true,
+        "title": "预留操作位：批次级挂起接口暂未开放",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "排队中 (Queued)0预估 0 积分Worker 队列待派发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "生成中 (Rendering)0预估 0 积分渲染节点执行中 · SSE 实时回传",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "质检中 (QC Check)0人脸向量比对512-dim 骨骼与一致性",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "已成功 (Settled)0均耗 — 积分资产就绪已入库",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重试中 (Retrying)0自动回退超时 / 限流捕获 · 不重复计费",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "待人工 (Manual)0需导演裁决质检踩线或风格偏离",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全部 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "待处理 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "排队中 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "生成中 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "质检审核中 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重试中 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "需人工介入 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "已成功 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "已失败 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "已取消 0",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "去分镜画布生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [
+      {
+        "text": "已取消 0",
+        "status": "no-visible-response",
+        "urlChanged": false,
+        "domChanged": false,
+        "apiCalled": false
+      }
+    ],
+    "apiRequests": [
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/render.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/render-tasks/events?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/projects/1325",
+      "GET /api/v1/projects/1325/render-tasks?page=1&page_size=100",
+      "GET /api/v1/billing/credit-account"
+    ]
+  },
+  {
+    "key": "composition",
+    "url": "/projects/1325/composition",
+    "title": "合成编排 · 浮光造梦",
+    "clickableCount": 34,
+    "disabledCount": 1,
+    "disabledWithoutTitle": [],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "刷新",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "回写分镜顺序",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "从分镜同步",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "下一步 · 后期合成 →",
+        "disabled": true,
+        "title": "请先编译计划，再进入后期合成",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "从分镜同步",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "试渲编译",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "编译计划",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "新增节点",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [
+      {
+        "text": "刷新",
+        "status": "responded",
+        "urlChanged": false,
+        "domChanged": false,
+        "apiCalled": true
+      }
+    ],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/v6.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/episodes/1/composition?view=node",
+      "GET /api/v1/projects/1325/episodes/1/composition/plans",
+      "GET /api/v1/projects/1325/episodes/1/anchor-packs",
+      "GET /api/v1/projects/1325/episodes/1/composition?view=node",
+      "GET /api/v1/projects/1325/episodes/1/composition/plans",
+      "GET /api/v1/projects/1325/episodes/1/anchor-packs"
+    ]
+  },
+  {
+    "key": "post",
+    "url": "/projects/1325/post",
+    "title": "后期编辑器 · 浮光造梦",
+    "clickableCount": 31,
+    "disabledCount": 1,
+    "disabledWithoutTitle": [
+      {
+        "tag": "button",
+        "text": "🎬 合成成片 · 母版导出",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "预览版",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "母版",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "字幕样式",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "🎬 合成成片 · 母版导出",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "去生成任务中心 →",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/post.ts?t=1793277359200",
+      "GET /api/v1/projects/1325/post/timeline?cut_type=preview",
+      "GET /api/v1/subtitle-styles",
+      "GET /api/v1/projects/1325/post/bgm-recommend?emotion=warm",
+      "GET /api/v1/projects/1325/post/preview-url"
+    ]
+  },
+  {
+    "key": "final-review",
+    "url": "/projects/1325/post/review",
+    "title": "成片审核 · 浮光造梦",
+    "clickableCount": 27,
+    "disabledCount": 0,
+    "disabledWithoutTitle": [],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "去后期编辑器 →",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/approvals.ts?t=1793277359200",
+      "GET /src/api/post.ts?t=1793277359200",
+      "GET /src/api/render.ts?t=1793277359200",
+      "GET /api/v1/orchestration/approvals?project_id=1325&approval_type=final_cut&status=pending&page=1&page_size=5"
+    ]
+  },
+  {
+    "key": "distribute",
+    "url": "/projects/1325/distribute",
+    "title": "分发 · 浮光造梦",
+    "clickableCount": 64,
+    "disabledCount": 8,
+    "disabledWithoutTitle": [
+      {
+        "tag": "input",
+        "text": "",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "连续性",
+        "disabled": false,
+        "title": "连续性",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "参数中心",
+        "disabled": false,
+        "title": "参数中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "V4 能力",
+        "disabled": false,
+        "title": "V4 能力",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "1 总览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "2 剧本",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "3 资产设计",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "4 配音轨",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "5 分镜",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "6 生成",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "7 编排",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "8 后期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "9 分发",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "播放预览",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "回退 10 秒",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "播放 / 暂停",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "前进 10 秒",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "音量",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全屏",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "抖音",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "快手",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "视频号",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "剪映",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "720p 极速分发流",
+        "disabled": false,
+        "title": "极速分发流",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "1080p（高清） 全平台通用标准",
+        "disabled": false,
+        "title": "当前套餐不支持该分辨率，点击查看升级权益",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "4K UHD PRO媒体存档专用",
+        "disabled": false,
+        "title": "当前套餐不支持该分辨率，点击查看升级权益",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "9:16 竖屏短剧（默认）",
+        "disabled": false,
+        "title": "项目画幅",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "16:9 横屏影视切片",
+        "disabled": true,
+        "title": "画幅跟随项目设定，当前项目非横屏",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "去水印需升级套餐",
+        "disabled": true,
+        "title": "去水印需升级套餐",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "立即导出当前集母版",
+        "disabled": true,
+        "title": "成片确认未通过：请先在「成片审核」通过 HITL-4，再导出母版",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "批量打包导出全剧 ZIP（10 集）",
+        "disabled": true,
+        "title": "成片确认未通过：请先通过 HITL-4 成片审核",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "重新提炼",
+        "disabled": true,
+        "title": "成片确认未通过：暂不能生成宣发文案",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "刷新授权",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "添加渠道 →",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "授权",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "授权",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "授权",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "授权",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "🎵 抖音",
+        "disabled": false,
+        "title": "未授权",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "⚡ 快手",
+        "disabled": false,
+        "title": "未授权",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "📺 视频号",
+        "disabled": false,
+        "title": "未授权",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "🎬 剪映",
+        "disabled": false,
+        "title": "未授权",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "发布到所选平台",
+        "disabled": true,
+        "title": "成片确认未通过：请先通过 HITL-4 成片审核",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "刷新导出任务",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "刷新分发记录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "历史导出记录（90 天留存）",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "🚀 立即一键推流全平台草稿",
+        "disabled": true,
+        "title": "成片确认未通过：请先通过 HITL-4 成片审核",
+        "role": ""
+      }
+    ],
+    "clickResults": [
+      {
+        "text": "刷新授权",
+        "status": "responded",
+        "urlChanged": false,
+        "domChanged": false,
+        "apiCalled": true
+      },
+      {
+        "text": "刷新导出任务",
+        "status": "responded",
+        "urlChanged": false,
+        "domChanged": false,
+        "apiCalled": true
+      },
+      {
+        "text": "刷新分发记录",
+        "status": "responded",
+        "urlChanged": false,
+        "domChanged": false,
+        "apiCalled": true
+      }
+    ],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/projects/1325",
+      "GET /src/api/export.ts?t=1793277359200",
+      "GET /api/v1/billing/plans",
+      "GET /api/v1/projects/1325/exports?page=1&page_size=50",
+      "GET /api/v1/platform-accounts",
+      "GET /api/v1/projects/1325/distributions?page=1&page_size=20",
+      "GET /api/v1/platform-accounts",
+      "GET /api/v1/projects/1325/exports?page=1&page_size=50",
+      "GET /api/v1/projects/1325/distributions?page=1&page_size=20"
+    ]
+  },
+  {
+    "key": "notifications",
+    "url": "/notifications",
+    "title": "通知中心 · 浮光造梦",
+    "clickableCount": 20,
+    "disabledCount": 1,
+    "disabledWithoutTitle": [
+      {
+        "tag": "button",
+        "text": "全部已读",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全部已读",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全部",
+        "disabled": false,
+        "title": "",
+        "role": "tab"
+      },
+      {
+        "tag": "button",
+        "text": "审批待办",
+        "disabled": false,
+        "title": "",
+        "role": "tab"
+      },
+      {
+        "tag": "button",
+        "text": "生成完成",
+        "disabled": false,
+        "title": "",
+        "role": "tab"
+      },
+      {
+        "tag": "button",
+        "text": "系统",
+        "disabled": false,
+        "title": "",
+        "role": "tab"
+      },
+      {
+        "tag": "button",
+        "text": "积分",
+        "disabled": false,
+        "title": "",
+        "role": "tab"
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/notifications?page=1&page_size=20",
+      "GET /api/v1/notifications/unread-count"
+    ]
+  },
+  {
+    "key": "billing",
+    "url": "/billing",
+    "title": "计费中心 · 浮光造梦",
+    "clickableCount": 34,
+    "disabledCount": 5,
+    "disabledWithoutTitle": [
+      {
+        "tag": "input",
+        "text": "超限硬暂停保护（固定开启）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "单镜超预估 1.5 倍熔断（固定开启）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "当前方案",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "上一页",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "下一页",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "立即充值（微信/支付宝）",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "升级套餐权益",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "导出账本流水 (CSV)",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "应用预算上限",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "超限硬暂停保护（固定开启）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "input",
+        "text": "单镜超预估 1.5 倍熔断（固定开启）",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "当前方案",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "立即升级",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "立即升级",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "全部",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "充值",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "冻结",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "结算",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "解冻",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "返还",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "赠送",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "过期",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "调整",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "上一页",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "下一页",
+        "disabled": true,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/plans",
+      "GET /api/v1/billing/transactions?page=1&page_size=20",
+      "GET /api/v1/projects?page=1&page_size=50&sort=-updated_at",
+      "GET /api/v1/billing/transactions?page=1&page_size=100&transaction_type=settle"
+    ]
+  },
+  {
+    "key": "profile",
+    "url": "/settings/profile",
+    "title": "个人设置 · 浮光造梦",
+    "clickableCount": 21,
+    "disabledCount": 0,
+    "disabledWithoutTitle": [],
+    "clickables": [
+      {
+        "tag": "a",
+        "text": "项目工作台",
+        "disabled": false,
+        "title": "项目工作台",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "资产库",
+        "disabled": false,
+        "title": "资产库",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "计费中心",
+        "disabled": false,
+        "title": "计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "团队与成员",
+        "disabled": false,
+        "title": "团队与成员",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "平台授权",
+        "disabled": false,
+        "title": "平台授权",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "模型配置",
+        "disabled": false,
+        "title": "模型配置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "设置",
+        "disabled": false,
+        "title": "设置",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "aaudit13900000002",
+        "disabled": false,
+        "title": "个人设置 · audit",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "退出登录",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "搜索项目",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "500积分",
+        "disabled": false,
+        "title": "前往计费中心",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "通知中心",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "AI 创作助手",
+        "disabled": false,
+        "title": "AI 创作助手",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "a",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "个人资料",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "创作偏好",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "通知偏好",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "安全设置",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "关于",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "a",
+        "text": "通知中心",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      },
+      {
+        "tag": "button",
+        "text": "保存资料",
+        "disabled": false,
+        "title": "",
+        "role": ""
+      }
+    ],
+    "clickResults": [],
+    "apiRequests": [
+      "GET /src/api/auth.ts?t=1793277359200",
+      "GET /src/api/projects.ts?t=1793277359200",
+      "GET /src/api/http.ts?t=1793277359200",
+      "GET /src/api/billing.ts?t=1793277359200",
+      "GET /src/api/notifications.ts?t=1793277359200",
+      "GET /src/api/assistant.ts?t=1793277359200",
+      "GET /api/v1/events/stream?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMjkwIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI3NzQyNCwiZXhwIjoxNzkzMjg0NjI0LCJqdGkiOiJDWVFuaXpnWW5Hc0lWakVUQmwwbmFBIn0.qzKZg5taVTteL0nO0z5kzEwIWToYWJa8XjmQIHh2G3U",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/billing/credit-account",
+      "GET /api/v1/notifications/unread-count",
+      "GET /api/v1/users/me"
+    ]
+  }
+]

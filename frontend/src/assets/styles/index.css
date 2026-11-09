@@ -1,0 +1,599 @@
+/**
+ * 文件级注释：全局样式入口 · 主题「极夜 · 极光」（Aurora Night Sky v1.5）。
+ *
+ * ── 引入顺序（不可调换）────────────────────────────────────────────────
+ *   1. aurora.css  设计系统本体：令牌（原生层）、氛围光、排版、九件组件。
+ *                  它是**无层（unlayered）**样式，天然高于 Tailwind 的 @layer，
+ *                  也就是说 `gd-card` / `gd-btn` 这些设计系统件永远压过临时工具类。
+ *   2. tokens.css  语义桥：把旧变量名改指 aurora（26k 行业务代码零改动换肤）。
+ *   3. Tailwind    三层指令。
+ *   4. 本文件其余部分：基座微调 + 旧类名兼容层（同样无层，保证能压住工具类）。
+ *
+ * ── 本文件的职责边界 ────────────────────────────────────────────────
+ * 只做三件事，**不重新发明组件**：
+ *   ① 基座：暗场下的字号基线、标题默认值、容器高度、滚动与选中态兜底；
+ *   ② 兼容层：把「方向 B」时期遗留、aurora 未定义的类名（.gd-card-flat /
+ *      .gd-cover-* / .gd-night-window / .gd-page-enter…）重新释义为极光语言，
+ *      让 24 个视图在改类名之前就先正确显示；
+ *   ③ 少量补丁：aurora 组件与既有业务写法之间的形状落差（例如 textarea 复用 .gd-input）。
+ */
+
+@import './aurora.css';
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════════════════════════════════
+   1. 基座 · Base
+   极光画布与氛围光由 aurora.css 的 html / body / body::before 承担，
+   这里只补「业务壳层」需要的几条。
+   ══════════════════════════════════════════════════════════════════════ */
+
+html {
+  /* 画布本身由 aurora 着色；height 100% 让 AppShell 的 h-screen 有参照 */
+  height: 100%;
+}
+
+body {
+  /* aurora 已给 15/26，这里显式声明一次，避免被业务层的 font-size 继承链打散 */
+  font-size: var(--gd-fs-body);
+  line-height: var(--gd-lh-body);
+}
+
+#app {
+  min-height: 100dvh;
+  /* 应用根不铺底色：让 body::before 的六层极光透上来 */
+  background-color: transparent;
+}
+
+/* 标题默认取衬线刊头；业务层若显式写 font-sans 则不生效（工具类在 @layer 里，
+   但 .gd-masthead 等具名类是无层的，故此处只做「元素级兜底」，不抢具名类） */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--gd-font-display);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--gd-ink-heading);
+}
+
+/* 任何元素一旦选择衬线，就是「刊头语义」：奶油色。
+   这是全站唯一的暖色材料，不允许衬线承载正文。 */
+.font-serif {
+  color: var(--gd-ink-heading);
+}
+
+/* 中文衬线没有真斜体，浏览器合成斜体会破坏字形 */
+em,
+i {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* 表格数字位宽不跳动（业务层的百分比、积分、时长全部受益） */
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 三档极光的降级：系统关闭透明度时，暗场仍需可读 */
+@media (prefers-reduced-transparency: reduce) {
+  .gd-card,
+  .gd-card-flat,
+  .gd-panel,
+  .gd-night-window,
+  .gd-modal__panel {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   2. 刊头 · Masthead
+   aurora 的 .gd-display / .gd-title-* 是「规格件」，业务页面用的是
+   「刊头」这个概念：衬线 + 奶油色 + 双层辉光 + 字距归零。
+   ══════════════════════════════════════════════════════════════════════ */
+.gd-masthead {
+  margin: 0;
+  font-family: var(--gd-font-display);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--gd-ink-heading);
+  text-shadow: var(--gd-glow-type);
+  text-wrap: balance;
+}
+
+/* 刊头下的导语：比正文大一号、行高更松，颜色退到二级 */
+.gd-lede {
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-lead);
+  line-height: var(--gd-lh-lead);
+  color: var(--gd-ink-2);
+  max-width: 62ch;
+}
+
+/* 刊眉：极小 + 宽字距 + 数字族，像场记板上的字（全系统唯一允许「松」的地方） */
+.gd-kicker {
+  font-family: var(--gd-font-mono);
+  font-size: var(--gd-fs-caps);
+  line-height: var(--gd-lh-caps);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gd-ink-3);
+}
+
+.gd-section-label {
+  font-family: var(--gd-font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gd-ink-3);
+}
+
+.gd-measure {
+  max-width: 68ch;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   3. 卡片兼容层
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* 密集列表容器：实色面板，不做玻璃（长表格 blur 会拖慢滚动） */
+.gd-card-flat {
+  background-color: var(--gd-panel);
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-4);
+}
+
+/* 色场卡片：内容墙 / Bento 的视觉优先卡，无描边、靠玻璃与光晕分层 */
+.gd-card-field {
+  position: relative;
+  background-color: var(--gd-surface-glass);
+  border: 1px solid transparent;
+  border-radius: var(--gd-r-4);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  backdrop-filter: blur(16px) saturate(125%);
+  transition: transform var(--gd-dur-3) var(--gd-ease),
+    border-color var(--gd-dur-3) var(--gd-ease), box-shadow var(--gd-dur-3) var(--gd-ease);
+}
+
+.gd-card-field.gd-card-interactive:hover,
+.gd-card-interactive:hover {
+  transform: translateY(-2px);
+  border-color: var(--gd-line-brand);
+  box-shadow: var(--gd-elev-2);
+}
+
+.gd-card-interactive {
+  transition: transform var(--gd-dur-3) var(--gd-ease),
+    border-color var(--gd-dur-3) var(--gd-ease), box-shadow var(--gd-dur-3) var(--gd-ease);
+}
+
+/* 编辑器面板域 */
+.gd-panel {
+  background-color: var(--gd-panel-bg);
+  border: 1px solid var(--gd-panel-hairline);
+  border-radius: var(--gd-r-4);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  backdrop-filter: blur(14px) saturate(120%);
+}
+
+.gd-panel-rail {
+  background-color: var(--gd-panel-rail-bg);
+}
+
+/* 发丝分隔线（保留旧类名：业务层有 1 处引用 hr.gd-hairline） */
+.gd-hairline {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.11),
+    rgba(255, 255, 255, 0.05) 62%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   4. 表单兼容层
+   aurora 的 `.gd-field` 是「label + 控件 + hint」的竖向容器；
+   旧代码把 `.gd-field` 当作输入框本身。为了不改变设计系统语义，
+   视图侧统一改名为 `.gd-input`，此处只补三处落差：
+   ① textarea 复用 .gd-input；② 紧凑档；③ 校验失败态。
+   ══════════════════════════════════════════════════════════════════════ */
+textarea.gd-input {
+  height: auto;
+  min-height: 96px;
+  padding: 10px var(--gd-s-3);
+  line-height: 1.7;
+  resize: vertical;
+}
+
+/* 紧凑档：密集工具栏内与 32px 小按钮同高 */
+.gd-field-sm,
+.gd-input--sm {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+/* 校验失败：描边转玫红 + 同形光环；错误文案由调用方置于字段下方 */
+.gd-field-invalid,
+.gd-input.gd-field-invalid,
+.gd-input.gd-field-invalid:hover:not(:disabled) {
+  border-color: rgba(255, 110, 134, 0.5);
+}
+
+.gd-input.gd-field-invalid:focus {
+  border-color: rgba(255, 110, 134, 0.75);
+  box-shadow: var(--gd-focus-ring-danger);
+  background-color: rgba(255, 110, 134, 0.05);
+}
+
+/* 搜索 / 图标前缀容器（旧 .gd-field-group）：整块玻璃胶囊，聚焦时点亮品牌描边 */
+.gd-field-group {
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-3);
+  background-color: rgba(255, 255, 255, 0.035);
+  transition: border-color var(--gd-dur-2) var(--gd-ease), box-shadow var(--gd-dur-2) var(--gd-ease);
+}
+
+.gd-field-group:focus-within {
+  border-color: rgba(139, 124, 255, 0.55);
+  box-shadow: var(--gd-glow-focus);
+}
+
+/* 暗底输入变体（认证页）：与 .gd-input 同形，只换配色 */
+.gd-field-dark,
+.gd-input--on-dark {
+  color: var(--gd-ink);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.gd-input--on-dark::placeholder {
+  color: var(--gd-ink-3);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   5. 封面体系（暗色封面 + 奶油字）
+   每款 = 暗遮罩 + 素材图 + 两团极光斑 + 夜空底。
+   素材图保留（AI 生成的剧集封面），压 25%→72% 暗遮罩后，
+   奶油色衬线标题对其最亮处仍有 ≥ 7:1。
+   ══════════════════════════════════════════════════════════════════════ */
+.gd-cover-0 {
+  background:
+    var(--gd-cover-scrim),
+    url('../assets/covers/cover-0.jpg') center / cover no-repeat,
+    radial-gradient(90% 120% at 18% 12%, rgba(139, 124, 255, 0.55) 0%, rgba(139, 124, 255, 0) 58%),
+    radial-gradient(100% 130% at 88% 8%, rgba(240, 123, 224, 0.34) 0%, rgba(240, 123, 224, 0) 60%),
+    linear-gradient(140deg, #0b1020 0%, #141a33 55%, #1d1338 100%);
+}
+
+.gd-cover-1 {
+  background:
+    var(--gd-cover-scrim),
+    url('../assets/covers/cover-1.jpg') center / cover no-repeat,
+    radial-gradient(90% 120% at 20% 15%, rgba(56, 217, 240, 0.4) 0%, rgba(56, 217, 240, 0) 58%),
+    radial-gradient(110% 130% at 85% 20%, rgba(139, 124, 255, 0.42) 0%, rgba(139, 124, 255, 0) 60%),
+    linear-gradient(140deg, #08111f 0%, #101d34 55%, #171a3a 100%);
+}
+
+.gd-cover-2 {
+  background:
+    var(--gd-cover-scrim),
+    url('../assets/covers/cover-2.jpg') center / cover no-repeat,
+    radial-gradient(100% 130% at 15% 85%, rgba(62, 232, 184, 0.32) 0%, rgba(62, 232, 184, 0) 58%),
+    radial-gradient(90% 120% at 85% 12%, rgba(240, 123, 224, 0.3) 0%, rgba(240, 123, 224, 0) 60%),
+    linear-gradient(150deg, #071410 0%, #101a2c 55%, #201231 100%);
+}
+
+.gd-cover-3 {
+  background:
+    var(--gd-cover-scrim),
+    url('../assets/covers/cover-3.jpg') center / cover no-repeat,
+    radial-gradient(90% 120% at 80% 15%, rgba(255, 196, 107, 0.34) 0%, rgba(255, 196, 107, 0) 58%),
+    radial-gradient(110% 130% at 15% 20%, rgba(139, 124, 255, 0.42) 0%, rgba(139, 124, 255, 0) 60%),
+    linear-gradient(135deg, #140f08 0%, #171a30 52%, #0c1424 100%);
+}
+
+.gd-cover-4 {
+  background:
+    var(--gd-cover-scrim),
+    url('../assets/covers/cover-4.jpg') center / cover no-repeat,
+    radial-gradient(100% 130% at 20% 10%, rgba(240, 123, 224, 0.36) 0%, rgba(240, 123, 224, 0) 58%),
+    radial-gradient(90% 120% at 85% 45%, rgba(56, 217, 240, 0.3) 0%, rgba(56, 217, 240, 0) 60%),
+    linear-gradient(145deg, #150a18 0%, #101a30 55%, #141033 100%);
+}
+
+.gd-cover-5 {
+  background:
+    var(--gd-cover-scrim),
+    url('../assets/covers/cover-5.jpg') center / cover no-repeat,
+    radial-gradient(90% 120% at 15% 15%, rgba(62, 232, 184, 0.34) 0%, rgba(62, 232, 184, 0) 58%),
+    radial-gradient(100% 130% at 85% 15%, rgba(139, 124, 255, 0.4) 0%, rgba(139, 124, 255, 0) 60%),
+    linear-gradient(135deg, #06140f 0%, #0f1730 50%, #1b1030 100%);
+}
+
+/* 图片封面：素材图以 style 注入，本类负责定位 + 暗遮罩 */
+.gd-cover-img {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gd-cover-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: var(--gd-cover-img-scrim);
+}
+
+/* 暗底渐变封面族（标题压底部）：六款色相全部取自极光五义 */
+.gd-cv-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+  isolation: isolate;
+}
+
+.gd-cv-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(4, 7, 15, 0.1) 0%, rgba(4, 7, 15, 0.78) 100%);
+}
+
+.gd-cv-1 { background: linear-gradient(140deg, #171043, #4b3bc9 58%, #8b7cff); }
+.gd-cv-2 { background: linear-gradient(140deg, #061726, #23658a 58%, #38d9f0); }
+.gd-cv-3 { background: linear-gradient(140deg, #250f1d, #7f2f4c 58%, #f07be0); }
+.gd-cv-4 { background: linear-gradient(140deg, #07211a, #1f6b53 58%, #3ee8b8); }
+.gd-cv-5 { background: linear-gradient(140deg, #12121c, #33334a 58%, #a99bff); }
+.gd-cv-6 { background: linear-gradient(140deg, #1d1408, #7a5418 58%, #ffc46b); }
+
+/* 封面档位说明：.gd-cv-4 是薄荷族，刻意不进资产墙的装饰轮转（见 AssetWallView coverClass）——
+   薄荷在 aurora 里独占「成功 / 通过」语义，一旦拿它当随机装饰底，
+   「QC 通过」这一结论就会和一整片绿封面混在一起，失去信号重量。
+   其余五档（星紫 / 极青 / 洋红 / 冷紫 / 琥珀）纯装饰，不承载任何状态含义。 */
+
+/* ══════════════════════════════════════════════════════════════════════
+   6. 暗域 / 夜窗 / 双域缝合（保留结构，重释义材料）
+   全站只剩一个画布，双域不再「上暗下暖」，而是「画布 ↔ 下沉面板」的明度差。
+   ══════════════════════════════════════════════════════════════════════ */
+.gd-desk-light {
+  background-image: var(--gd-light-pool);
+  background-repeat: no-repeat;
+}
+
+.gd-stage-page {
+  background-color: var(--gd-canvas);
+  background-image:
+    radial-gradient(60% 420px at 50% -80px, rgba(139, 124, 255, 0.2) 0%, rgba(139, 124, 255, 0.06) 46%, rgba(139, 124, 255, 0) 72%),
+    radial-gradient(120% 90% at 50% 40%, rgba(4, 7, 15, 0) 55%, rgba(4, 7, 15, 0.35) 100%);
+}
+
+.gd-glow-title {
+  color: var(--gd-ink-heading);
+  text-shadow: var(--gd-glow-type-strong);
+}
+
+/* 暗域玻璃卡：从「白 5%」改为 aurora 的标准玻璃配方 */
+.gd-card-dark {
+  background-color: var(--gd-surface-glass);
+  background-image: radial-gradient(120% 92% at 100% 0%, rgba(139, 124, 255, 0.12), transparent 58%);
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-4);
+  box-shadow: var(--gd-elev-1);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  backdrop-filter: blur(16px) saturate(125%);
+  transition: transform var(--gd-dur-3) var(--gd-ease),
+    border-color var(--gd-dur-3) var(--gd-ease), box-shadow var(--gd-dur-3) var(--gd-ease);
+}
+
+.gd-card-dark.gd-card-interactive:hover {
+  border-color: var(--gd-line-brand);
+  box-shadow: var(--gd-elev-2);
+  transform: translateY(-2px);
+}
+
+/* 暗域主按钮档：为 AppButton 保留的增强类，统一指向彩光玻璃主变体 */
+.gd-btn-bright {
+  /* 由 .gd-btn--primary 承担材质；本类只补一层额外外晕（暗底上更「亮」） */
+  box-shadow: var(--gd-glow-brand);
+}
+
+.gd-progress-dark {
+  background-color: var(--gd-progress-track);
+}
+
+.gd-junction {
+  height: 1px;
+  border: 0;
+  background: var(--gd-line);
+}
+
+.gd-junction-v {
+  width: 1px;
+  background: var(--gd-line);
+}
+
+.gd-empty-aurora {
+  background:
+    radial-gradient(45% 60% at 30% 40%, rgba(139, 124, 255, 0.4) 0%, rgba(139, 124, 255, 0) 70%),
+    radial-gradient(50% 65% at 68% 30%, rgba(56, 217, 240, 0.26) 0%, rgba(56, 217, 240, 0) 70%),
+    radial-gradient(55% 60% at 55% 75%, rgba(240, 123, 224, 0.26) 0%, rgba(240, 123, 224, 0) 72%);
+  filter: blur(6px);
+}
+
+/* 夜窗：内容媒体区的「一扇窗」——下沉一档 + 顶部极光 + 雾晕边 */
+.gd-night-window {
+  position: relative;
+  background-color: var(--gd-window-bg);
+  border-radius: var(--gd-r-4);
+  box-shadow: var(--gd-shadow-window);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.gd-night-window::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(90% 58% at 50% -14%, rgba(139, 124, 255, 0.34) 0%, rgba(139, 124, 255, 0.1) 46%, rgba(139, 124, 255, 0) 70%),
+    radial-gradient(58% 42% at 80% 6%, rgba(240, 123, 224, 0.14) 0%, rgba(240, 123, 224, 0) 66%);
+}
+
+.gd-night-window-hero::before {
+  background:
+    radial-gradient(105% 66% at 50% -16%, rgba(139, 124, 255, 0.42) 0%, rgba(139, 124, 255, 0.14) 48%, rgba(139, 124, 255, 0) 72%),
+    radial-gradient(64% 48% at 82% 4%, rgba(240, 123, 224, 0.18) 0%, rgba(240, 123, 224, 0) 68%);
+}
+
+.gd-night-window-sm {
+  box-shadow: var(--gd-shadow-window-sm);
+}
+
+.gd-night-window-panel::before {
+  background:
+    radial-gradient(120% 34% at 50% -6%, rgba(139, 124, 255, 0.28) 0%, rgba(139, 124, 255, 0.08) 52%, rgba(139, 124, 255, 0) 76%),
+    radial-gradient(46% 22% at 76% 10%, rgba(240, 123, 224, 0.12) 0%, rgba(240, 123, 224, 0) 70%);
+}
+
+.gd-night-window-interactive {
+  transition: box-shadow var(--gd-dur-2) var(--gd-ease);
+}
+
+.gd-night-window-interactive:hover {
+  box-shadow: var(--gd-shadow-window-hover);
+}
+
+/* 雾带：画布 ↔ 面板之间的极光过渡（26px，无硬边） */
+.gd-fog-junction {
+  height: var(--gd-fog-width);
+  border: 0;
+  flex-shrink: 0;
+  background:
+    radial-gradient(56% 150% at 50% 50%, rgba(139, 124, 255, 0.16) 0%, rgba(139, 124, 255, 0) 68%),
+    var(--gd-fog-junction-h);
+}
+
+.gd-fog-junction-v {
+  width: var(--gd-fog-width);
+  flex-shrink: 0;
+  background:
+    radial-gradient(150% 56% at 50% 50%, rgba(139, 124, 255, 0.16) 0%, rgba(139, 124, 255, 0) 68%),
+    var(--gd-fog-junction-v);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   7. 骨架屏（暗场版：扫光从 white 55% 收到 8%，否则暗底上是一道白光）
+   ══════════════════════════════════════════════════════════════════════ */
+@keyframes gd-skeleton-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.gd-skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.045);
+  border-radius: var(--gd-r-3);
+}
+
+.gd-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  animation: gd-skeleton-sweep 1.6s var(--gd-ease) infinite;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   8. 路由过渡（淡入 + 上移 4px；位移 ≤ 2px 是卡片级纪律，
+      页面级入场允许 4px，且 200ms 内收敛）
+   ══════════════════════════════════════════════════════════════════════ */
+.gd-page-enter-active {
+  transition: opacity var(--gd-dur-2) var(--gd-ease-out), transform var(--gd-dur-2) var(--gd-ease-out);
+}
+
+.gd-page-enter-from {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   9. 品牌色实心块的文字校正
+   极光里唯一「颜色在文字下面」的地方是按钮；按钮已由 .gd-btn 承担深墨字。
+   业务层仍有少量 `bg-primary-500 text-white` 的选中态，白字对 #8B7CFF 只有 3.3:1，
+   故提供统一替代：紫洗底 + 品牌描边 + 近白字（≥ 7:1）。
+   ══════════════════════════════════════════════════════════════════════ */
+.gd-chip-active {
+  color: #fff;
+  font-weight: 600;
+  background-color: rgba(139, 124, 255, 0.3);
+  border-color: var(--gd-line-brand);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 14px -6px rgba(139, 124, 255, 0.9);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   9.1 实心色块 → 极光档（替代 `bg-* text-white` 的批量写法）
+
+   暗域里「高饱和实底 + 白字」是最容易翻车的一组：
+   #8B7CFF 上的白字只有 3.3:1，#3EE8B8 上的白字只有 1.7:1（几乎读不出来）。
+   设计系统的解法有两条，这里各用一个类表达：
+
+   · 品牌实底（步骤序号 / 分页当前页 / 选中计数）→ 实心星紫 + 深墨字。
+     #8B7CFF 对 #0B0A1E 实测 5.9:1；同时它是「一屏只有几处」的高光，
+     实心才有「点亮」的力道，洗色会读成未选中。
+   · 语义实底（成功 / 失败 / 警示 / 信息）→ 同色 12% 洗底 + 亮字 + 同色描边。
+     语义色在极光里永远是「光」而不是「漆」，铺满会变成交通灯。
+   ───────────────────────────────────────────────────────────────────── */
+.gd-fill-brand {
+  color: #0b0a1e;
+  background-color: var(--gd-violet);
+  border-color: rgba(139, 124, 255, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 0 16px -8px rgba(139, 124, 255, 0.9);
+}
+
+.gd-fill-mint {
+  color: #7defc9;
+  background-color: var(--gd-mint-wash);
+  border-color: rgba(62, 232, 184, 0.34);
+}
+.gd-fill-rose {
+  color: #ffb3be;
+  background-color: var(--gd-rose-wash);
+  border-color: rgba(255, 110, 134, 0.34);
+}
+.gd-fill-amber {
+  color: #ffd79a;
+  background-color: var(--gd-amber-wash);
+  border-color: rgba(255, 196, 107, 0.34);
+}
+.gd-fill-cyan {
+  color: #86e9f8;
+  background-color: var(--gd-cyan-wash);
+  border-color: rgba(56, 217, 240, 0.34);
+}
+/* 中性实底（原 bg-neutral-900）：暗场里「深色块」反而要抬亮才能与画布分开 */
+.gd-fill-ink {
+  color: var(--gd-ink);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--gd-line-strong);
+}

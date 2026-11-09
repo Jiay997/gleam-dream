@@ -1,0 +1,336 @@
+/**
+ * 文件级注释：GleamDream Studio 设计令牌 · 语义桥接层（Aurora Night Sky v1.5）。
+ *
+ * ── 这个文件为什么存在 ────────────────────────────────────────────────
+ * 视觉语言从「方向 B 暖纸杂志风」整体切换为「极夜 · 极光」。
+ * 全站 26k 行代码里散落着约 1400 处语义类（text-neutral-500 / bg-surface-raised /
+ * border-hairline / text-gd-pending…），它们全部映射到本文件的变量名。
+ * 因此**变量名一个不改，只把值改指 aurora**——换肤是单点操作，业务代码零改动，
+ * 这就是当初把颜色收敛成令牌的回报。
+ *
+ * ── 两个层级，别混用 ────────────────────────────────────────────────
+ * ① aurora 原生层（aurora.css §1）：--gd-canvas / --gd-ink / --gd-line /
+ *    --gd-violet / --gd-r-3 / --gd-dur-2…   新代码一律用这一层。
+ * ② 旧语义桥（本文件）：--gd-neutral-* / --gd-primary-* / --gd-surface-* /
+ *    --gd-gold* / 业务五态。它们只做「改名」，值全部指向 ①，不引入新色值。
+ *
+ * ── 三条映射纪律 ────────────────────────────────────────────────────
+ * 1. 浅色阶倒置：旧 neutral 0→900 是「白→黑」，暗场里改为「卡片→文字」，
+ *    即索引越大越亮。文字只用 400 以上，200/300 只做描边（禁止当文字色）。
+ * 2. 品牌紫不换色相，只换明度：500 仍是主色，但底色场景改用 50–200 三档洗色；
+ *    350 以上（300/600/700/800/900）是「深底上的强调文字」，越靠后越亮。
+ * 3. 功能色倒置：旧方案是「浅底 + 深字」，暗场改为「语义色 12% 洗底 +
+ *    30% 描边 + 提亮一档的字」，语义不变、方向反转。
+ *
+ * 与 aurora.css 的关系：本文件**不得**重复定义 aurora 已定义的令牌
+ * （--gd-ease-out / --gd-font-mono / --gd-z-modal 等），否则会静默覆盖设计系统。
+ */
+
+:root {
+  /* ════════════════════════════════════════════════════════════════
+     1. 中性色阶（旧 0–900 → 暗场四级表面 + 三级文字）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-neutral-0: var(--gd-surface);            /* 卡片基色（玻璃卡的实色底） */
+  --gd-neutral-50: var(--gd-panel-sunken);      /* 内嵌 / 凹陷面（原页面台面） */
+  --gd-neutral-100: var(--gd-panel);            /* 卡内分组 / 表头 */
+  --gd-neutral-200: var(--gd-line);             /* 发丝描边 */
+  --gd-neutral-300: var(--gd-line-strong);      /* 强调描边（禁止当文字） */
+  --gd-neutral-400: var(--gd-ink-3);            /* 三级文字 · 6.19:1 */
+  --gd-neutral-500: color-mix(in oklab, var(--gd-ink-3) 58%, var(--gd-ink-2));
+  --gd-neutral-600: var(--gd-ink-2);            /* 次级文字 · 10.19:1 */
+  --gd-neutral-700: color-mix(in oklab, var(--gd-ink-2) 55%, var(--gd-ink));
+  --gd-neutral-800: var(--gd-ink);              /* 正文主色 · 18.10:1 */
+  --gd-neutral-900: var(--gd-ink);              /* 最强强调（层级由字号/字重承担） */
+
+  /* ════════════════════════════════════════════════════════════════
+     2. 品牌星紫（旧 float-glow purple → aurora Violet）
+     底色用 50–200 的洗色；文字与图标用 300 以上。
+     ════════════════════════════════════════════════════════════════ */
+  --gd-primary-50: rgba(139, 124, 255, 0.1);   /* 选中行 / 弱标记载体 */
+  --gd-primary-100: rgba(139, 124, 255, 0.16); /* 分段控件激活底 */
+  --gd-primary-200: rgba(139, 124, 255, 0.32); /* 品牌描边 */
+  --gd-primary-300: #b9aeff;                   /* 图标 / 强调文字 */
+  --gd-primary-400: #c9c1ff;                   /* 接近墨头的强调 */
+  --gd-primary-500: var(--gd-violet);          /* 品牌主色 #8B7CFF */
+  --gd-primary-600: #9d8dff;                   /* 深底上的次级强调文字 */
+  --gd-primary-700: var(--gd-ink-brand);       /* 链接 / 品牌文字 #A99BFF · 7.3:1 */
+  --gd-primary-800: #c3b8ff;
+  --gd-primary-900: #d8d1ff;
+
+  /* ════════════════════════════════════════════════════════════════
+     3. 数据暖金 → 极光琥珀（语义：配额 / 余额 / 待处理 / 成果）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-gold: var(--gd-amber);
+  --gd-gold-deep: #e8a94a;
+  --gd-gold-light: #ffd79a;
+  --gd-gold-fog: rgba(255, 196, 107, 0.1);
+  --gd-grad-gold: linear-gradient(135deg, #ffd79a, #e8a94a);
+
+  /* ════════════════════════════════════════════════════════════════
+     4. 功能色（浅底深字 → 洗底提亮字，语义不变）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-success: var(--gd-mint);
+  --gd-success-bg: var(--gd-mint-wash);
+  --gd-success-border: rgba(62, 232, 184, 0.3);
+  --gd-success-strong: #7defc9;
+  --gd-success-bright: #7defc9;
+
+  --gd-danger: var(--gd-rose);
+  --gd-danger-bg: var(--gd-rose-wash);
+  --gd-danger-border: rgba(255, 110, 134, 0.32);
+  --gd-danger-strong: #ffb3be;
+  --gd-danger-bright: #ffb3be;
+
+  --gd-info: var(--gd-cyan);
+  --gd-info-bg: var(--gd-cyan-wash);
+  --gd-info-border: rgba(56, 217, 240, 0.3);
+  --gd-info-strong: #86e9f8;
+  --gd-info-bright: #86e9f8;
+
+  --gd-warning: var(--gd-amber);
+  --gd-warning-bg: var(--gd-amber-wash);
+  --gd-warning-bg-deep: rgba(255, 196, 107, 0.18);
+  --gd-warning-border: rgba(255, 196, 107, 0.3);
+  --gd-warning-strong: #ffd79a;
+  --gd-warning-bright: #ffd79a;
+
+  /* ════════════════════════════════════════════════════════════════
+     5. 业务五态（生成中 / 待确认 / 已锁定 / 失败 / 审核拦截）
+     与 aurora 五义一一对应：running=极青 · pending=琥珀 · locked=薄荷 ·
+     failed=玫红 · blocked=洋红（AI 创作域的拦截语义）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-running: var(--gd-cyan);
+  --gd-running-bg: var(--gd-cyan-wash);
+  --gd-running-border: rgba(56, 217, 240, 0.3);
+  --gd-pending: var(--gd-amber);
+  --gd-pending-bg: var(--gd-amber-wash);
+  --gd-pending-border: rgba(255, 196, 107, 0.3);
+  --gd-locked: var(--gd-mint);
+  --gd-locked-bg: var(--gd-mint-wash);
+  --gd-locked-border: rgba(62, 232, 184, 0.3);
+  --gd-failed: var(--gd-rose);
+  --gd-failed-bg: var(--gd-rose-wash);
+  --gd-failed-border: rgba(255, 110, 134, 0.32);
+  --gd-blocked: var(--gd-magenta);
+  --gd-blocked-bg: var(--gd-magenta-wash);
+  --gd-blocked-border: rgba(240, 123, 224, 0.3);
+  --gd-blocked-strong: #f7a8ee;
+
+  /* ════════════════════════════════════════════════════════════════
+     6. 表面语义（台面 / 纸面 / 凹陷 / 反白）
+     暗场的「面」不再靠明度差 + 投影，而靠四级表面 + 1px 冷光细线。
+     ════════════════════════════════════════════════════════════════ */
+  --gd-surface-canvas: var(--gd-panel-sunken);  /* 模块内嵌面（非页面底；页面底=透明极光） */
+  --gd-surface-raised: var(--gd-surface);       /* 卡片 / 面板 */
+  --gd-surface-sunken: var(--gd-panel-sunken);  /* 输入槽 / 媒体底 / 代码块 */
+  --gd-surface-inset: #0a1020;                  /* 更深凹陷（骨架 / 分段轨道） */
+  --gd-surface-invert: var(--gd-canvas);        /* 反白域（播放器外框） */
+  --gd-hairline: var(--gd-line);
+  --gd-hairline-soft: var(--gd-line-soft);
+  --gd-hairline-strong: var(--gd-line-strong);
+
+  /* ════════════════════════════════════════════════════════════════
+     7. 覆盖层与媒体遮罩
+     ════════════════════════════════════════════════════════════════ */
+  --gd-overlay: var(--gd-scrim);
+  --gd-scrim-faint: rgba(4, 7, 15, 0.45);
+  --gd-scrim-soft: rgba(4, 7, 15, 0.6);
+  --gd-scrim-strong: rgba(4, 7, 15, 0.82);
+  --gd-frost-light: rgba(11, 17, 28, 0.78);
+
+  /* ════════════════════════════════════════════════════════════════
+     8. 播放器 / 视频预览域（暗场里最深的一级）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-player-bg: var(--gd-canvas);
+  --gd-player-panel: var(--gd-panel-sunken);
+  --gd-player-text: var(--gd-ink);
+  --gd-player-hint: var(--gd-ink-3);
+
+  /* ════════════════════════════════════════════════════════════════
+     9. 时间线轨道（五轨五色，全部取自五义）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-timeline-video: var(--gd-violet);
+  --gd-timeline-audio: var(--gd-mint);
+  --gd-timeline-bgm: var(--gd-amber);
+  --gd-timeline-subtitle: var(--gd-cyan);
+  --gd-playhead: var(--gd-rose);
+
+  /* ════════════════════════════════════════════════════════════════
+     10. 分镜画布 / 后期编辑台（Konva 舞台，字面色值见 canvasTokens.ts）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-canvas-bg: #070b16;
+  --gd-canvas-grid: rgba(255, 255, 255, 0.05);
+  --gd-shot-selected: rgba(139, 124, 255, 0.14);
+  --gd-connector: rgba(139, 124, 255, 0.45);
+  --gd-editor-stage: #070b16;
+  --gd-editor-tick: rgba(255, 255, 255, 0.08);
+
+  /* ════════════════════════════════════════════════════════════════
+     11. 面板域（编辑器三栏 / 工具条 / 底部操作栏）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-panel-bg: rgba(17, 26, 44, 0.72);
+  --gd-panel-rail-bg: rgba(8, 13, 26, 0.55);
+  --gd-panel-hairline: var(--gd-line);
+  --gd-rail-left: 248px;
+  --gd-rail-right: 320px;
+  --gd-toolbar-h: 56px;
+  --gd-footer-bar-h: 72px;
+
+  /* ════════════════════════════════════════════════════════════════
+     12. 壳层尺寸（顶栏 ≤ 80px、侧栏 ≥ 208px：导航规范硬约束）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-sidebar-w: 232px;
+  --gd-topbar-h: 60px;
+  --gd-sidebar-bg: rgba(8, 13, 26, 0.6);
+  --gd-sidebar-active-bg: rgba(139, 124, 255, 0.16);
+
+  /* ════════════════════════════════════════════════════════════════
+     13. 内容墙 Bento 节奏（间距 ≥ 20px：密度纪律）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-bento-row: 232px;
+  --gd-bento-gap: 20px;
+  --gd-bento-cols: 3;
+
+  /* ════════════════════════════════════════════════════════════════
+     14. 封面体系（暗色封面 + 奶油字）
+     浅色幻彩封面在暗场里会「发光发脏」，改为「夜空底 + 极光斑 + 素材图」，
+     压一层 25%→72% 的暗遮罩，保证奶油色衬线标题 ≥ 7:1。
+     ════════════════════════════════════════════════════════════════ */
+  --gd-cover-scrim: linear-gradient(180deg, rgba(4, 7, 15, 0.25), rgba(4, 7, 15, 0.72));
+  --gd-cover-ink: var(--gd-ink-heading);
+  --gd-cover-img-scrim: linear-gradient(180deg, rgba(4, 7, 15, 0.3), rgba(4, 7, 15, 0.7));
+
+  /* ════════════════════════════════════════════════════════════════
+     15. 版心宽度（aurora §6.2：内容最大宽 1200px）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-content-max: 1200px;
+  --gd-content-xs: 640px;
+  --gd-content-sm: 720px;
+  --gd-content-md: 880px;
+  --gd-content-lg: 960px;
+
+  /* ════════════════════════════════════════════════════════════════
+     16. 字体族（三族分工：衬线刊头 / 无衬线正文 / DIN 数字）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-font-sans: var(--gd-font-body);
+  --gd-font-serif: var(--gd-font-display);
+  --gd-font-num: var(--gd-font-mono);
+
+  /* ════════════════════════════════════════════════════════════════
+     17. 圆角（形状锁 · 只允许 6 / 8 / 14 / 18 / 22 / 9999）
+     旧档 lg=16 已废弃：16 不在六档内，会与 14/18 读成「差不多」的错位。
+     ════════════════════════════════════════════════════════════════ */
+  --gd-radius-sm: var(--gd-r-1);   /* 6  微标签 / 键帽 */
+  --gd-radius-md: var(--gd-r-2);   /* 8  分段控件 / 小标签 */
+  --gd-radius-lg: var(--gd-r-3);   /* 14 控件 / 卡内分组（旧 16 → 14） */
+  --gd-radius-xl: var(--gd-r-4);   /* 18 主卡 / 面板 */
+  --gd-radius-2xl: var(--gd-r-5);  /* 22 弹层 / 播放器 */
+
+  /* ════════════════════════════════════════════════════════════════
+     18. 阴影（暗域靠光晕分层，不靠黑投影）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-shadow-0: none;
+  --gd-shadow-1: var(--gd-elev-1);
+  --gd-shadow-2: var(--gd-elev-2);
+  --gd-shadow-3: var(--gd-elev-2);
+  --gd-shadow-4: var(--gd-elev-overlay);
+
+  /* ════════════════════════════════════════════════════════════════
+     19. 描边 / 交互态 / 焦点环
+     ════════════════════════════════════════════════════════════════ */
+  --gd-border-base: 1px solid var(--gd-line);
+  --gd-border-strong: 1px solid var(--gd-line-strong);
+  --gd-border-focus: 2px solid var(--gd-violet);
+  --gd-state-hover: rgba(255, 255, 255, 0.045);
+  --gd-state-active: rgba(255, 255, 255, 0.08);
+  --gd-focus-ring: var(--gd-glow-focus);
+  --gd-focus-ring-danger: 0 0 0 3px rgba(255, 110, 134, 0.18), 0 0 22px -6px rgba(255, 110, 134, 0.5);
+  --gd-focus-ring-bright: var(--gd-glow-focus);
+
+  /* ════════════════════════════════════════════════════════════════
+     20. 进度轨道
+     ════════════════════════════════════════════════════════════════ */
+  --gd-progress-track: rgba(255, 255, 255, 0.07);
+  --gd-progress-track-dark: rgba(255, 255, 255, 0.07);
+
+  /* ════════════════════════════════════════════════════════════════
+     21. 动效（aurora 四档：120 / 200 / 320 / 560ms）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-duration-fast: var(--gd-dur-1);
+  --gd-duration-normal: var(--gd-dur-2);
+  --gd-duration-slow: var(--gd-dur-3);
+  --gd-ease-standard: var(--gd-ease);
+  /* 往返循环缓动（补齐缺失令牌：此前 animation 简写引用它会整条失效） */
+  --gd-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ════════════════════════════════════════════════════════════════
+     22. z-index（沿用 aurora 层级；只补 aurora 未定义的 raised / drawer）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-z-raised: 10;
+  --gd-z-drawer: 50;
+
+  /* ════════════════════════════════════════════════════════════════
+     23. 认证页（全站唯一「片头时刻」：比画布更深一档 + 玻璃表单）
+     ════════════════════════════════════════════════════════════════ */
+  --gd-auth-glass-bg: rgba(17, 26, 44, 0.55);
+  --gd-auth-glass-border: rgba(255, 255, 255, 0.1);
+  --gd-auth-field-bg: rgba(255, 255, 255, 0.035);
+  --gd-auth-field-border: var(--gd-line);
+  --gd-auth-stage: var(--gd-canvas);
+  --gd-auth-placeholder: var(--gd-ink-3);
+
+  /* ════════════════════════════════════════════════════════════════
+     24. 暗域扩展件（夜窗 / 雾带 / 辉光刊头 / 双域缝合）
+     全站只剩一个画布，双域结构保留但不再「上暗下暖」，
+     改为「画布 ↔ 面板」的明度差，雾带退化为极光色过渡带。
+     ════════════════════════════════════════════════════════════════ */
+  --gd-aurora-core: var(--gd-violet);
+  --gd-aurora-halo: #a78bfa;
+  --gd-grad-primary: var(--gd-grad-brand);
+  --gd-shadow-bloom: var(--gd-glow-brand);
+  --gd-glass-bg: rgba(255, 255, 255, 0.05);
+  --gd-glass-border: rgba(255, 255, 255, 0.12);
+  --gd-glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --gd-junction-ink: var(--gd-line-strong);
+  --gd-light-pool: radial-gradient(
+    620px 240px at 24% 0%,
+    rgba(139, 124, 255, 0.1),
+    rgba(139, 124, 255, 0) 70%
+  );
+  --gd-glow-title-shadow: var(--gd-glow-type-strong);
+
+  --gd-window-bg: var(--gd-panel-sunken);
+  --gd-window-text: var(--gd-ink);
+  --gd-window-hint: var(--gd-ink-3);
+  --gd-shadow-window: inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 24px rgba(139, 124, 255, 0.16), 0 0 48px rgba(139, 124, 255, 0.1),
+    0 8px 40px rgba(4, 7, 15, 0.55);
+  --gd-shadow-window-hover: inset 0 0 0 1px rgba(255, 255, 255, 0.09),
+    0 0 32px rgba(139, 124, 255, 0.24), 0 0 64px rgba(139, 124, 255, 0.14),
+    0 10px 44px rgba(4, 7, 15, 0.6);
+  --gd-shadow-window-sm: inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 14px rgba(139, 124, 255, 0.14), 0 4px 20px rgba(4, 7, 15, 0.45);
+
+  /* 雾带：从画布到面板的极光过渡（不再是「暗 → 暖纸」） */
+  --gd-fog-junction-h: linear-gradient(
+    180deg,
+    var(--gd-panel-sunken) 0%,
+    rgba(139, 124, 255, 0.1) 52%,
+    var(--gd-canvas) 100%
+  );
+  --gd-fog-junction-v: linear-gradient(
+    90deg,
+    var(--gd-panel-sunken) 0%,
+    rgba(139, 124, 255, 0.1) 52%,
+    var(--gd-canvas) 100%
+  );
+  --gd-fog-width: 26px;
+
+  /* 夜窗内状态胶囊（洗色底 + 提亮字） */
+  --gd-blocked-bright: #f7a8ee;
+  --gd-window-tone-bg-running: var(--gd-cyan-wash);
+  --gd-window-tone-bg-pending: var(--gd-amber-wash);
+  --gd-window-tone-bg-locked: var(--gd-mint-wash);
+  --gd-window-tone-bg-failed: var(--gd-rose-wash);
+  --gd-window-tone-bg-blocked: var(--gd-magenta-wash);
+}

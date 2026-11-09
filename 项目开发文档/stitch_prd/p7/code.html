@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#1d192e","surface-bright":"#fdf8ff","background":"#fdf8ff","on-primary":"#ffffff","surface-container-lowest":"#ffffff","error":"#ba1a1a","secondary-fixed":"#e6deff","tertiary-fixed":"#e8ddff","inverse-on-surface":"#f4eeff","surface-variant":"#e6defc","on-primary-fixed":"#180065","secondary":"#5e39e0","tertiary":"#6044ae","on-tertiary-container":"#faf3ff","surface-tint":"#5b46d3","secondary-fixed-dim":"#cabeff","primary-container":"#6d5ae6","on-secondary":"#ffffff","tertiary-fixed-dim":"#cebdff","on-tertiary-fixed-variant":"#4f319c","surface":"#fdf8ff","on-secondary-container":"#fffbff","primary-fixed-dim":"#c7bfff","on-secondary-fixed-variant":"#4816cb","on-error":"#ffffff","primary-fixed":"#e5deff","surface-container-highest":"#e6defc","on-tertiary-fixed":"#21005e","surface-container":"#f2ebff","on-error-container":"#93000a","on-primary-container":"#f9f4ff","on-surface":"#1d192e","error-container":"#ffdad6","secondary-container":"#7757fa","on-tertiary":"#ffffff","tertiary-container":"#795ec9","inverse-primary":"#c7bfff","surface-container-low":"#f7f1ff","inverse-surface":"#322d44","on-surface-variant":"#474554","outline-variant":"#c9c4d7","outline":"#787586","surface-dim":"#ded6f3","on-primary-fixed-variant":"#4228ba","primary":"#543ecc","on-secondary-fixed":"#1c0062","surface-container-high":"#ece4ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-lg":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-xl":"2rem","margin-desktop":"2.5rem","space-lg":"1.25rem","margin-mobile":"1rem","space-sm":"0.375rem",margin:"1.5rem",gutter:"1rem"},fontFamily:{"display-lg-mobile":["Noto Serif"],"body-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Noto Serif"],"body-xl":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl":["Noto Serif"],"label-sm":["Plus Jakarta Sans"],"headline-lg":["Noto Serif"],"body-md":["Plus Jakarta Sans"],"code-timecode":["Space Grotesk"],"headline-sm":["Noto Serif"],"headline-md":["Noto Serif"],"display-lg":["Noto Serif"],"label-md":["Plus Jakarta Sans"]},fontSize:{"display-lg-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-xl":["18px",{lineHeight:"28px",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"code-timecode":["13px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"headline-sm":["18px",{lineHeight:"26px",fontWeight:"600"}],"headline-md":["22px",{lineHeight:"30px",fontWeight:"500"}],"display-lg":["48px",{lineHeight:"58px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"16px",fontWeight:"500"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed"><aside class="fixed left-0 top-0 h-full w-60 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-gutter flex items-center gap-space-sm bg-surface-container-low"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">auto_videocam</span></div><div class="flex flex-col"><span class="font-headline-sm text-[15px] font-bold tracking-tight text-on-surface leading-tight">浮光造梦</span><span class="font-label-sm text-[9px] uppercase tracking-wider text-outline">GleamDream</span></div></div><div class="px-space-md py-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-outline uppercase tracking-wider">创作管线 Pipeline</div></div><nav class="flex flex-col gap-1 px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="workbench" href="#"><span class="material-symbols-outlined text-[18px]">space_dashboard</span><span class="font-label-md">P1 创作工作台</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="script-workshop" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span><span class="font-label-md">P2 剧本工坊</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="asset-matrix" href="#"><span class="material-symbols-outlined text-[18px]">category</span><span class="font-label-md">P3 资产矩阵</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="storyboard" href="#"><span class="material-symbols-outlined text-[18px]">view_carousel</span><span class="font-label-md">P4 智能分镜</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="batch-render" href="#"><span class="material-symbols-outlined text-[18px]">motion_photos_auto</span><span class="font-label-md">P5 批量渲染</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="post-composition" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="font-label-md">P6 后期合成</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="master-export" href="#"><span class="material-symbols-outlined text-[18px]">rocket_launch</span><span class="font-label-md">P7 母版分发</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="billing-budget" href="#"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span class="font-label-md">P8 计费与预算</span></a></nav></div><div class="p-space-md"><div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm font-semibold text-tertiary">算力配额</span><span class="font-code-timecode text-[11px] text-primary">98.4%</span></div><div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden"><div class="w-5/6 h-full bg-primary rounded-full"></div></div><span class="font-label-sm text-outline text-[10px]">高速算力通道已就绪</span></div></div></aside><div class="pl-60 flex flex-col min-h-screen"><header class="fixed top-0 left-60 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg gap-space-md"><div class="flex items-center gap-space-lg min-w-0"><div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm shrink-0"><span class="font-label-md font-semibold text-on-surface">赛博霓虹·第03幕</span><span class="text-outline">/</span><span class="font-body-sm text-on-surface-variant truncate max-w-xs">P7 母版导出与多平台分发中心</span></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container px-space-md py-1 rounded-full shrink-0"><div class="flex items-center gap-1 font-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span><span>H1 剧本定稿</span></div><span class="text-outline-variant text-[10px]">›</span><div class="flex items-center gap-1 font-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span><span>H2 资产锁定</span></div><span class="text-outline-variant text-[10px]">›</span><div class="flex items-center gap-1 font-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span><span>H3 分镜批准</span></div><span class="text-outline-variant text-[10px]">›</span><div class="flex items-center gap-1 font-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span><span>H4 成片批准</span></div><span class="text-outline-variant text-[10px]">›</span><div class="flex items-center gap-1 font-label-sm text-primary font-bold"><span class="material-symbols-outlined text-[14px] text-secondary">rocket_launch</span><span>P7 分发就绪</span></div></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-sm bg-surface-container-high px-space-md py-1 rounded-full"><span class="material-symbols-outlined text-[16px] text-primary">toll</span><span class="font-code-timecode text-on-surface">8,210</span><span class="font-label-sm text-outline">可用</span><span class="text-outline-variant">|</span><span class="font-label-sm text-outline">冻结 0</span></div><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm tracking-wider uppercase font-bold text-[10px]">PRO</span><button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 pt-16 pb-8 bg-surface w-full px-gutter-lg"><div class="flex flex-col w-full font-body-md text-on-surface">
+<!-- Masthead Top Banner -->
+<section class="w-full bg-surface-container-low rounded-xl p-space-lg mb-space-lg shadow-sm">
+<div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-md shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">P7 母版导出与多平台分发中心</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm uppercase tracking-wider">
+              PRD V4.0 · F7 HUB
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              H4 终审已放行 · 4K ProRes 无损母版已就绪
+            </span>
+</div>
+<p class="font-label-md text-outline tracking-wider uppercase mt-1">
+            EXPORT &amp; MULTI-PLATFORM DISTRIBUTION HUB · 浮光造梦 梦境窗口流水线
+          </p>
+<div class="flex flex-wrap items-center gap-space-md mt-2 text-on-surface-variant font-body-sm">
+<span class="font-headline-sm text-headline-sm text-primary">EP.02 潜龙受辱，黑金龙纹令</span>
+<span class="text-outline-variant">•</span>
+<span class="font-code-timecode text-code-timecode text-on-surface font-semibold">24 镜头</span>
+<span class="text-outline-variant">•</span>
+<span class="font-code-timecode text-code-timecode text-primary font-semibold">01:52 完整母版</span>
+</div>
+</div>
+</div>
+<!-- Quick stats block -->
+<div class="flex flex-wrap items-center gap-space-md bg-surface-container-highest px-space-lg py-space-md rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-outline uppercase tracking-wider">总文件大小</span>
+<span class="font-code-timecode text-headline-sm font-bold text-on-surface">384.2 <span class="text-label-sm font-normal text-outline">MB</span></span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-outline uppercase tracking-wider">视频编码</span>
+<span class="font-code-timecode text-headline-sm font-bold text-on-surface">H.264 <span class="text-label-sm font-normal text-outline">/ AAC</span></span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-outline uppercase tracking-wider">电平响度</span>
+<span class="font-code-timecode text-headline-sm font-bold text-secondary">-14.0 <span class="text-label-sm font-normal text-outline">LUFS 真峰值</span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Two-Column Master Canvas (Left 55% / Right 45%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full mb-space-xl">
+<!-- LEFT COLUMN (55% -> 7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- A. Master Player & Inspection Night Window (.gd-night-window) -->
+<div class="rounded-2xl p-space-lg flex flex-col shadow-2xl relative overflow-hidden" style="background-color: #0a0a12; box-shadow: 0 0 28px rgba(124, 92, 255, 0.2), inset 0 2px 8px rgba(0, 0, 0, 0.8);">
+<!-- Aurora glow overlay -->
+<div class="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl pointer-events-none opacity-20" style="background: radial-gradient(circle, #7c5cff 0%, #a78bfa 100%);"></div>
+<div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none opacity-15" style="background: radial-gradient(circle, #5e39e0 0%, #a78bfa 100%);"></div>
+<!-- Window Header -->
+<div class="flex items-center justify-between pb-space-md relative z-10">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm text-surface-bright font-bold">母版级监视器与质检开口</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-code-timecode uppercase font-semibold text-inverse-on-surface" style="background-color: rgba(124, 92, 255, 0.3);">
+              ProRes 422 HQ
+            </span>
+</div>
+<div class="flex items-center gap-space-xs text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary-fixed">PRO 纯净母版 · 免平台浮水印</span>
+</div>
+</div>
+<!-- 9:16 Short Drama Vertical Monitor -->
+<div class="relative w-full aspect-[9/16] max-h-[540px] mx-auto rounded-xl overflow-hidden flex flex-col justify-between p-space-md group" style="background-color: #000000; box-shadow: inset 0 0 30px rgba(0,0,0,0.9);">
+<!-- Background Short Drama Climax Scene -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cinematic climax scene of a dramatic modern cyberpunk short film. A defiant male protagonist wearing an unbuttoned black tactical suit stands drenched under heavy neon rain in an alleyway. Neon signs in purple and amber reflect on wet asphalt. He extends a black-and-gold carved dragon crest badge toward the camera with fierce intensity. Atmospheric fog, cinematic rim lighting, 8k film still, dramatic depth of field." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT74HaiVHbqp8ppT9RwRj0aB45_pvVXxCUqYDrYAXLPb4Dxft8dgF3kQ9bBWADKqo4FOLnPw514g_DHdDvKPOdjBkM0H9em9yGRB6kCq-i_1BCmQNz0YoUf6rqr9L3tIEWm6f2bg9Fw8QHnZr8D7QNsg6zee9HjHy277Af7juDV_DZujdLRKTJaQ5GGQsdMpcUypFdSxpo8nRj3rVqjKVdWfYepXs4xZ1senQfhDHrjYZohR8mHGCNBQ')"></div>
+<!-- Cinema Letterbox Vignette Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/60 pointer-events-none"></div>
+<!-- Top Safe Area Frame & Telemetry -->
+<div class="relative z-10 flex items-center justify-between font-code-timecode text-surface-bright text-xs">
+<div class="flex items-center gap-space-xs bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-md">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-bold tracking-wider">REC</span>
+<span class="text-outline-variant">|</span>
+<span>1080×1920 60FPS</span>
+</div>
+<div class="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-md text-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed">aspect_ratio</span>
+<span>9:16 短剧安全区已激活</span>
+</div>
+</div>
+<!-- Subtle 9:16 Safe Zone Overlay Guideline -->
+<div class="absolute inset-x-8 top-12 bottom-20 border border-dashed border-primary/40 rounded-lg pointer-events-none flex flex-col justify-between p-2">
+<span class="text-[9px] font-code-timecode text-primary/70 self-start">SAFE AREA TOP BOUND (字幕极限)</span>
+<span class="text-[9px] font-code-timecode text-primary/70 self-end">SAFE AREA BOTTOM BOUND (手势交互区)</span>
+</div>
+<!-- Center Hover Play Overlay -->
+<div class="relative z-10 flex items-center justify-center">
+<button class="w-16 h-16 rounded-full flex items-center justify-center transition-all transform hover:scale-110 active:scale-95 shadow-xl text-on-surface" style="background: linear-gradient(135deg, #a78bfa 0%, #6d5ae6 100%);" type="button">
+<span class="material-symbols-outlined text-[32px] text-on-primary ml-1">play_arrow</span>
+</button>
+</div>
+<!-- Player Scrubber & Bottom Controls Bar -->
+<div class="relative z-10 flex flex-col gap-space-xs bg-black/70 backdrop-blur-md p-space-sm rounded-lg">
+<!-- Timeline track -->
+<div class="flex items-center gap-space-sm">
+<span class="font-code-timecode text-code-timecode text-primary font-bold">01:52.00</span>
+<div class="flex-1 h-2 bg-surface-variant/30 rounded-full relative cursor-pointer overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-full rounded-full" style="background: linear-gradient(90deg, #6d5ae6, #a78bfa);"></div>
+</div>
+<span class="font-code-timecode text-code-timecode text-outline-variant">01:52.00</span>
+</div>
+<!-- Toolbar buttons -->
+<div class="flex items-center justify-between text-inverse-on-surface pt-1">
+<div class="flex items-center gap-space-sm">
+<button class="hover:text-primary transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-[20px]">replay_10</span>
+</button>
+<button class="hover:text-primary transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+</button>
+<button class="hover:text-primary transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-[20px]">forward_10</span>
+</button>
+<div class="w-px h-3.5 bg-outline-variant/40"></div>
+<button class="hover:text-primary transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+</div>
+<div class="flex items-center gap-space-md font-label-sm">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider" style="background-color: rgba(109, 90, 230, 0.4); color: #cebdff;">
+                  HDR10
+                </span>
+<span class="text-tertiary-fixed font-code-timecode">18.4 Mbps</span>
+<button class="hover:text-primary transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Watermark Guarantee Notice -->
+<div class="mt-space-md p-space-sm rounded-lg flex items-center justify-between text-label-md" style="background-color: rgba(94, 57, 224, 0.15); color: #cebdff;">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified_user</span>
+<span>PRO 会员独占：导出文件已自动剥离 GleamDream 平台水印及一切工程元标记</span>
+</div>
+<span class="font-code-timecode text-[11px] text-primary-fixed">CLEAN_FEED_PASS</span>
+</div>
+</div>
+<!-- B. Regulatory Compliance Mandatory Badge Preview (PRD NFR-C6 / SF-F7-11) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">policy</span>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">《人工智能生成合成内容标识办法》法定标识预览</h2>
+<span class="font-label-sm text-outline">国家网信办监管标准 · 片尾显式标识与溯源元数据双重锚定</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[14px] text-outline">lock</span>
+<span>系统强制嵌入不可关闭</span>
+</div>
+</div>
+<!-- End-Slate Preview Card (Pure Black Cinema Card) -->
+<div class="w-full bg-black rounded-lg p-space-lg text-center flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="min-height: 110px;">
+<div class="flex items-center gap-2 text-surface-bright/90 font-display-lg text-body-lg">
+<span class="material-symbols-outlined text-[20px] text-primary-container">auto_awesome</span>
+<span class="font-semibold tracking-wide">本内容由 AI 辅助生成</span>
+</div>
+<p class="font-label-md text-surface-variant/80 tracking-widest uppercase">
+            浮光造梦 GleamDream 智能协同引擎制作 · 深度合成算法服务备案
+          </p>
+<div class="flex items-center gap-2 mt-1 px-3 py-0.5 rounded-full bg-surface-container/10 font-code-timecode text-label-sm text-outline-variant">
+<span>溯源数字编码:</span>
+<span class="text-secondary-fixed font-semibold">GD-20261015-EP02-A8F9-SHA256</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-1">
+<div class="p-space-sm bg-surface-container rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md font-semibold text-on-surface">显式尾标 (2.0秒)</span>
+<span class="font-body-sm text-outline">成片第 01:50-01:52 帧底居中合成标识，不遮挡核心对白。</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">fingerprint</span>
+<div class="flex flex-col">
+<span class="font-label-md font-semibold text-on-surface">隐式盲水印已注入</span>
+<span class="font-body-sm text-outline">视频像素级高频频域内嵌创作工坊 ID、制作时间戳与模型指纹。</span>
+</div>
+</div>
+</div>
+</div>
+<!-- C. Target Platform Spec Checklist (PRD US-F7-07) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">checklist_rtl</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">各发行平台规格预审报告</h2>
+</div>
+<span class="font-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+            全平台规范 100% 达标
+          </span>
+</div>
+<!-- Platform Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1">
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md font-semibold flex items-center gap-1.5 shrink-0 shadow-sm" type="button">
+<span class="w-2 h-2 rounded-full bg-surface-bright"></span>
+            抖音 (Douyin)
+          </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md shrink-0" type="button">
+            快手 (Kuaishou)
+          </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md shrink-0" type="button">
+            微信视频号
+          </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md shrink-0" type="button">
+            小红书 (RED)
+          </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md shrink-0" type="button">
+            剪映工程草稿
+          </button>
+</div>
+<!-- Checklist Table Items -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-body-md font-medium text-on-surface">单集时长要求</span>
+<span class="font-code-timecode text-body-sm text-outline">01:52 (规范: 00:45 ~ 03:00)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+              ✓ 完美符合
+            </span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-body-md font-medium text-on-surface">文件体积上限</span>
+<span class="font-code-timecode text-body-sm text-outline">384.2 MB (平台限额: ≤ 1024 MB)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+              ✓ 达标 384MB
+            </span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-body-md font-medium text-on-surface">分辨率与色彩编码</span>
+<span class="font-code-timecode text-body-sm text-outline">1080×1920 @ 60fps · Rec.709</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+              ✓ 标准竖屏流
+            </span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-body-md font-medium text-on-surface">UI 遮挡安全边距</span>
+<span class="font-body-sm text-outline">上下 120px / 右侧 80px 交互避让</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+              ✓ 100% 避让无遮挡
+            </span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-body-md font-medium text-on-surface">封面候选图与关键帧</span>
+<span class="font-code-timecode text-body-sm text-outline">1080×1920 无损 PNG 自动生成</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+              ✓ 3张高光已萃取
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (45% -> 5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- A. Export Parameters & Package Download Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">母版导出规格与打包</h2>
+</div>
+<span class="font-label-sm text-outline">单集即时渲染流</span>
+</div>
+<!-- Resolution Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">输出分辨率</label>
+<div class="grid grid-cols-3 gap-space-sm">
+<button class="py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md flex flex-col items-center" type="button">
+<span>720p</span>
+<span class="text-[10px] text-outline">极速分发流</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-primary-container text-on-primary-container shadow-sm font-label-md font-semibold flex flex-col items-center" type="button">
+<span>1080p (高清)</span>
+<span class="text-[10px] text-on-primary-container/80">全平台通用推荐</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md flex flex-col items-center relative" type="button">
+<span class="flex items-center gap-1 font-semibold text-secondary">
+                4K UHD
+                <span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed text-[9px] rounded">PRO</span>
+</span>
+<span class="text-[10px] text-outline">母版归档专用</span>
+</button>
+</div>
+</div>
+<!-- Aspect Ratio Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">画幅比例设定</label>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="py-2 px-3 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-md font-semibold flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">stay_current_portrait</span>
+<span>9:16 竖屏短剧 (默认)</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">stay_current_landscape</span>
+<span>16:9 横屏影视切片</span>
+</button>
+</div>
+</div>
+<!-- File naming template input -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-outline uppercase tracking-wider">母版命名规范模版</label>
+<span class="font-label-sm text-primary hover:underline cursor-pointer">自定义宏</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[16px]">label</span>
+<input class="bg-transparent text-body-sm font-code-timecode text-on-surface flex-1 outline-none" type="text" value="{剧名}_{集号}_{集标题}_{分辨率}"/>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-code-timecode text-outline">
+<span>预览:</span>
+<span class="text-on-surface font-semibold truncate">重生之我在短剧当神豪_EP02_黑金龙纹令_1080p.mp4</span>
+</div>
+</div>
+<!-- Packaging Options Checklist -->
+<div class="flex flex-col gap-2 pt-1">
+<label class="flex items-center gap-space-sm cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-on-surface">附带无损 SRT 软字幕轨与 CC 标头</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-on-surface">分集边导边下 (.zip 离线容灾通道)</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-on-surface">导出全剧工程清单 (JSON / Final Cut XML)</span>
+</label>
+</div>
+<!-- Action buttons -->
+<div class="flex flex-col gap-space-sm pt-2">
+<button class="w-full py-3 px-space-lg rounded-lg bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-sm transition-all shadow-md active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>立即下载当前集母版 (384.2 MB)</span>
+</button>
+<button class="w-full py-2.5 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">folder_zip</span>
+<span>批量打包导出全剧 ZIP (24集 · 8.4 GB)</span>
+</button>
+</div>
+</div>
+<!-- B. AI Intelligent Promotion Metadata Panel (PRD US-F7-03) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">smart_toy</span>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">AI 智能宣发文案与高光抓取</h2>
+<span class="font-label-sm text-outline">基于剧情转折算法自动提取吸睛文案</span>
+</div>
+</div>
+<button class="px-2 py-1 rounded bg-surface-container text-primary hover:bg-surface-container-high transition-colors font-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>重新提炼</span>
+</button>
+</div>
+<!-- Recommended Title Field -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-outline">
+<span>爆款吸引力标题建议</span>
+<span class="font-code-timecode text-primary">28 / 30 字</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between gap-space-sm cursor-pointer">
+<span class="font-body-md font-semibold text-on-surface leading-tight">
+              “三十万天策旧部听令！”雨夜逆袭，打脸全场沸腾！
+            </span>
+<span class="material-symbols-outlined text-outline text-[16px]">edit</span>
+</div>
+</div>
+<!-- AI Synopsis Field -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-outline">
+<span>剧情吸睛提要 (带热搜情绪钩子)</span>
+<span class="font-code-timecode">84 / 100 字</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container text-body-sm text-on-surface-variant leading-relaxed">
+            隐忍三年的赘婿竟是龙王至尊！赵家大寿之日当众受辱撕毁婚书，黑金龙令一出，三十万精锐直升机群撕裂暴雨暗夜，全族跪地求饶！
+          </div>
+</div>
+<!-- Popular Topic Tags -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-outline uppercase tracking-wider">宣发关联话题标签</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm font-semibold">#逆袭短剧</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm font-semibold">#战神归来</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm font-semibold">#高能反转</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm">#短剧必看榜</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm">#浮光造梦出品</span>
+</div>
+</div>
+<!-- Cover Candidate Thumbnails -->
+<div class="flex flex-col gap-1.5 pt-1">
+<span class="font-label-sm text-outline uppercase tracking-wider">AI 抓取高点击率封面候选</span>
+<div class="grid grid-cols-3 gap-space-sm">
+<!-- Cover 1 (Selected) -->
+<div class="relative rounded-lg overflow-hidden aspect-[9/16] bg-surface-container shadow-md group cursor-pointer" style="box-shadow: 0 0 0 2px #5e39e0;">
+<div class="w-full h-full bg-cover bg-center" data-alt="Vertical movie poster shot from a dramatic angle. The protagonist stands in torrential rain clutching a gleaming golden crest badge. Ultra cinematic neon lighting, high contrast portrait, sharp focus on the glowing artifact." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkwJW9wIJiE6ewTHxVO01o_RMF1Y1Dll_N2HdkHw0M2m7DwaHg1bGAuZEwNG6VMfaBscN6wrZsANpKHSr5VK3-6EpwrFXhJ2UfD3vK1rDn2-l9xhB3JBCcHyMG3TTQKxM2EyX4ItOUgettac1-CrlP8MbKUnuK_-F-v_ZDtNGpLiBkUym4nqYVkb02ARSPtIqk4la2CeTL6X402WBOUr3RU1zFhBRG38VHHeowDLni5qWOizxCuiTDvg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-1.5">
+<span class="font-code-timecode text-[10px] text-surface-bright font-bold">帧 00:48 (优选)</span>
+<span class="text-[9px] text-secondary-fixed-dim">CTR预测: 8.9%</span>
+</div>
+<div class="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<!-- Cover 2 -->
+<div class="relative rounded-lg overflow-hidden aspect-[9/16] bg-surface-container opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cinematic vertical screenshot of an arrogant villain in luxury suit suddenly showing sheer terror and backing away against a grand banquet hall wall. Warm golden lighting with shattering shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAd-ZzcK66WVWePleQXtUJWA-VYs0k56ymYWz6l5iQXuFJNkJVgTUZOTgZMmG3PHB9OGnFkbccXns8qwZjweXK9pPJ01-9rXwZYoPnpxKWM5k7fUVfstuMIcEUTswEHr66oBrrPs8vzVbnwCJ-VT_VCdtBANtFB1pAJnUDzRuB-kmgpm0rN16LI1F9gTOJH8NAvfo_gVM7CCou7a5OtwsL3ycwXz7R4DbUlw_s4F3HywoLHysYyAMb6Yw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-1.5">
+<span class="font-code-timecode text-[10px] text-surface-bright font-bold">帧 01:14</span>
+<span class="text-[9px] text-outline-variant">CTR预测: 7.2%</span>
+</div>
+</div>
+<!-- Cover 3 -->
+<div class="relative rounded-lg overflow-hidden aspect-[9/16] bg-surface-container opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-full h-full bg-cover bg-center" data-alt="Dramatic vertical cinematic shot of a fleet of black helicopters arriving through storm clouds illuminating a high-rise city skyline with high-intensity spotlights. Gritty action movie composition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdUQNgpKrxY1NMpfZqyLjm4dDBae5zr9-96Cy3Rsa9ovEYNVldP6_HCnYb9mWD8BV-9MAOxdWnAQuL9swLfiu18asv0L4xHChdBl18u3CaQvJVX60qblWUeU1sv_auKo7piKOLFGbmM3KtqWTW9e-uPQeYX44LyUbHMpo_IgheNqjwF0Ye8OTnQnHxHfnYpcD4A84RAdHvP8OdQ6okL77Tt6VDy-8aQS1nPg1LigK6CxLxTpOIER9g6w')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-1.5">
+<span class="font-code-timecode text-[10px] text-surface-bright font-bold">帧 01:38</span>
+<span class="text-[9px] text-outline-variant">CTR预测: 6.8%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- C. Multi-Platform 1-Click Distribution Pipeline -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">rocket_launch</span>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">矩阵平台一键推流授权</h2>
+<span class="font-label-sm text-outline">已绑定官方短剧开放平台 OAuth 凭据</span>
+</div>
+</div>
+<button class="text-primary hover:text-secondary font-label-sm font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_link</span>
+<span>添加渠道</span>
+</button>
+</div>
+<!-- Account Authorization Cards List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Douyin Card -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-on-background flex items-center justify-center text-surface-bright shrink-0 font-bold text-xs">
+                抖
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md font-semibold text-on-surface">浮光剧场官方</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">授权有效</span>
+</div>
+<span class="font-label-sm text-outline font-code-timecode">OAuth 令牌剩余 18 天 · 自动同步作品草稿</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-sm font-semibold shadow-sm shrink-0" type="button">
+              一键分发起草
+            </button>
+</div>
+<!-- WeChat Channels Card -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shrink-0 font-bold text-xs">
+                视
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md font-semibold text-on-surface">造梦短剧频道</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">授权有效</span>
+</div>
+<span class="font-label-sm text-outline font-code-timecode">微信小店挂接已就绪 · 支持分销带货锚点</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-sm font-semibold shadow-sm shrink-0" type="button">
+              一键分发起草
+            </button>
+</div>
+<!-- Kuaishou Card with Expiring Alert -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-on-surface shrink-0 font-bold text-xs">
+                快
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md font-semibold text-on-surface">短剧先锋营</span>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-label-sm text-[10px] font-semibold">临期 22小时</span>
+</div>
+<span class="font-label-sm text-outline">建议分发前更新 OAuth Refresh Token</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors font-label-sm font-semibold shrink-0" type="button">
+              重新授权
+            </button>
+</div>
+</div>
+<!-- Recent distribution record snippet -->
+<div class="pt-1 flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-outline">
+<span>最近推流记录 (EP.01 溯源)</span>
+<span class="font-code-timecode text-primary">已同步 3 个平台</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container text-body-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface font-medium truncate max-w-[200px]">EP.01 龙王隐世 · 抖音官方草稿箱</span>
+</div>
+<span class="font-code-timecode text-label-sm text-outline">发布成功 · 回链已捕获</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Global Sticky Distribution Bar -->
+<footer class="w-full bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col md:flex-row items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">done_all</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">母版校验全部通过</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm">
+            HASH: 4F9B...8E21
+          </span>
+</div>
+<span class="font-body-sm text-outline">
+          法定 AI 显式与隐式水印已内嵌 · 画面与字幕安全区合规 · 3 平台授权通路畅通无阻
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-full md:w-auto justify-end">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md font-semibold flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>历史导出记录 (90天留存)</span>
+</button>
+<button class="px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-all shadow-md active:scale-95 font-label-md font-bold flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>🚀 立即一键推流全平台草稿</span>
+</button>
+</div>
+</footer>
+</div>
+<script>
+  // Simple interactive feedback script for preview interactions
+  document.addEventListener('DOMContentLoaded', () => {
+    const playBtn = document.querySelector('button .material-symbols-outlined');
+    if (playBtn) {
+      playBtn.parentElement.addEventListener('click', () => {
+        const icon = playBtn;
+        if (icon.textContent === 'play_arrow') {
+          icon.textContent = 'pause';
+        } else if (icon.textContent === 'pause') {
+          icon.textContent = 'play_arrow';
+        }
+      });
+    }
+  });
+</script></main><footer class="fixed bottom-0 left-60 right-0 h-8 bg-surface-container-low backdrop-blur-md shadow-[0_-1px_6px_rgba(0,0,0,0.03)] z-30 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>SSE/Celery 流水线: 活跃中 (12ms)</span></div><div class="hidden sm:flex items-center gap-space-xs font-code-timecode text-[11px] text-outline"><span>快照:</span><span class="text-on-surface">v12.6-master</span></div></div><div class="flex items-center gap-space-md font-label-sm text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">cloud_done</span><span>导出节点 #4 [ 就绪 ]</span></div></div></footer></div></body></html>

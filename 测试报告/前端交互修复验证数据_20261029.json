@@ -1,0 +1,127 @@
+[
+  {
+    "name": "创建页-未填标题时下一步禁用",
+    "pass": true,
+    "detail": "请先填写项目名（1~30 字）"
+  },
+  {
+    "name": "创建页-缺项原因可见",
+    "pass": true,
+    "detail": "请先填写项目名（1~30 字）"
+  },
+  {
+    "name": "创建页-填标题后下一步可用",
+    "pass": true,
+    "detail": "title=进入下一步"
+  },
+  {
+    "name": "快捷创建-灵感预填标题",
+    "pass": true,
+    "detail": "暴雨夜的告白"
+  },
+  {
+    "name": "快捷创建-灵感预填简介",
+    "pass": true,
+    "detail": "暴雨夜的告白"
+  },
+  {
+    "name": "快捷创建-题材预选",
+    "pass": true,
+    "detail": "aria-pressed=true"
+  },
+  {
+    "name": "顶栏搜索-跳转并带 q",
+    "pass": true,
+    "detail": "url=http://127.0.0.1:5175/projects?q=%E4%BA%A4%E4%BA%92%E5%AE%A1%E8%AE%A1"
+  },
+  {
+    "name": "顶栏搜索-工作台关键词回填",
+    "pass": true,
+    "detail": "keyword=交互审计"
+  },
+  {
+    "name": "剧本页-无剧本显示空态",
+    "pass": true,
+    "detail": "空态正常"
+  },
+  {
+    "name": "剧本页-空态提供生成入口",
+    "pass": true,
+    "detail": "入口可见"
+  },
+  {
+    "name": "资产页-无剧本时规划按钮禁用",
+    "pass": true,
+    "detail": "title=当前项目还没有剧本：请先在剧本页生成或导入剧本，再回来规划资产"
+  },
+  {
+    "name": "资产页-空态提供去剧本入口",
+    "pass": true,
+    "detail": "引导按钮存在"
+  },
+  {
+    "name": "配音页-无台词时生成禁用",
+    "pass": true,
+    "detail": "title=本集没有可配音台词：请先在剧本页补充对白 / 旁白"
+  },
+  {
+    "name": "配音页-无配音轨时审批禁用",
+    "pass": true,
+    "detail": "title=本集没有可配音台词，无法提交配音审批"
+  },
+  {
+    "name": "配音页-空态去剧本入口",
+    "pass": true,
+    "detail": "入口存在"
+  },
+  {
+    "name": "编排页-未编译时下一步禁用且有原因",
+    "pass": true,
+    "detail": "title=请先编译计划，再进入后期合成"
+  },
+  {
+    "name": "后期页-空时间线合成禁用且有原因",
+    "pass": true,
+    "detail": "title=时间线为空：请先在生成任务中心完成镜头视频生成"
+  },
+  {
+    "name": "后期页-提供去生成任务中心入口",
+    "pass": true,
+    "detail": "入口存在"
+  },
+  {
+    "name": "分发页-未过审导出禁用且有原因",
+    "pass": true,
+    "detail": "title=成片确认未通过：请先在「成片审核」通过 HITL-4，再导出母版"
+  },
+  {
+    "name": "个人设置-修改密码表单禁用",
+    "pass": true,
+    "detail": "inputs disabled=true"
+  },
+  {
+    "name": "个人设置-注销入口禁用",
+    "pass": true,
+    "detail": "即将上线标识"
+  },
+  {
+    "name": "归档 API 成功",
+    "pass": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "name": "归档后工作台可见（已交付页签）",
+    "pass": true,
+    "detail": "列表渲染完成"
+  },
+  {
+    "name": "归档卡片菜单-恢复入口可见",
+    "pass": false,
+    "detail": "未找到恢复入口"
+  },
+  {
+    "name": "UI 恢复归档成功",
+    "pass": false,
+    "detail": "status=archived"
+  }
+]

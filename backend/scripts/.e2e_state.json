@@ -1,0 +1,40 @@
+{
+  "done": [
+    "01_register",
+    "02_recharge",
+    "03_create_project",
+    "04_script_generate",
+    "05_script_review",
+    "06_assets",
+    "07_storyboard",
+    "08_render",
+    "09_post",
+    "10_export",
+    "11_notify",
+    "12_cross_user"
+  ],
+  "ctx": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNjY4IiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlhdCI6MTc5MzI0NTMwMiwiZXhwIjoxNzkzMjUyNTAyfQ.ZcmMDbL6PZ86YLthxJdl9p3sn2wELqxdbvq9vAENNTE",
+    "user_id": 1668,
+    "balance": 10499,
+    "tmp_project_id": 983,
+    "project_id": 984,
+    "script_approval_id": 266,
+    "hero_asset_id": 828,
+    "storyboard_id": 275,
+    "storyboard_approval_id": 268,
+    "render_task_ids": [
+      750,
+      749,
+      748,
+      747,
+      746,
+      745,
+      744,
+      743
+    ],
+    "final_cut_approval_id": 283,
+    "export_id": 192,
+    "token_b": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMTMiLCJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzkzMjUyNDcxLCJleHAiOjE3OTMyNTk2NzF9.rRhMEDitVZIYFlMwEeEZ39E9FAI4LnqphYlTGmSZ8nI"
+  }
+}

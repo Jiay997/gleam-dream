@@ -1,0 +1,17 @@
+# 浮光造梦前端（frontend）
+
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+dist-ssr/
+
+# 本地环境与日志
+*.local
+*.log
+npm-debug.log*
+
+# 编辑器
+.idea/
+.DS_Store

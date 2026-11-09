@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#fdf8ff", "on-tertiary-fixed": "#21005e", "on-primary-container": "#f9f4ff", "secondary": "#5e39e0", "secondary-fixed-dim": "#cabeff", "on-surface": "#1d192e", "tertiary-container": "#795ec9", "surface-container-highest": "#e6defc", "secondary-fixed": "#e6deff", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#4816cb", "inverse-on-surface": "#f4eeff", "on-tertiary-fixed-variant": "#4f319c", "on-secondary-container": "#fffbff", "surface-container": "#f2ebff", "primary-fixed-dim": "#c7bfff", "surface-container-low": "#f7f1ff", "on-error-container": "#93000a", "on-secondary-fixed": "#1c0062", "tertiary-fixed": "#e8ddff", "surface-dim": "#ded6f3", "surface-variant": "#e6defc", "inverse-primary": "#c7bfff", "on-error": "#ffffff", "surface-container-high": "#ece4ff", "error": "#ba1a1a", "primary": "#543ecc", "outline": "#787586", "on-primary-fixed": "#180065", "error-container": "#ffdad6", "on-surface-variant": "#474554", "tertiary-fixed-dim": "#cebdff", "on-primary-fixed-variant": "#4228ba", "surface-tint": "#5b46d3", "outline-variant": "#c9c4d7", "surface": "#fdf8ff", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "on-background": "#1d192e", "background": "#fdf8ff", "primary-container": "#6d5ae6", "tertiary": "#6044ae", "on-tertiary-container": "#faf3ff", "secondary-container": "#7757fa", "primary-fixed": "#e5deff", "inverse-surface": "#322d44" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "gutter-lg": "1.5rem", "space-sm": "0.375rem", "space-lg": "1.25rem", "margin": "1.5rem", "margin-mobile": "1rem", "margin-desktop": "2.5rem" }, "fontFamily": { "body-xl": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "display-lg": [ "Noto Serif" ], "headline-lg": [ "Noto Serif" ], "body-sm": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-xl": [ "Noto Serif" ], "headline-xl-mobile": [ "Noto Serif" ], "headline-md": [ "Noto Serif" ], "headline-sm": [ "Noto Serif" ], "code-timecode": [ "Space Grotesk" ], "display-lg-mobile": [ "Noto Serif" ], "body-lg": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-xl": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "16px", "fontWeight": "500" } ], "display-lg": [ "48px", { "lineHeight": "58px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "fontWeight": "500" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-xl-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "22px", { "lineHeight": "30px", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "code-timecode": [ "13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "display-lg-mobile": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface min-h-screen selection:bg-secondary-fixed selection:text-on-secondary-fixed"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-[0_2px_10px_rgba(109,90,230,0.25)]"><span class="material-symbols-outlined text-[20px]">auto_awesome</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">浮光造梦</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">GLEAMDREAM</span></div></div><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">STUDIO</span></div><div class="px-space-lg pt-space-md pb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">制片生产流水线 / PIPELINE</span></div><nav class="flex flex-col gap-1 px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="creation-workbench" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">P1 创作工作台</span></div><span class="font-code-timecode text-label-sm text-outline">01</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="script-workshop" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">history_edu</span><span class="font-body-md text-body-md">P2 剧本工坊</span></div><span class="font-code-timecode text-label-sm text-outline">02</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="asset-matrix" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">category</span><span class="font-body-md text-body-md">P3 资产矩阵</span></div><span class="font-code-timecode text-label-sm text-outline">03</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="smart-storyboard" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">view_kanban</span><span class="font-body-md text-body-md">P4 智能分镜</span></div><span class="font-code-timecode text-label-sm text-outline">04</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="batch-render" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">blur_on</span><span class="font-body-md text-body-md">P5 批量渲染</span></div><span class="font-code-timecode text-label-sm text-outline">05</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="post-composition" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">movie_edit</span><span class="font-body-md text-body-md">P6 后期合成</span></div><span class="font-code-timecode text-label-sm text-outline">06</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="master-distribute" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">publish</span><span class="font-body-md text-body-md">P7 母版分发</span></div><span class="font-code-timecode text-label-sm text-outline">07</span></a><div class="my-space-xs mx-space-sm h-px bg-surface-container-highest"></div><a aria-current="page" class="flex items-center justify-between px-space-md py-2.5 rounded-lg transition-all bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="billing-budget" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-md text-body-md">P8 计费与预算</span></div><span class="font-code-timecode text-label-sm text-outline">08</span></a></nav></div><div class="p-space-lg flex flex-col gap-space-md"><div class="p-space-md rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-outline">预算消耗配额</span><span class="font-code-timecode text-label-sm text-primary font-semibold">73.4%</span></div><div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 73.4%"></div></div><div class="flex justify-between items-center text-outline font-label-sm text-label-sm"><span>今日消耗</span><span class="font-code-timecode text-on-surface font-semibold">1,790 pts</span></div></div><div class="flex items-center justify-between text-outline text-label-sm px-space-xs"><span class="font-body-sm text-body-sm">引擎核心集群</span><span class="flex items-center gap-1.5 text-secondary font-code-timecode font-medium"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Online</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-full px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-lg"><nav class="flex items-center gap-2 font-label-md text-label-md"><span class="text-outline hover:text-on-surface transition-colors cursor-pointer">账户中心</span><span class="text-outline-variant font-code-timecode">/</span><span class="text-on-surface font-semibold">P8 计费中心与预算安全体系</span></nav><div class="h-4 w-px bg-surface-container-highest"></div><div class="flex items-center gap-2 px-space-md py-1 rounded-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-[16px] text-tertiary">movie</span><span class="font-label-sm text-label-sm text-outline">项目:</span><span class="font-label-md text-label-md text-on-surface font-medium">赛博霓虹·第03幕</span><span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-surface">expand_more</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md px-space-md py-1.5 rounded-xl bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-primary">token</span><span class="font-label-sm text-label-sm text-outline">可用:</span><span class="font-code-timecode text-label-md font-semibold text-primary">8,210</span></div><div class="h-3 w-px bg-surface-container-highest"></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-outline">lock</span><span class="font-label-sm text-label-sm text-outline">冻结:</span><span class="font-code-timecode text-label-md text-outline">0</span></div></div><div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[16px]">workspace_premium</span><span>PRO 导演版</span></div><div class="flex items-center gap-2"><button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button"><span class="material-symbols-outlined text-[20px]">security</span></button><button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 pb-12 bg-background flex-1"><div class="flex flex-col w-full">
+<div class="px-gutter-lg py-space-lg flex flex-col gap-space-xl max-w-[1600px] mx-auto w-full">
+<!-- PAGE HEADER -->
+<section class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_12px_rgba(35,23,10,0.03)] relative overflow-hidden">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="flex items-start gap-space-lg relative z-10">
+<div class="w-2.5 h-16 rounded-full bg-primary-container shrink-0 shadow-[0_0_12px_rgba(109,90,230,0.4)]"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold tracking-wider uppercase">DR-2 / US-F1-09</span>
+<span class="text-outline font-code-timecode text-label-sm">LEDGER VERSION 4.2</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              熔断监听在线
+            </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">P8 计费中心与预算安全体系</h1>
+<p class="font-label-md text-label-md text-outline mt-0.5 tracking-wide uppercase">
+            BILLING &amp; BUDGET SAFETY SYSTEM · PRD V4.0 F1 落地 · 只追加不可篡改账本
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-md flex-wrap relative z-10">
+<button class="flex items-center gap-2 bg-primary-container hover:bg-primary text-on-primary font-body-md text-body-md font-semibold px-space-lg py-2.5 rounded-lg shadow-[0_4px_14px_rgba(109,90,230,0.25)] transition-all active:scale-[0.98]" id="open-recharge-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">add_card</span>
+<span>立即充值 (微信/支付宝)</span>
+</button>
+<button class="flex items-center gap-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-md text-body-md font-medium px-space-lg py-2.5 rounded-lg shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">workspace_premium</span>
+<span>升级套餐权益</span>
+</button>
+<button class="flex items-center gap-2 bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-body-md text-body-md px-space-md py-2.5 rounded-lg transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">download</span>
+<span>导出账本流水 (CSV)</span>
+</button>
+</div>
+</section>
+<!-- SECTION 1: 4 ASSET METRIC CARDS -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg">
+<!-- Card 1: Available Credits -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col justify-between relative group hover:shadow-[0_8px_20px_rgba(109,90,230,0.08)] transition-all">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface-variant">可用积分余额</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-code-timecode text-label-sm font-semibold">1 pts = ¥0.01</span>
+</div>
+<div class="flex flex-col gap-1 my-space-xs">
+<div class="flex items-baseline gap-2">
+<span class="font-code-timecode text-[42px] leading-none font-bold text-on-surface tracking-tight" id="balance-counter">8,210</span>
+<span class="font-headline-sm text-headline-sm text-outline">积分</span>
+</div>
+<div class="font-code-timecode text-label-md text-outline">折合资金基准：¥82.10 CNY</div>
+</div>
+<div class="pt-space-md mt-space-md border-t-0 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">card_giftcard</span>
+<span class="font-label-sm text-label-sm text-outline">本月充值:</span>
+<span class="font-code-timecode text-label-sm font-semibold text-on-surface">15,000 pts</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-code-timecode text-label-sm font-bold">+1,500 赠</span>
+</div>
+</div>
+<!-- Card 2: Frozen Credits -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col justify-between relative group hover:shadow-[0_8px_20px_rgba(109,90,230,0.08)] transition-all">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface-variant">执行中冻结积分</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-outline font-code-timecode text-label-sm">PIPELINE IDLE</span>
+</div>
+<div class="flex flex-col gap-1 my-space-xs">
+<div class="flex items-baseline gap-2">
+<span class="font-code-timecode text-[42px] leading-none font-bold text-on-surface tracking-tight">0</span>
+<span class="font-headline-sm text-headline-sm text-outline">积分</span>
+</div>
+<div class="font-label-sm text-label-sm text-emerald-600 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>当前无阻断/运行中锁定任务</span>
+</div>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-low rounded-lg p-2.5">
+<p class="font-body-sm text-body-sm text-outline leading-tight">
+            PRD GR-4 契约：任务启动自动预检冻结，任务成功实扣，失败全额解冻返还。
+          </p>
+</div>
+</div>
+<!-- Card 3: Monthly Spent -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col justify-between relative group hover:shadow-[0_8px_20px_rgba(109,90,230,0.08)] transition-all">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">timelapse</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface-variant">本月累计已消耗</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm">10月当前</span>
+</div>
+<div class="flex flex-col gap-1 my-space-xs">
+<div class="flex items-baseline gap-2">
+<span class="font-code-timecode text-[42px] leading-none font-bold text-on-surface tracking-tight">6,790</span>
+<span class="font-headline-sm text-headline-sm text-outline">积分</span>
+</div>
+<div class="font-code-timecode text-label-md text-outline">折合资金基准：¥67.90 CNY</div>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">trending_flat</span>
+<span class="font-label-sm text-label-sm text-outline">环比上月:</span>
+<span class="font-code-timecode text-label-sm font-semibold text-on-surface">-0.4% (持平)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">成本健康</span>
+</div>
+</div>
+<!-- Card 4: Nocturnal Aurora Mini Window (gd-night-window-sm) -->
+<div class="rounded-[16px] p-space-lg flex flex-col justify-between relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.2)]" style="background: #0a0a12; box-shadow: 0 0 24px rgba(124, 92, 255, 0.18), inset 0 0 16px rgba(10, 10, 18, 0.8);">
+<!-- Aurora glow overlay -->
+<div class="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-secondary/30 blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-36 h-36 rounded-full bg-tertiary-container/20 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-surface-container-highest">近 7 日算力趋势</span>
+</div>
+<span class="font-code-timecode text-label-sm text-secondary-fixed-dim">均 970 pts/日</span>
+</div>
+<!-- Mini Spark Bars Chart SVG -->
+<div class="my-space-sm relative z-10 flex flex-col gap-2">
+<div class="h-20 w-full flex items-end justify-between gap-2 px-1 pt-3">
+<!-- Day 1: 520 -->
+<div class="flex flex-col items-center gap-1 flex-1 group">
+<div class="w-full bg-surface-container-highest/20 rounded-t-sm h-8 relative flex items-end overflow-hidden group-hover:bg-surface-container-highest/30 transition-all">
+<div class="w-full bg-gradient-to-t from-secondary to-primary-fixed-dim h-[65%] rounded-t-sm"></div>
+</div>
+<span class="font-code-timecode text-[10px] text-outline-variant">10/09</span>
+</div>
+<!-- Day 2: 740 -->
+<div class="flex flex-col items-center gap-1 flex-1 group">
+<div class="w-full bg-surface-container-highest/20 rounded-t-sm h-11 relative flex items-end overflow-hidden group-hover:bg-surface-container-highest/30 transition-all">
+<div class="w-full bg-gradient-to-t from-secondary to-primary-fixed-dim h-[80%] rounded-t-sm"></div>
+</div>
+<span class="font-code-timecode text-[10px] text-outline-variant">10/10</span>
+</div>
+<!-- Day 3: 410 -->
+<div class="flex flex-col items-center gap-1 flex-1 group">
+<div class="w-full bg-surface-container-highest/20 rounded-t-sm h-7 relative flex items-end overflow-hidden group-hover:bg-surface-container-highest/30 transition-all">
+<div class="w-full bg-gradient-to-t from-secondary to-primary-fixed-dim h-[50%] rounded-t-sm"></div>
+</div>
+<span class="font-code-timecode text-[10px] text-outline-variant">10/11</span>
+</div>
+<!-- Day 4: 1,320 -->
+<div class="flex flex-col items-center gap-1 flex-1 group">
+<div class="w-full bg-surface-container-highest/20 rounded-t-sm h-16 relative flex items-end overflow-hidden group-hover:bg-surface-container-highest/30 transition-all">
+<div class="w-full bg-gradient-to-t from-primary to-secondary-fixed-dim h-[95%] rounded-t-sm shadow-[0_0_8px_rgba(167,139,250,0.5)]"></div>
+</div>
+<span class="font-code-timecode text-[10px] text-secondary-fixed">10/12</span>
+</div>
+<!-- Day 5: 890 -->
+<div class="flex flex-col items-center gap-1 flex-1 group">
+<div class="w-full bg-surface-container-highest/20 rounded-t-sm h-12 relative flex items-end overflow-hidden group-hover:bg-surface-container-highest/30 transition-all">
+<div class="w-full bg-gradient-to-t from-secondary to-primary-fixed-dim h-[75%] rounded-t-sm"></div>
+</div>
+<span class="font-code-timecode text-[10px] text-outline-variant">10/13</span>
+</div>
+<!-- Day 6: 1,120 -->
+<div class="flex flex-col items-center gap-1 flex-1 group">
+<div class="w-full bg-surface-container-highest/20 rounded-t-sm h-14 relative flex items-end overflow-hidden group-hover:bg-surface-container-highest/30 transition-all">
+<div class="w-full bg-gradient-to-t from-secondary to-primary-fixed-dim h-[88%] rounded-t-sm"></div>
+</div>
+<span class="font-code-timecode text-[10px] text-outline-variant">10/14</span>
+</div>
+<!-- Day 7: 1,790 (Today Peak) -->
+<div class="flex flex-col items-center gap-1 flex-1 group">
+<div class="w-full bg-surface-container-highest/20 rounded-t-sm h-20 relative flex items-end overflow-hidden group-hover:bg-surface-container-highest/30 transition-all">
+<div class="w-full bg-gradient-to-t from-secondary to-primary-fixed-dim h-[100%] rounded-t-sm shadow-[0_0_12px_rgba(202,190,255,0.7)] animate-pulse"></div>
+</div>
+<span class="font-code-timecode text-[10px] text-primary-fixed-dim font-bold">今日</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-code-timecode text-surface-container-highest/80 pt-1 border-t-0 bg-surface-container-highest/10 rounded px-2 py-1 relative z-10">
+<span>渲染 4,820</span>
+<span>合成 1,440</span>
+<span>资产 480</span>
+<span>剧本 50</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: PROJECT BUDGET GUARDRAILS (SF-F1 / US-F1-09) -->
+<section class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[24px]">shield_with_heart</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">单项目预算熔断阀与成本护栏</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-code-timecode text-label-sm font-semibold">PRD US-F1-09</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">
+              为单个短剧生成项目设定配额硬顶，防御因提示词死循环或批处理脚本异常导致的账户透支与高额账单。
+            </p>
+</div>
+</div>
+<!-- Project Selector Dropdown -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-2 rounded-xl">
+<span class="font-label-sm text-label-sm text-outline">目标项目:</span>
+<div class="flex items-center gap-1 font-body-md text-body-md font-semibold text-on-surface cursor-pointer">
+<span>《赛博霓虹·第03幕》</span>
+<span class="material-symbols-outlined text-[18px] text-outline">expand_more</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-semibold">执行中</span>
+</div>
+</div>
+<!-- Main Visual Guardrail Display -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center bg-surface-container-low/60 p-space-lg rounded-xl">
+<!-- Left: Progress Gauge & Threshold Visualizer -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">当前消耗配额进度</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-code-timecode text-[32px] leading-tight font-bold text-on-surface" id="spent-val">6,790</span>
+<span class="text-outline font-headline-sm text-headline-sm">/</span>
+<span class="font-code-timecode text-headline-sm text-headline-sm text-outline" id="quota-total">10,000 pts</span>
+<span class="font-code-timecode text-label-md text-primary font-bold ml-1" id="quota-percent">(67.9%)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span>
+<span class="text-outline">实耗</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2.5 h-2.5 rounded-sm bg-amber-400"></span>
+<span class="text-outline">80% 软预警</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2.5 h-2.5 rounded-sm bg-error"></span>
+<span class="text-outline">100% 硬熔断</span>
+</div>
+</div>
+</div>
+<!-- Composite Gauge Bar -->
+<div class="relative w-full h-4 bg-surface-container-highest rounded-full overflow-hidden shadow-inner">
+<!-- Active Fill -->
+<div class="h-full bg-primary-container rounded-l-full transition-all duration-500 relative" id="guardrail-fill" style="width: 67.9%;">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-white/20"></div>
+</div>
+<!-- Soft Limit Marker at 80% -->
+<div class="absolute top-0 bottom-0 left-[80%] w-0.5 bg-amber-500 z-20 shadow-[0_0_6px_rgba(245,158,11,0.8)]"></div>
+<!-- Hard Break Marker at 100% -->
+<div class="absolute top-0 bottom-0 right-0 w-1 bg-error z-20"></div>
+</div>
+<!-- Threshold Cards Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Soft Warning -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex items-start gap-space-md">
+<div class="w-7 h-7 rounded bg-amber-50 flex items-center justify-center text-amber-600 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">80% 软预警线 (8,000 pts)</span>
+<span class="px-1.5 py-0.2 rounded bg-emerald-50 text-emerald-700 font-code-timecode text-label-sm font-semibold">安全 (未触发)</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-normal">
+                  达到时触发站内实时 Toast 警示与负责人邮件提醒，当前余量 1,210 pts，不阻断任务。
+                </p>
+</div>
+</div>
+<!-- Hard Fuse -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex items-start gap-space-md">
+<div class="w-7 h-7 rounded bg-error-container/50 flex items-center justify-center text-error shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">100% 硬熔断阀 (10,000 pts)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-primary font-code-timecode text-label-sm font-semibold">熔断保护监听中</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-normal">
+                  达到时立即硬性挂起后续生成队列（Celery 任务暂停），杜绝透支，需主动二次授权。
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Budget Controls & Hard Switch Box -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-space-lg rounded-xl flex flex-col gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">调整项目预算上限 (pts)</span>
+<span class="font-body-sm text-body-sm text-outline">修改后对当前项目所有流水任务即时生效</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<input class="w-full accent-primary h-2 bg-surface-container-highest rounded-lg cursor-pointer" id="budget-range" max="30000" min="7000" step="1000" type="range" value="10000"/>
+<span class="font-code-timecode text-label-md font-bold text-primary w-24 text-right" id="range-label">10,000</span>
+</div>
+<!-- Feature Toggles -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<label class="flex items-center justify-between cursor-pointer p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">超限硬暂停保护</span>
+<span class="font-body-sm text-body-sm text-outline">强制挂起未启动任务 (SF-F1)</span>
+</div>
+<input checked="" class="w-4 h-4 text-primary rounded bg-surface-container cursor-not-allowed" disabled="" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">单镜超预估 1.5 倍熔断</span>
+<span class="font-body-sm text-body-sm text-outline">模型重试次数过载拦截 (NFR-K3)</span>
+</div>
+<input checked="" class="w-4 h-4 text-primary rounded bg-surface-container" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SUBSCRIPTION TIERS MATRIX -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">会员套餐权益与并发梯度</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">GPU POOL TIERS</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">支持按月/年灵活调优，支持团队组织级统一开票</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Tier 1: Free -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface">免费探索版</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-code-timecode text-label-sm font-semibold">FREE</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-code-timecode text-[32px] font-bold text-on-surface">¥0</span>
+<span class="font-body-md text-body-md text-outline">/ 永久</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">适合独立导演灵感速记与短片分镜前期小样测试。</p>
+<ul class="flex flex-col gap-2.5 pt-space-sm font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+<span>2 路任务并发渲染队列</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+<span>720p 视频生成预览</span>
+</li>
+<li class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px] text-outline">close</span>
+<span>带平台浮水印</span>
+</li>
+<li class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px] text-outline">close</span>
+<span>无 4K 原画超分及插队通道</span>
+</li>
+</ul>
+</div>
+<button class="mt-space-xl w-full py-2.5 rounded-lg bg-surface-container text-on-surface-variant font-body-md text-body-md font-medium text-center hover:bg-surface-container-high transition-colors" type="button">
+            当前不可降级
+          </button>
+</div>
+<!-- Tier 2: Pro (Active) -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_8px_24px_rgba(109,90,230,0.12)] flex flex-col justify-between relative ring-2 ring-primary-container">
+<div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-primary-container text-on-primary-container font-code-timecode text-label-sm font-bold shadow-md">
+            当前激活状态 · CURRENT ACTIVE
+          </div>
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">专业版 PRO</span>
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-bold">PRO DUAL</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-code-timecode text-[32px] font-bold text-on-surface">¥199</span>
+<span class="font-body-md text-body-md text-outline">/ 月 (到期 2026-11-30)</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">专为职业短剧团队打磨，解锁全高清无水印及加速通道。</p>
+<ul class="flex flex-col gap-2.5 pt-space-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-2 font-medium">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+<span><strong>5 路独享并发</strong> 算力通道</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+<span><strong>1080p 60fps 高清纯净无水印</strong></span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+<span><strong>4K 原画解锁</strong> (超分质感增强)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+<span>每批次免费插队 3 次 · 专属 GPU 优先池</span>
+</li>
+</ul>
+</div>
+<div class="flex items-center gap-space-sm mt-space-xl">
+<button class="flex-1 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-md text-body-md font-semibold text-center transition-all shadow-sm" type="button">
+              立即续费专业版
+            </button>
+<button class="px-3 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+</div>
+</div>
+<!-- Tier 3: Studio -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface">工作室集群版</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-code-timecode text-label-sm font-semibold">STUDIO</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-code-timecode text-[32px] font-bold text-on-surface">¥699</span>
+<span class="font-body-md text-body-md text-outline">/ 月</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">工业化短剧量产流水线，含剪映工程一键对接与团队多席位。</p>
+<ul class="flex flex-col gap-2.5 pt-space-sm font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check</span>
+<span><strong>10 路并发渲染</strong> 极限吞吐</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check</span>
+<span>团队协作分权 (ACL 制片/编剧/特效席位)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check</span>
+<span><strong>剪映草稿工程 / FCP XML 直接导出</strong></span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check</span>
+<span>专属人物角色一致性 LoRA 模型私有化定制</span>
+</li>
+</ul>
+</div>
+<button class="mt-space-xl w-full py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-md text-body-md font-semibold text-center transition-colors" type="button">
+            补差价升级至工作室版
+          </button>
+</div>
+</div>
+</section>
+<!-- SECTION 4: STRICT APPEND-ONLY LEDGER JOURNAL (PRD F1.2 / DR-2) -->
+<section class="bg-surface-container-lowest p-space-xl rounded-[16px] shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">只追加不可篡改积分流水台账</h2>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-code-timecode text-label-sm font-semibold">APPEND-ONLY SECURE LEDGER</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">
+              严格遵循 PRD DR-2 / 契约：禁止物理删除与回溯修改，失败全额解冻返还（PRD GR-4）透明审计。
+            </p>
+</div>
+</div>
+<!-- Filter Pills Bar -->
+<div class="flex items-center gap-1.5 p-1 bg-surface-container-low rounded-xl flex-wrap">
+<button class="ledger-filter-btn px-3 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm" data-filter="all" type="button">全部类型 (6)</button>
+<button class="ledger-filter-btn px-3 py-1 rounded-lg text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" data-filter="settle" type="button">结算扣除 (Settle)</button>
+<button class="ledger-filter-btn px-3 py-1 rounded-lg text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" data-filter="unfreeze" type="button">解冻返还 (Unfreeze)</button>
+<button class="ledger-filter-btn px-3 py-1 rounded-lg text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" data-filter="grant" type="button">充值赠送 (Grant)</button>
+</div>
+</div>
+<!-- Table View -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md rounded-l-lg">流水号 &amp; 时间戳 (UTC/Local)</th>
+<th class="py-3 px-space-md">关联项目 / 集号 / 阶段</th>
+<th class="py-3 px-space-md">业务类型</th>
+<th class="py-3 px-space-md">调用模型与算力规格</th>
+<th class="py-3 px-space-md text-right">变动积分</th>
+<th class="py-3 px-space-md text-right">变动后结余</th>
+<th class="py-3 px-space-md text-center rounded-r-lg">任务 Trace ID / 凭证</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<!-- Record 1: Settle -->
+<tr class="ledger-row hover:bg-surface-container-low/70 transition-colors" data-category="settle">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-timecode text-label-md font-bold text-on-surface">TX-20261015-8821</span>
+<span class="font-code-timecode text-[11px] text-outline">14:32:05 (UTC+8)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md font-medium text-on-surface">《赛博霓虹·第03幕》</span>
+<span class="font-label-sm text-label-sm text-outline">EP.02 P5 批量视频渲染 (12 镜头)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  SETTLE 结算
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">Kling V1.5 Pro (1080p 60fps)</span>
+<span class="font-code-timecode text-[11px] text-outline">12 镜批次 · 480 帧</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-bold text-error">-640 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-semibold text-on-surface">8,210 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<button class="inline-flex items-center gap-1 font-code-timecode text-label-sm text-primary hover:text-primary-container transition-colors" onclick="alert('任务链 Trace ID: tr-8f9b2a-kling-prod\n执行状态: SUCCESS (耗时 42s)')" type="button">
+<span>tr-8f9b2a</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Record 2: Unfreeze Refund (Transparent Failure Refund GR-4) -->
+<tr class="ledger-row hover:bg-surface-container-low/70 transition-colors bg-emerald-50/20" data-category="unfreeze">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-timecode text-label-md font-bold text-on-surface">TX-20261015-8819</span>
+<span class="font-code-timecode text-[11px] text-outline">14:10:12 (UTC+8)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md font-medium text-on-surface">《赛博霓虹·第03幕》</span>
+<span class="font-label-sm text-label-sm text-emerald-800">EP.02 Shot-09 超时自动返还</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-code-timecode text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  UNFREEZE 返还
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-emerald-900">因 Kling 算力集群超时全额返还</span>
+<span class="font-code-timecode text-[11px] text-outline">触发熔断保护 · 零损耗</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-bold text-emerald-600">+45 pts (返还)</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-semibold text-on-surface">8,850 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<button class="inline-flex items-center gap-1 font-code-timecode text-label-sm text-emerald-700 hover:text-emerald-900 transition-colors" onclick="alert('任务链 Trace ID: tr-timeout-refund-8819\n策略: GR-4 全额自动解冻，原路退回可用池')" type="button">
+<span>tr-refund-9c</span>
+<span class="material-symbols-outlined text-[14px]">verified</span>
+</button>
+</td>
+</tr>
+<!-- Record 3: TTS Settle -->
+<tr class="ledger-row hover:bg-surface-container-low/70 transition-colors" data-category="settle">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-timecode text-label-md font-bold text-on-surface">TX-20261015-8790</span>
+<span class="font-code-timecode text-[11px] text-outline">11:28:44 (UTC+8)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md font-medium text-on-surface">《赛博霓虹·第03幕》</span>
+<span class="font-label-sm text-label-sm text-outline">EP.01 P6 智能配音与台词对齐</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  SETTLE 结算
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">TTS 云希 V3 (多情感短剧定制)</span>
+<span class="font-code-timecode text-[11px] text-outline">24 句台词 · 1,420 字符</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-bold text-error">-14 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-semibold text-on-surface">8,805 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<button class="inline-flex items-center gap-1 font-code-timecode text-label-sm text-primary hover:text-primary-container transition-colors" onclick="alert('任务链 Trace ID: tr-tts-yunxi-441\n执行状态: SUCCESS')" type="button">
+<span>tr-tts-441</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Record 4: Storyboard Rendering Settle -->
+<tr class="ledger-row hover:bg-surface-container-low/70 transition-colors" data-category="settle">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-timecode text-label-md font-bold text-on-surface">TX-20261014-7621</span>
+<span class="font-code-timecode text-[11px] text-outline">18:45:00 (UTC+8)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md font-medium text-on-surface">《赛博霓虹·第03幕》</span>
+<span class="font-label-sm text-label-sm text-outline">EP.01 P4 智能分镜高保真预览</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-timecode text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  SETTLE 结算
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">Midjourney V6.1 Cinematic</span>
+<span class="font-code-timecode text-[11px] text-outline">18 镜头连续风格锚定</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-bold text-error">-180 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-semibold text-on-surface">8,819 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<button class="inline-flex items-center gap-1 font-code-timecode text-label-sm text-primary hover:text-primary-container transition-colors" onclick="alert('任务链 Trace ID: tr-mj-sb-18x\n执行状态: SUCCESS')" type="button">
+<span>tr-mj-18x</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Record 5: Grant/Recharge Package -->
+<tr class="ledger-row hover:bg-surface-container-low/70 transition-colors bg-surface-container/30" data-category="grant">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-timecode text-label-md font-bold text-on-surface">TX-20261010-0012</span>
+<span class="font-code-timecode text-[11px] text-outline">09:15:30 (UTC+8)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md font-medium text-on-surface">微信在线充值 (商户单号 WX889021)</span>
+<span class="font-label-sm text-label-sm text-outline">热销档位：¥100.00 CNY</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 font-code-timecode text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                  GRANT 充值充入
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">基准 10,000 + 赠送 1,500</span>
+<span class="font-code-timecode text-[11px] text-outline">合规网关直接结算入账</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-bold text-blue-700">+11,500 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-semibold text-on-surface">8,999 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<button class="inline-flex items-center gap-1 font-code-timecode text-label-sm text-outline hover:text-on-surface transition-colors" onclick="alert('微信支付凭据号: 4200002198202610108821\n对账状态: 财税已核对')" type="button">
+<span>wx-pay-rec</span>
+<span class="material-symbols-outlined text-[14px]">receipt</span>
+</button>
+</td>
+</tr>
+<!-- Record 6: Registration Welcome Grant -->
+<tr class="ledger-row hover:bg-surface-container-low/70 transition-colors" data-category="grant">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-timecode text-label-md font-bold text-on-surface">TX-20261001-0001</span>
+<span class="font-code-timecode text-[11px] text-outline">00:00:01 (UTC+8)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md font-medium text-on-surface">平台新剧本导演入驻初始扶持</span>
+<span class="font-label-sm text-label-sm text-outline">浮光造梦 Studio 新人礼包</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 font-code-timecode text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                  GRANT 初始赠送
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">无门槛创作测试算力</span>
+<span class="font-code-timecode text-[11px] text-outline">系统直接注记</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-bold text-blue-700">+500 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-code-timecode text-label-md font-semibold text-on-surface">500 pts</span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="font-code-timecode text-label-sm text-outline">SYS-INIT</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Ledger Footer Pagination & Meta -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs text-outline font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span>共 6 条流水记录</span>
+<span>·</span>
+<span>账本哈希校验: <span class="font-code-timecode text-on-surface font-semibold">0x7f4c...b902 (SHA-256 Valid)</span></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">chevron_left</span></button>
+<span class="px-2 font-code-timecode text-on-surface font-semibold">1 / 1</span>
+<button class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">chevron_right</span></button>
+</div>
+</div>
+</section>
+<!-- SECTION 5: MODAL / QUICK RECHARGE DRAWER COMPONENT -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden p-4" id="recharge-modal">
+<div class="bg-surface-container-lowest max-w-xl w-full rounded-[20px] p-space-xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] flex flex-col gap-space-lg relative animate-in fade-in zoom-in-95 duration-200">
+<!-- Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">算力积分快捷充值</h3>
+<span class="font-body-sm text-body-sm text-outline">1 积分 = ¥0.01 CNY · 资金安全由合规网关托管 · 秒级入账</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline hover:text-on-surface" id="close-recharge-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Tiers Grid -->
+<div class="grid grid-cols-2 gap-space-md" id="tier-selection-grid">
+<!-- Option 1 -->
+<div class="recharge-tier-option border-2 border-transparent bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl cursor-pointer flex flex-col justify-between transition-all" data-amount="10" data-gift="0" data-points="1,000">
+<div class="flex justify-between items-center">
+<span class="font-code-timecode text-headline-sm text-on-surface font-bold">¥10</span>
+<span class="font-code-timecode text-label-sm text-outline">1,000 pts</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-1">短片体验包</span>
+</div>
+<!-- Option 2 -->
+<div class="recharge-tier-option border-2 border-transparent bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl cursor-pointer flex flex-col justify-between transition-all" data-amount="50" data-gift="500" data-points="5,000">
+<div class="flex justify-between items-center">
+<span class="font-code-timecode text-headline-sm text-on-surface font-bold">¥50</span>
+<span class="font-code-timecode text-label-sm text-emerald-700 font-semibold">+送 500 pts</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-1">共 5,500 pts (赠10%)</span>
+</div>
+<!-- Option 3 (Selected Hot) -->
+<div class="recharge-tier-option ring-2 ring-primary-container bg-secondary-fixed/20 p-space-md rounded-xl cursor-pointer flex flex-col justify-between transition-all relative overflow-hidden" data-amount="100" data-gift="1,500" data-points="10,000">
+<div class="absolute -right-6 top-1.5 bg-primary-container text-on-primary-container text-[10px] font-bold px-7 py-0.5 rotate-45">热销</div>
+<div class="flex justify-between items-center">
+<span class="font-code-timecode text-headline-sm text-primary font-bold">¥100</span>
+<span class="font-code-timecode text-label-sm text-primary font-bold">+送 1,500 pts</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-1">共 11,500 pts (赠15%)</span>
+</div>
+<!-- Option 4 -->
+<div class="recharge-tier-option border-2 border-transparent bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl cursor-pointer flex flex-col justify-between transition-all" data-amount="500" data-gift="10,000" data-points="50,000">
+<div class="flex justify-between items-center">
+<span class="font-code-timecode text-headline-sm text-on-surface font-bold">¥500</span>
+<span class="font-code-timecode text-label-sm text-tertiary font-bold">+送 10,000 pts</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-1">剧组首选 (赠20%)</span>
+</div>
+</div>
+<!-- Payment Channels -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">选择支付方式</span>
+<div class="grid grid-cols-2 gap-space-md">
+<label class="flex items-center gap-space-md p-space-md bg-surface-container-low rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="accent-primary w-4 h-4" name="pay_channel" type="radio"/>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[22px]">payments</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">微信支付</span>
+</div>
+</label>
+<label class="flex items-center gap-space-md p-space-md bg-surface-container-low rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
+<input class="accent-primary w-4 h-4" name="pay_channel" type="radio"/>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 text-[22px]">account_balance</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">支付宝支付</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">实际支付金额:</span>
+<span class="font-code-timecode text-[26px] font-bold text-on-surface" id="pay-total-display">¥100.00</span>
+</div>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-body-md text-body-md font-semibold px-space-xl py-3 rounded-xl shadow-[0_4px_16px_rgba(109,90,230,0.3)] transition-all active:scale-[0.98]" id="confirm-recharge-btn" type="button">
+            确认提交并拉起收银台
+          </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Budget range slider dynamic update
+    const slider = document.getElementById('budget-range');
+    const rangeLabel = document.getElementById('range-label');
+    const quotaTotal = document.getElementById('quota-total');
+    const quotaPercent = document.getElementById('quota-percent');
+    const guardrailFill = document.getElementById('guardrail-fill');
+    const currentSpent = 6790;
+
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        rangeLabel.textContent = val.toLocaleString();
+        quotaTotal.textContent = `${val.toLocaleString()} pts`;
+        const pct = Math.min(100, ((currentSpent / val) * 100)).toFixed(1);
+        quotaPercent.textContent = `(${pct}%)`;
+        guardrailFill.style.width = `${pct}%`;
+      });
+    }
+
+    // Ledger Filter Tab Behavior
+    const filterBtns = document.querySelectorAll('.ledger-filter-btn');
+    const rows = document.querySelectorAll('.ledger-row');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+          b.classList.add('text-outline');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        btn.classList.remove('text-outline');
+
+        const filter = btn.getAttribute('data-filter');
+        rows.forEach(r => {
+          if (filter === 'all' || r.getAttribute('data-category') === filter) {
+            r.style.display = '';
+          } else {
+            r.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Recharge Modal Interactions
+    const openBtn = document.getElementById('open-recharge-btn');
+    const closeBtn = document.getElementById('close-recharge-btn');
+    const modal = document.getElementById('recharge-modal');
+    const tierOptions = document.querySelectorAll('.recharge-tier-option');
+    const payDisplay = document.getElementById('pay-total-display');
+    const confirmBtn = document.getElementById('confirm-recharge-btn');
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+    }
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+
+    tierOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        tierOptions.forEach(o => {
+          o.classList.remove('ring-2', 'ring-primary-container', 'bg-secondary-fixed/20');
+          o.classList.add('bg-surface-container-low');
+        });
+        opt.classList.add('ring-2', 'ring-primary-container', 'bg-secondary-fixed/20');
+        opt.classList.remove('bg-surface-container-low');
+        const amount = opt.getAttribute('data-amount');
+        payDisplay.textContent = `¥${amount}.00`;
+      });
+    });
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        alert('正在安全拉起收银台... \n账单已写入 PRD DR-2 前序预检流水通道。');
+        modal.classList.add('hidden');
+      });
+    }
+  </script>
+</div></main><footer class="fixed bottom-0 left-72 right-0 h-10 bg-surface-container-lowest/90 backdrop-blur-md z-40 shadow-[0_-1px_6px_rgba(0,0,0,0.03)]"><div class="w-full h-full px-gutter-lg flex items-center justify-between font-code-timecode text-label-sm"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="text-outline font-body-sm text-body-sm">SSE 实时心跳:</span><span class="text-on-surface font-semibold">18ms</span></div><div class="h-3 w-px bg-surface-container-highest"></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[15px] text-tertiary">history</span><span class="text-outline font-body-sm text-body-sm">会话快照:</span><span class="text-on-surface">v12.6-rc2</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span><span class="text-outline font-body-sm text-body-sm">账本双向加密审计:</span><span class="text-secondary font-semibold">SYNCED &amp; PASS</span></div><div class="h-3 w-px bg-surface-container-highest"></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[15px] text-primary">bolt</span><span class="text-outline font-body-sm text-body-sm">安全熔断监听:</span><span class="text-on-surface font-semibold">HEALTHY 100%</span></div></div></div></footer></div></body></html>

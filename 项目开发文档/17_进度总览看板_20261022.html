@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GleamDream Studio · V6.4 进度总览（2026-10-22）</title>
+<style>
+  :root{
+    --paper:#FBFAF6;
+    --paper-2:#F4F1E9;
+    --ink:#1B1A17;
+    --ink-2:#4A4741;
+    --ink-3:#7A756B;
+    --line:#DFD8C9;
+    --line-2:#EDE8DC;
+    --accent:#8C5B2F;
+    --accent-soft:#F0E4D4;
+    --good:#3F6B57;
+    --good-soft:#E4EDE7;
+    --warn:#B07B24;
+    --warn-soft:#F6EBD6;
+    --bad:#A6432F;
+    --bad-soft:#F6E0DA;
+    --serif:"Songti SC","Noto Serif SC",Georgia,"Times New Roman",serif;
+    --sans:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    --mono:"JetBrains Mono","SF Mono",Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:14px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:56px 40px 72px;}
+  /* ---------- header ---------- */
+  .eyebrow{
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;
+  }
+  h1{
+    font-family:var(--serif);font-weight:600;font-size:40px;line-height:1.2;
+    margin:12px 0 10px;letter-spacing:-.01em;
+  }
+  .sub{color:var(--ink-2);font-size:15px;max-width:760px;}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:0;margin-top:26px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .meta div{
+    padding:12px 24px 12px 0;margin-right:24px;border-right:1px solid var(--line-2);
+    font-size:12.5px;color:var(--ink-2);
+  }
+  .meta div:last-child{border-right:0;}
+  .meta b{color:var(--ink);font-weight:600;}
+  /* ---------- section ---------- */
+  section{margin-top:52px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;}
+  .sec-no{
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    letter-spacing:.1em;padding-top:4px;
+  }
+  h2{font-family:var(--serif);font-size:22px;font-weight:600;margin:0;letter-spacing:.01em;}
+  .hint{color:var(--ink-3);font-size:12.5px;margin:12px 0 0;}
+  /* ---------- kpi ---------- */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px;}
+  .kpi{
+    background:#fff;border:1px solid var(--line);padding:20px 20px 18px;position:relative;
+  }
+  .kpi .lab{font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;}
+  .kpi .val{font-family:var(--serif);font-size:34px;line-height:1.1;margin-top:8px;}
+  .kpi .val small{font-size:15px;color:var(--ink-3);font-family:var(--sans);}
+  .kpi .note{font-size:11.5px;color:var(--ink-2);margin-top:8px;border-top:1px dashed var(--line-2);padding-top:8px;}
+  .kpi.hero{background:var(--ink);border-color:var(--ink);color:#F7F3E8;}
+  .kpi.hero .lab,.kpi.hero .note{color:#C9C1AE;border-color:#3A372F;}
+  .kpi.hero .val{color:#F7F3E8;}
+  .kpi.hero .val small{color:#B7AE99;}
+  /* ---------- bars ---------- */
+  .bars{margin-top:8px;}
+  .bar-row{
+    display:grid;grid-template-columns:190px 1fr 58px;align-items:center;gap:16px;
+    padding:9px 0;border-bottom:1px solid var(--line-2);
+  }
+  .bar-row:last-child{border-bottom:0;}
+  .bar-name{font-size:13px;}
+  .bar-name span{display:block;font-size:11px;color:var(--ink-3);}
+  .track{height:8px;background:var(--paper-2);position:relative;overflow:hidden;}
+  .track i{display:block;height:100%;width:0;}
+  .fill-good{background:var(--good);}
+  .fill-warn{background:var(--warn);}
+  .fill-bad{background:var(--bad);}
+  .num{font-family:var(--mono);font-size:12.5px;text-align:right;color:var(--ink-2);}
+  /* ---------- table ---------- */
+  table{width:100%;border-collapse:collapse;margin-top:18px;font-size:12.8px;}
+  th{
+    text-align:left;font-weight:600;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-3);
+    border-bottom:1px solid var(--line);padding:0 10px 8px 0;
+  }
+  td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2);}
+  td:first-child{color:var(--ink);font-weight:600;}
+  .tag{
+    display:inline-block;font-size:10.5px;padding:1px 7px;border:1px solid;
+    letter-spacing:.03em;white-space:nowrap;
+  }
+  .t-done{color:var(--good);border-color:#BFD3C6;background:var(--good-soft);}
+  .t-part{color:var(--warn);border-color:#E3CFA5;background:var(--warn-soft);}
+  .t-todo{color:var(--bad);border-color:#E4BEB3;background:var(--bad-soft);}
+  /* ---------- milestone ---------- */
+  .ms{display:grid;grid-template-columns:130px 96px 1fr;gap:0;margin-top:18px;border-top:1px solid var(--line);}
+  .ms > div{padding:13px 14px 13px 0;border-bottom:1px solid var(--line-2);font-size:12.8px;}
+  .ms .d{font-family:var(--mono);font-size:12px;color:var(--ink-2);}
+  .ms .st{font-size:11px;}
+  /* ---------- risks ---------- */
+  .risk{display:grid;grid-template-columns:56px 1fr 110px;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-2);}
+  .risk .id{font-family:var(--mono);font-size:11.5px;color:var(--accent);padding-top:2px;}
+  .risk .desc b{display:block;font-weight:600;color:var(--ink);margin-bottom:3px;font-size:13px;}
+  .risk .desc span{color:var(--ink-2);font-size:12.5px;}
+  .risk .lvl{text-align:right;font-size:11px;padding-top:2px;}
+  /* ---------- actions ---------- */
+  ol.acts{margin:18px 0 0;padding:0;counter-reset:a;list-style:none;}
+  ol.acts li{
+    counter-increment:a;position:relative;padding:16px 0 16px 56px;border-bottom:1px solid var(--line-2);
+  }
+  ol.acts li:before{
+    content:counter(a,decimal-leading-zero);position:absolute;left:0;top:15px;
+    font-family:var(--serif);font-size:22px;color:var(--accent);
+  }
+  ol.acts b{display:block;font-size:13.5px;margin-bottom:4px;}
+  ol.acts p{margin:0;color:var(--ink-2);font-size:12.8px;}
+  /* ---------- footer ---------- */
+  .foot{
+    margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--ink-3);font-size:11.5px;display:flex;justify-content:space-between;gap:24px;
+  }
+  .callout{
+    margin-top:22px;background:var(--paper-2);border-left:3px solid var(--accent);
+    padding:16px 20px;font-size:13px;color:var(--ink-2);
+  }
+  .callout b{color:var(--ink);}
+  @media (max-width:980px){
+    .wrap{padding:36px 20px 56px;}
+    h1{font-size:30px;}
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .bar-row{grid-template-columns:130px 1fr 50px;gap:10px;}
+    .risk{grid-template-columns:44px 1fr;}
+    .risk .lvl{grid-column:2;text-align:left;}
+    .ms{grid-template-columns:96px 84px 1fr;}
+    table{font-size:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">GleamDream Studio · Progress Review</div>
+  <h1>项目完成情况与进度总览</h1>
+  <p class="sub">对照《PRD V6.4（照片合成角色定稿版）》的功能清单、数据与架构设计，逐项核验代码实现，统计完成比例并识别交付阻塞。所有百分比均以可复核的代码证据为准。</p>
+
+  <div class="meta">
+    <div>评估日期 <b>2026-10-22</b></div>
+    <div>需求基线 <b>PRD V6.4</b> · 134 US / 120 AC</div>
+    <div>MVP 基线 <b>99 US</b> + 3 横切模块</div>
+    <div>计划交付 <b>2026-12-18</b></div>
+    <div>剩余工作量 <b>≈167 人日</b></div>
+  </div>
+
+  <!-- 01 -->
+  <section>
+    <div class="sec-head"><div class="sec-no">01</div><h2>四个数字看结论</h2></div>
+    <div class="kpis">
+      <div class="kpi hero">
+        <div class="lab">V6.4 MVP 口径完成度</div>
+        <div class="val">62<small>%</small></div>
+        <div class="note">99 条 MVP US 折算完成 66.4（含横切加权）</div>
+      </div>
+      <div class="kpi">
+        <div class="lab">V4.0 口径（上一版）</div>
+        <div class="val">95<small>%</small></div>
+        <div class="note">F1–F8 端到端闭环已交付</div>
+      </div>
+      <div class="kpi">
+        <div class="lab">V6 新增范围实现率</div>
+        <div class="val">4<small>%</small></div>
+        <div class="note">48 条新增 US 中仅 2 条"进行中"</div>
+      </div>
+      <div class="kpi">
+        <div class="lab">MVP 功能缺口</div>
+        <div class="val">33.5<small> US</small></div>
+        <div class="note">F9 + F10 + F11 共 17 条全空</div>
+      </div>
+    </div>
+    <div class="callout">
+      <b>一句话结论：</b>不是"做了一半"，而是"上一版做完了、新版没开工"。V6.0 的三条新主线（配音先行 F9、合成编排 F10、连续性/质检/反馈 5A），以及参数中心 F11、照片合成 F3.14，在代码层检索命中均为 0。
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section>
+    <div class="sec-head"><div class="sec-no">02</div><h2>分模块完成度（MVP 口径）</h2></div>
+    <p class="hint">完成度 = Σ（已完成 1 / 进行中 0.5）÷ 该模块 MVP US 数；P1/P2 不计入分母。</p>
+    <div class="bars">
+      <div class="bar-row"><div class="bar-name">F1 账号计费权限<span>8 US · 微信登录为 Stub</span></div><div class="track"><i class="fill-good" style="width:94%"></i></div><div class="num">94%</div></div>
+      <div class="bar-row"><div class="bar-name">F2 剧本<span>17 US · 缺台词清单与连续性事实</span></div><div class="track"><i class="fill-warn" style="width:76%"></i></div><div class="num">76%</div></div>
+      <div class="bar-row"><div class="bar-name">F3 资产<span>15 US · 缺锚点包与照片合成</span></div><div class="track"><i class="fill-warn" style="width:67%"></i></div><div class="num">67%</div></div>
+      <div class="bar-row"><div class="bar-name">F4 智能分镜<span>15 US · 台词绑定整块为空</span></div><div class="track"><i class="fill-warn" style="width:60%"></i></div><div class="num">60%</div></div>
+      <div class="bar-row"><div class="bar-name">F5 视频生成<span>11 US · 缺音画对齐输入</span></div><div class="track"><i class="fill-good" style="width:91%"></i></div><div class="num">91%</div></div>
+      <div class="bar-row"><div class="bar-name">F6 后期合成<span>8 US · 职责未按 V6 收缩</span></div><div class="track"><i class="fill-good" style="width:100%"></i></div><div class="num">100%</div></div>
+      <div class="bar-row"><div class="bar-name">F7 导出分发<span>5 US · 含 AI 标识合规项</span></div><div class="track"><i class="fill-good" style="width:100%"></i></div><div class="num">100%</div></div>
+      <div class="bar-row"><div class="bar-name">F8 项目管理<span>3 US · 状态机/快照/ACL</span></div><div class="track"><i class="fill-good" style="width:100%"></i></div><div class="num">100%</div></div>
+      <div class="bar-row"><div class="bar-name">F9 配音轨<span>5 US · 新模块未开工</span></div><div class="track"><i class="fill-bad" style="width:1%"></i></div><div class="num">0%</div></div>
+      <div class="bar-row"><div class="bar-name">F10 合成编排<span>6 US · 新模块未开工</span></div><div class="track"><i class="fill-bad" style="width:1%"></i></div><div class="num">0%</div></div>
+      <div class="bar-row"><div class="bar-name">F11 参数中心<span>6 US · 新模块未开工</span></div><div class="track"><i class="fill-bad" style="width:1%"></i></div><div class="num">0%</div></div>
+      <div class="bar-row"><div class="bar-name">5A 横切（M0/M1/M2）<span>按 8 US 当量 · 仅 L1 人脸 QC</span></div><div class="track"><i class="fill-bad" style="width:11%"></i></div><div class="num">11%</div></div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section>
+    <div class="sec-head"><div class="sec-no">03</div><h2>基线 vs 实测：工程覆盖</h2></div>
+    <table>
+      <thead>
+        <tr><th style="width:26%">维度</th><th style="width:16%">基线</th><th style="width:14%">实测</th><th style="width:12%">覆盖率</th><th>缺口说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>功能域</td><td>F1–F11</td><td>F1–F8</td><td>8 / 11</td><td>F9 / F10 / F11 无任何代码</td></tr>
+        <tr><td>后端端点</td><td>≈245</td><td>169</td><td>≈69%</td><td>V6 约 45 个端点未建</td></tr>
+        <tr><td>数据库表</td><td>≈90</td><td>68</td><td>≈76%</td><td>V4 设计 100%；V6 增量 0/22</td></tr>
+        <tr><td>LangGraph 子图</td><td>10</td><td>1</td><td>10%</td><td>仅编剧子图（9 节点），ADR-09 已确认同步管线路线</td></tr>
+        <tr><td>前端页面</td><td>22 + 5 类 V6 页</td><td>22 + 1</td><td>22 / 27</td><td>缺配音工作台、轨道/节点视图、参数中心、照片合成流程</td></tr>
+        <tr><td>E2E 场景</td><td>31</td><td>12 步冒烟</td><td>12 / 31</td><td>E2E-13~31 全未自动化</td></tr>
+        <tr><td>埋点</td><td>42 项</td><td>最小集</td><td>≈25%</td><td>CCCR 与 M1–M22 不可完整观测</td></tr>
+        <tr><td>测试</td><td>—</td><td>107 用例 / 12 文件</td><td>待复测</td><td>本会话无法启动 venv 与 PostgreSQL，未复跑</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 04 -->
+  <section>
+    <div class="sec-head"><div class="sec-no">04</div><h2>里程碑：计划 vs 判定</h2></div>
+    <div class="ms">
+      <div class="d">2026-10-30</div><div class="st"><span class="tag t-todo">高风险</span></div><div><b>M0 契约冻结</b>　02/06 文档仍止于 V4，F9/F10/F11/5A 无字段与接口定义；剩余 7 项待拍板无结论。</div>
+      <div class="d">2026-11-20</div><div class="st"><span class="tag t-todo">不可达</span></div><div><b>M1 声音链</b>　T-02~T-09 需 ≈25 人日，且依赖 M0；当前 0 行代码。</div>
+      <div class="d">2026-11-27</div><div class="st"><span class="tag t-todo">不可达</span></div><div><b>M2 分镜绑定</b>　依赖 F9 的 actual_ms 与 shot_line_bindings，二者皆无。</div>
+      <div class="d">2026-12-04</div><div class="st"><span class="tag t-todo">不可达</span></div><div><b>M3 编排 MVP</b>　T-16/17/18 为关键路径（16 人日），尚未开始。</div>
+      <div class="d">2026-12-09</div><div class="st"><span class="tag t-todo">不可达</span></div><div><b>M4 双视图</b>　依赖 M3；节点视图无画布与守卫。</div>
+      <div class="d">2026-12-16</div><div class="st"><span class="tag t-todo">不可达</span></div><div><b>M5 连续性与门禁</b>　M0 事实源、L2 三维校验、结构化反馈全未开始。</div>
+      <div class="d">2026-12-18</div><div class="st"><span class="tag t-todo">不可达</span></div><div><b>M6 灰度</b>　167 人日需 ≥4 FTE 且零缓冲；人力未确认。</div>
+    </div>
+    <p class="hint">人力—工期推演（净工作日，2026-10-26 起）：1 FTE → 2027-06-16；2 FTE → 2027-02-19；4 FTE → 2026-12-23；5 FTE → 2026-12-11。</p>
+  </section>
+
+  <!-- 05 -->
+  <section>
+    <div class="sec-head"><div class="sec-no">05</div><h2>关键未完成事项（按阻塞性）</h2></div>
+    <table>
+      <thead><tr><th style="width:34%">事项</th><th style="width:13%">工作量</th><th style="width:16%">阻塞什么</th><th>为什么优先</th></tr></thead>
+      <tbody>
+        <tr><td>V6 契约冻结（22 表 + 45 端点）</td><td>4 d</td><td>全部 V6 编码</td><td>契约晚一天，建表返工多一天</td></tr>
+        <tr><td>V6 数据迁移（22 张表）</td><td>6 d</td><td>F9/F10/5A/F11/F3.14</td><td>无表即无功能</td></tr>
+        <tr><td>F9 配音轨（含词级对齐）</td><td>≈25 d</td><td>M1、D-02 强制关口</td><td>"配音先行"链路的起点</td></tr>
+        <tr><td>F4.13 台词绑定 + GR-11</td><td>≈16 d</td><td>D-01 按镜头解锁</td><td>否则退化为整集解锁</td></tr>
+        <tr><td>F10 编排图 + 编译器 + plan_hash</td><td>≈30 d</td><td>E2E-15 门禁、计费幂等</td><td>V6 的立身之本</td></tr>
+        <tr><td>5A：M0 + L2 三维 + 结构化反馈</td><td>≈26 d</td><td>QG-1 / M19 / M20 / M21</td><td>发布门禁不达标不可上线</td></tr>
+        <tr><td>F11 参数中心</td><td>≈19 d</td><td>文案完整率 / 可复现率</td><td>硬门禁，但可灰度后补</td></tr>
+        <tr><td>F3.14 照片合成（仅 M1）</td><td>≈24 d</td><td>QG-11 / QG-12 / QG-13</td><td>合规红线，不接受灰度</td></tr>
+        <tr><td>E2E-13~31 + 兼容模式回归</td><td>≈12 d</td><td>发布门禁与存量项目</td><td>无回归则老项目断链</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 06 -->
+  <section>
+    <div class="sec-head"><div class="sec-no">06</div><h2>风险与阻塞（Top 6）</h2></div>
+    <div class="risk"><div class="id">R-01</div><div class="desc"><b>契约未冻结</b><span>02/06 无 V6 定义，建表与接口靠"猜"；M0 距截止仅 8 天。</span></div><div class="lvl"><span class="tag t-todo">已发生 / 高</span></div></div>
+    <div class="risk"><div class="id">R-02</div><div class="desc"><b>人力与 167 人日不匹配</b><span>PRD 未定团队规模；8 周计划隐含 4–5 FTE 全员并行零延误。</span></div><div class="lvl"><span class="tag t-todo">高 / 高</span></div></div>
+    <div class="risk"><div class="id">R-03</div><div class="desc"><b>plan_hash 双视图一致性未验证</b><span>E2E-15 是发布门禁，编译器为最大技术不确定性，没做 spike。</span></div><div class="lvl"><span class="tag t-part">中 / 高</span></div></div>
+    <div class="risk"><div class="id">R-04</div><div class="desc"><b>WhisperX 词级对齐精度未知</b><span>直接决定 GR-11 时长推导与 M15 一次通过率。</span></div><div class="lvl"><span class="tag t-part">中 / 高</span></div></div>
+    <div class="risk"><div class="id">R-06</div><div class="desc"><b>照片合成"只拦不放"未实现</b><span>QG-11/12/13 属合规硬门槛，拒绝码字典与法务口径均未定。</span></div><div class="lvl"><span class="tag t-todo">中 / 极高</span></div></div>
+    <div class="risk"><div class="id">R-07</div><div class="desc"><b>前端窄屏 2 项 P0 / 7 项 P1</b><span>内容区被压到几十像素、弹窗无 max-height，阻断级体验缺陷。</span></div><div class="lvl"><span class="tag t-part">已发生 / 中</span></div></div>
+  </section>
+
+  <!-- 07 -->
+  <section>
+    <div class="sec-head"><div class="sec-no">07</div><h2>建议立即做的 3 件事</h2></div>
+    <ol class="acts">
+      <li>
+        <b>本周内开出 02/06 的 V6 增量包</b>
+        <p>哪怕只有表名、字段与端点签名。T-02/T-16 在关键路径上，契约每拖一天，建表返工就多一天。</p>
+      </li>
+      <li>
+        <b>两个 spike 并给出结论</b>
+        <p>① 编排编译器与 plan_hash 的等价性（1 集样片双视图比对）；② WhisperX 在自家 TTS 音频上的 50 句误差分布。这决定 V6.0 是"能承诺"还是"大概能"。</p>
+      </li>
+      <li>
+        <b>10-24 前把"人力 × 范围 × 交付日"三角定下来</b>
+        <p>167 人日的账已很清楚：不加人也不砍范围，12-18 只是纸面日期。推荐方案 A（2 FTE、保主链路、交付 2027-02），而非硬撑 12-18 导致门禁不达标。</p>
+      </li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <div>证据：169 端点 / 68 表 / 28 视图 / 32 路由 / 1 张子图 / 107 测试用例（代码实测，2026-10-22）</div>
+    <div>详见《17_V6.4进度评估与偏差分析报告_20261022.md》</div>
+  </div>
+
+</div>
+</body>
+</html>

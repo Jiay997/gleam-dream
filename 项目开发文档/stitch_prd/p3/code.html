@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed-variant":"#4816cb","tertiary-fixed":"#e8ddff","primary-container":"#6d5ae6","surface-container-lowest":"#ffffff","on-tertiary-container":"#faf3ff","surface":"#fdf8ff","on-secondary-fixed":"#1c0062","surface-container-high":"#ece4ff","inverse-surface":"#322d44","on-tertiary":"#ffffff","primary-fixed":"#e5deff","secondary":"#5e39e0","outline":"#787586","secondary-fixed-dim":"#cabeff","secondary-fixed":"#e6deff","background":"#fdf8ff","surface-tint":"#5b46d3","surface-dim":"#ded6f3","tertiary":"#6044ae","tertiary-container":"#795ec9","on-tertiary-fixed-variant":"#4f319c","on-surface-variant":"#474554","surface-bright":"#fdf8ff","surface-container-low":"#f7f1ff","outline-variant":"#c9c4d7","on-primary-container":"#f9f4ff","surface-variant":"#e6defc","secondary-container":"#7757fa","primary":"#543ecc","on-primary-fixed-variant":"#4228ba","on-error":"#ffffff","inverse-on-surface":"#f4eeff","primary-fixed-dim":"#c7bfff","on-error-container":"#93000a","on-surface":"#1d192e","on-secondary-container":"#fffbff","on-primary":"#ffffff","error-container":"#ffdad6","error":"#ba1a1a","on-background":"#1d192e","surface-container-highest":"#e6defc","on-tertiary-fixed":"#21005e","on-secondary":"#ffffff","surface-container":"#f2ebff","tertiary-fixed-dim":"#cebdff","inverse-primary":"#c7bfff","on-primary-fixed":"#180065"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1rem","space-sm":"0.375rem","space-md":"0.75rem","margin":"1.5rem","gutter-lg":"1.5rem","space-lg":"1.25rem","gutter":"1rem","margin-desktop":"2.5rem","space-xs":"0.25rem","space-xl":"2rem"},"fontFamily":{"headline-xl":["Noto Serif"],"headline-xl-mobile":["Noto Serif"],"code-timecode":["Space Grotesk"],"body-lg":["Plus Jakarta Sans"],"body-xl":["Plus Jakarta Sans"],"display-lg":["Noto Serif"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Noto Serif"],"display-lg-mobile":["Noto Serif"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Noto Serif"],"headline-md":["Noto Serif"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"code-timecode":["13px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-xl":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"58px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"500"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"30px","fontWeight":"500"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased select-none"><aside class="fixed left-0 top-0 bottom-8 w-60 bg-surface-container-low z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="h-16 flex items-center px-5 gap-3 bg-surface-container-low"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[18px]">movie_edit</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">浮光造梦</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase mt-0.5">GleamDream Studio</span></div></div><div class="px-4 py-2"><span class="font-label-sm text-label-sm text-outline px-2 uppercase tracking-wider font-semibold">编导产线管线</span></div><nav class="flex flex-col gap-0.5 px-3" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a class="flex items-center gap-3 px-3 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="creation-workbench" href="#"><span class="material-symbols-outlined text-[18px]">space_dashboard</span><span class="flex-1">创作工作台</span><span class="font-code-timecode text-[11px] opacity-60">P1</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="script-workshop" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span><span class="flex-1">剧本工坊</span><span class="font-code-timecode text-[11px] opacity-60">P2</span></a><a aria-current="page" class="flex items-center gap-3 px-3 py-2 rounded-full transition-colors bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="asset-matrix" href="#"><span class="material-symbols-outlined text-[18px]">perm_media</span><span class="flex-1">资产矩阵</span><span class="font-code-timecode text-[11px] opacity-60">P3</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="smart-storyboard" href="#"><span class="material-symbols-outlined text-[18px]">view_carousel</span><span class="flex-1">智能分镜</span><span class="font-code-timecode text-[11px] opacity-60">P4</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="batch-render" href="#"><span class="material-symbols-outlined text-[18px]">motion_photos_auto</span><span class="flex-1">批量渲染</span><span class="font-code-timecode text-[11px] opacity-60">P5</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="post-composition" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1">后期合成</span><span class="font-code-timecode text-[11px] opacity-60">P6</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="master-distribution" href="#"><span class="material-symbols-outlined text-[18px]">publish</span><span class="flex-1">母版分发</span><span class="font-code-timecode text-[11px] opacity-60">P7</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="billing-budget" href="#"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span class="flex-1">计费与预算</span><span class="font-code-timecode text-[11px] opacity-60">P8</span></a></nav></div><div class="p-3 m-3 rounded-xl bg-surface-container shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-outline font-semibold uppercase">Studio Node</span><span class="inline-flex items-center px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant">Node 04</span></div><div class="flex items-center gap-2"><div class="w-6 h-6 rounded bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs font-code-timecode">GD</div><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md font-medium text-on-surface truncate">造梦先行导演组</span><span class="font-label-sm text-label-sm text-on-surface-variant">8 位协作者协作中</span></div></div></div></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-16 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-30 flex items-center justify-between px-6"><div class="flex items-center gap-4 min-w-0"><div class="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-surface-container"><span class="material-symbols-outlined text-[16px] text-primary">movie_filter</span><span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[140px]">赛博霓虹·第03幕</span></div><div class="h-4 w-px bg-outline-variant/60"></div><div class="flex items-center gap-2"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span><span>H1 剧本 已定稿</span></div><span class="text-outline-variant text-xs">→</span><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-sm"><span class="material-symbols-outlined text-[14px] animate-pulse">hourglass_top</span><span class="font-semibold">H2 资产 质检审批中</span></div><span class="text-outline-variant text-xs">→</span><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-outline font-label-sm text-label-sm"><span>H3 分镜 ·</span></div><span class="text-outline-variant text-xs">→</span><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-outline font-label-sm text-label-sm"><span>H4 成片 ·</span></div></div></div><div class="flex items-center gap-4 shrink-0"><div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high"><span class="material-symbols-outlined text-[16px] text-primary">token</span><div class="flex items-baseline gap-1 font-code-timecode text-xs"><span class="font-semibold text-on-surface">8,450</span><span class="text-on-surface-variant text-[11px]">可用</span><span class="text-outline text-[11px]">/ 冻结 600</span></div></div><div class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold tracking-wide">PRO 会员</div><button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 pb-8 min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- P3 Page Header Banner: Tactile Daylight Parchment Style with Deep Studio Accent -->
+<header class="relative px-8 py-6 bg-surface-container-low shadow-[0_2px_12px_rgba(35,23,10,0.04)] overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6">
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center gap-3">
+<span class="font-code-timecode text-label-sm text-primary uppercase tracking-widest bg-primary-fixed px-2.5 py-0.5 rounded-full font-semibold">STAGE 03 / HITL-GATE 02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            质检审批进行中
+          </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-headline-xl">
+          P3 资产管理与一致性质检墙 <span class="font-code-timecode text-headline-md text-outline font-normal">· ASSET MATRIX</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span>全剧视觉锚点基准库 · 角色 / 场景 / 关键道具跨镜头余弦一致性检验</span>
+<span class="text-outline-variant">|</span>
+<span class="text-primary font-medium">HITL 关口二：视觉资产定稿阻断点</span>
+</p>
+</div>
+<!-- Top Utility Controls -->
+<div class="flex flex-wrap items-center gap-3 shrink-0">
+<!-- Debounced Search Input -->
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-outline">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-outline" placeholder="搜索资产标识、角色ID、音色..." type="text"/>
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md rounded-lg shadow-sm transition-all duration-150 active:scale-98" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">autorenew</span>
+<span>批量重抽 (多选 0)</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md rounded-lg shadow-sm transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">file_download</span>
+<span>导出资产清单</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2 bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md rounded-lg shadow-[0_2px_10px_rgba(84,62,204,0.3)] transition-all duration-150 active:scale-98" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>新建锚点资产</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Top Consistency Dashboard Bar -->
+<section class="px-8 py-5 bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-4">
+<!-- Metric 1: Face Score Average -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex items-center justify-between">
+<div class="flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase tracking-wider">全剧平均 face_score</span>
+<div class="flex items-baseline gap-2">
+<span class="font-code-timecode text-headline-lg font-bold text-on-surface">96.8%</span>
+<span class="font-label-sm text-label-sm text-[#059669] bg-[#ecfdf5] px-2 py-0.5 rounded-full font-semibold">达标 ≥ 95%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">余弦相似度均值稳健</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">face</span>
+</div>
+</div>
+<!-- Metric 2: 3-View Rate -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex items-center justify-between">
+<div class="flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase tracking-wider">三视图合规达标率</span>
+<div class="flex items-baseline gap-2">
+<span class="font-code-timecode text-headline-lg font-bold text-on-surface">100%</span>
+<span class="font-code-timecode text-label-sm text-primary font-medium">4/4 就绪</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">正/侧/背正交投影已对齐</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">view_in_ar</span>
+</div>
+</div>
+<!-- Metric 3: Borderline Role Alert -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex items-center justify-between ring-1 ring-error/20">
+<div class="flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase tracking-wider">余弦漂移踩线角色</span>
+<div class="flex items-baseline gap-2">
+<span class="font-code-timecode text-headline-lg font-bold text-error">1 位</span>
+<span class="font-label-sm text-label-sm text-error bg-error-container px-2 py-0.5 rounded-full font-semibold">0.80~0.85 预警</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">「赵天豪」侧颜需人工核验</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-error-container/60 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+</div>
+<!-- Metric 4: Audio Binding -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(35,23,10,0.03)] flex items-center justify-between">
+<div class="flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase tracking-wider">专属 TTS 音色绑定</span>
+<div class="flex items-baseline gap-2">
+<span class="font-code-timecode text-headline-lg font-bold text-on-surface">4 / 4</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-2 py-0.5 rounded-full font-semibold">全角色已配</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">情感声谱曲线已同步加载</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/60 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">record_voice_over</span>
+</div>
+</div>
+</div>
+<!-- Quick Filter Tabs & Summary Row -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-2">
+<div class="flex items-center gap-1.5 p-1 bg-surface-container rounded-xl overflow-x-auto">
+<button class="px-4 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm" type="button">
+          全部资产 (8)
+        </button>
+<button class="px-4 py-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors" type="button">
+          核心角色 (4)
+        </button>
+<button class="px-4 py-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors" type="button">
+          场景与天气变体 (3)
+        </button>
+<button class="px-4 py-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors" type="button">
+          关键道具 (1)
+        </button>
+<button class="flex items-center gap-1 px-4 py-1.5 rounded-lg hover:bg-surface-container-high text-error font-label-md text-label-md font-medium transition-colors" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>踩线待审 (1)</span>
+</button>
+</div>
+<div class="flex items-center gap-4 text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-[#059669]"></span>
+<span>≥ 0.90 极度一致</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-[#ca8a04]"></span>
+<span>0.80 - 0.89 临界警戒</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-error"></span>
+<span>&lt; 0.80 不合格阻断</span>
+</span>
+</div>
+</div>
+</section>
+<!-- Main Bento Asset Matrix Canvas -->
+<main class="px-8 pb-32 pt-2 bg-surface">
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- CARD 1: Core Protagonist - Lu Changfeng -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_rgba(35,23,10,0.04)] flex flex-col justify-between group hover:shadow-[0_8px_30px_rgba(84,62,204,0.08)] transition-all duration-300">
+<div>
+<!-- Card Header & Identity Specs -->
+<div class="flex items-start justify-between mb-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">陆长风</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">核心主角</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">身负宿命的镇抚司指挥使 · 戏份权重 38%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-timecode text-headline-sm font-bold text-[#059669]">0.985</span>
+<span class="font-label-sm text-label-sm text-[#059669] font-medium">超高一致性</span>
+</div>
+</div>
+<!-- Night Window: Generative Character Display -->
+<div class="relative w-full h-72 rounded-xl bg-[#0a0a12] p-2 shadow-[0_0_24px_rgba(124,92,255,0.22)] overflow-hidden mb-4">
+<div class="w-full h-full rounded-lg bg-cover bg-center relative" data-alt="Cinematic portrait of ancient Chinese male warrior Lu Changfeng in dark embroidered silk robes, cold silver moonlight, subtle rim light in deep violet, sharp intense gaze, highly detailed skin texture, photorealistic cinematic lighting, ultra-high definition" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYsyBGHwECAzJ7BoQr-kqmfP-mTW8LA0EogmTjn2kR2FaunbCgS1uva735iGT_eO0Bm_pV2GGagYNyWrjOKGZ2yei1s6bp3_gXB-T1IKfxxao16VDDR_SpCKIdakgMth04JrtqMjtBH_CSq6EiPUfBSbUTGbzEYjmctIqrN8gNFX7E4Rt9iPrXPmKYxkoN2QrGbmSEu5ZSoQ8kmaMWcQOTjvUYMCBN0ALZ-ponX7Imn-1yzBXXsyTCMw')">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-transparent to-transparent opacity-80"></div>
+<!-- Floating Top Badges -->
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[#dcd6fa] font-code-timecode text-label-sm">ASSET_ID: CH_001</span>
+<span class="px-2 py-0.5 rounded bg-primary/80 backdrop-blur-md text-white font-label-sm text-label-sm">LoRA 512-dim v4</span>
+</div>
+<!-- Night Scrubber Indicator -->
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[#c4bee2] font-code-timecode text-label-sm">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+                  Prompt Lock: OK
+                </span>
+<span>Latent Seed: 84920194</span>
+</div>
+</div>
+</div>
+<!-- 3-View Strip with High Precision Face Scores -->
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">正交三视图基准 (3-View Ground Truth)</span>
+<span class="font-code-timecode text-label-sm text-[#059669]">PASS (均值 0.980)</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden group/item">
+<div class="w-full h-full bg-cover bg-center" data-alt="Strict front view passport angle of Lu Changfeng, neutral expression, perfectly centered, studio character design sheet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCd7vlXxyzmjgU0IE496K8K_WzhCDyzPh_hWNFj_CmZSMqRdaum9Jt2TussHm-oBvEzAkr05ZG3hNkUcMhDBlz3WnxRRz3ggHpko-usAKaFTuSwtOpkvJDqOvAa0vBf5-Fh9f0wWJXX4Awz4uWfE59tC0WGu6lN5z745QJMDZNLA9yUOM58RCc0nJybJ-VUaTiJaZFa0kpSfwzmodzjuYzvYob-cYALY3h6SAr9mMImSvZ3p_i4uqGBJw')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">正视 Front</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.99</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden group/item">
+<div class="w-full h-full bg-cover bg-center" data-alt="Strict 90 degree side profile of Lu Changfeng, clear jawline, ancient bun hairstyle, uniform lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOYudgFPzmVI5dpbhaFiCJ6VDPvy30XIcspaGUmroAP53q6ivU0e1GNHhCLpt2d3DxU5Ykl4Ig1kBTWbZ5QjVwbSb_mUA4kkiw4TH6hLkW0DuYFzK3uHdtnMhOtW2quJsd5zTDUKpZAnsRewR9dcPjwfL4rAxJdLEaITnKd487ItY6M1mQMY4SwrcxhrXcyhLbIlyAwGfLZhUX3ed4SGRqukNKwL4FqmmVRfcjKikRfYwLmTA2TRlL5w')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">侧面 Profile</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.98</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden group/item">
+<div class="w-full h-full bg-cover bg-center" data-alt="Strict back view showing costume silhouette and long hair tied with jade clasp of ancient character" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvKlCQCmrBtS8J9dFg2sGtM-wrDRMWiIIPYqdsW4OccNgguuV3LoY0JS4EK9yCUxodpmnvSqqpnhcVvWR8Fwk6fBe8x84Qm3B6cr3BNKsYs6LnQekHUuooNE-dT_easpEg5mQSHWI7G6ekbNcVWFRf-bfKF-QstcTis408o-m4IO7TQSHU2D96OMsZi7HhC7zwtXURk-xEcEBJCzmYQ0MoeUxA_2XUShb43K2tVw8bI8OpZeb7uXjL6g')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">背视 Back</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.97</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5 Emotion Expression Switcher -->
+<div class="space-y-1.5 mb-4">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">表情微调矩阵 (5-Expression Weights)</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-medium shadow-sm" type="button">平静 (Default)</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" type="button">愤怒 (Ready)</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" type="button">悲伤 (Ready)</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" type="button">震怒 (Ready)</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" type="button">冷笑 (Ready)</button>
+</div>
+</div>
+<!-- TTS Audio Binding Pill -->
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm hover:scale-105 transition-transform" type="button">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">沉稳冷冽 · 青年公子音 (云希 V3)</span>
+<span class="font-code-timecode text-[10px] text-outline">TTS-ID: YUNXI_V3_DRAMA · 30s 试听样音</span>
+</div>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-[#059669] font-medium">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              已绑定
+            </span>
+</div>
+</div>
+<!-- Card Bottom Operational Trigger -->
+<div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>重抽形象 (预估 45积分)</span>
+</button>
+<button class="font-label-sm text-label-sm text-primary hover:text-secondary font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>生成变体 (战损 / 夜行衣)</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Heroine - Su Wan -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_rgba(35,23,10,0.04)] flex flex-col justify-between group hover:shadow-[0_8px_30px_rgba(84,62,204,0.08)] transition-all duration-300">
+<div>
+<!-- Card Header & Identity Specs -->
+<div class="flex items-start justify-between mb-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">苏婉</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">女主角</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">名门商贾之后，智谋过人 · 戏份权重 24%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-timecode text-headline-sm font-bold text-[#059669]">0.972</span>
+<span class="font-label-sm text-label-sm text-[#059669] font-medium">基准达标</span>
+</div>
+</div>
+<!-- Night Window: Generative Display -->
+<div class="relative w-full h-72 rounded-xl bg-[#0a0a12] p-2 shadow-[0_0_24px_rgba(124,92,255,0.18)] overflow-hidden mb-4">
+<div class="w-full h-full rounded-lg bg-cover bg-center relative" data-alt="Cinematic portrait of noble young ancient Chinese noblewoman Su Wan with refined hairpins, delicate silk pastel robe, soft warm lanterns lighting mixed with violet dusk atmosphere, gentle yet intelligent expression" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJp71jeYlkOO2wN9gFp3IdyTqHUFSRZru5KpJEqOArtY6R9tiIg8TSHudchgNncT44h_FF2JlPnbcmZgsCl3ZwgTniJSdzAwX_LsTwmRcI0H-z_JK9o6JrhyBMUU9iRDLsdPn4M9Sy-qF2zSJpjMjPrDnNYDAg1IWFrwsZHrl_wbsOlLrcq-XD0HbzrRjBOmBmuF_MxKR6kiq2QDbvWbFlxPgjv-KI6PvyZsV90w5015wWga4eVCd26w')">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[#dcd6fa] font-code-timecode text-label-sm">ASSET_ID: CH_002</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high/90 text-on-surface font-label-sm text-label-sm">系统原创生成</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[#c4bee2] font-code-timecode text-label-sm">
+<span>免真人授权留痕</span>
+<span>Latent Seed: 19482701</span>
+</div>
+</div>
+</div>
+<!-- 3-View Strip -->
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">正交三视图基准 (3-View Ground Truth)</span>
+<span class="font-code-timecode text-label-sm text-[#059669]">PASS (均值 0.975)</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Front orthographic portrait view of female character Su Wan, neutral soft expression, standard hair accessory" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsgUT3BkVBc8zFi0Q_qP1x341uk8v8VYzO8IJ5cztxcXEZUDKtpfvrFXFX3Wdw8b_8Lw9l07V57hnDHZxGVrqdoJz5I7XVsmqyDTcvQzmUs_EePaQKFmnUgmjhGoumgLEiJh3Z0ULTAnh1oLYCHNnmBEjrmlf6pKiaeZW-DzLuZeAOkf99D8t77VdIAhFhNkmAsKDrYiSU6oxA1StKFPDOEPTzlLu4Nny0m8jZhUCntsvR9VcRKvKeUg')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">正视 Front</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.98</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Strict side profile of female character Su Wan, delicate nose bridge and hair bun" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBfOfiZ-jE_7hxzWvJiCSU4o5Y3zZVQGmiY23l59F6a9VUbgPBHzyD8r_WpLci7HvNPGgfcrH1v5vkyucG1Dv5mOzKaULTSQilJZW-D0joKtUzmwEST-ynW5EPPGbOkrH9hFMXz8XWQo3lYA5NT9EojogLqH8B5sqx72D7o8pm1DExTN9xnO_2jOOK-SSnwgw1NCqaB0UqG6j8-NsaM4wPA2pHjZgTzFvtNHB1CiRwZxQ8DVRLFr8Hkw')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">侧面 Profile</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.97</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Back view of ancient lady showing elaborate hair bun arrangement and draped silk cape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDT7-OhFJnpgMf2FAWrsDvHckB-djZoPp4Qf1ixHNNUYgj77u_VGzllSvecQ1qgo_xFUmdwr0K2GrKcIvKg0X1Z9gqcRnq7P7sqablnUeCTnPbBsLb7KfGM-Tf51vTX6u8luhmvySeVTt8P0Nvs-Glc_FxradfMe6A8qWbIjRdFDKggqJmAosLrNQTbUBadL7a5CdKfI4tFS3bKLiXs1LyweZcXMrGSZ3uwxLpxAoyTxU9CgmxVL3MSzQ')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">背视 Back</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.97</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Expression Tags -->
+<div class="space-y-1.5 mb-4">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">表情微调矩阵 (5-Expression Weights)</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-medium" type="button">温婉 (Default)</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm" type="button">凝重 (Ready)</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm" type="button">落泪 (Ready)</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm" type="button">浅笑 (Ready)</button>
+</div>
+</div>
+<!-- TTS Binding -->
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm hover:scale-105 transition-transform" type="button">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">清冷温婉 · 名门千金音 (知微 V2)</span>
+<span class="font-code-timecode text-[10px] text-outline">TTS-ID: ZHIWEI_V2_POETIC · 30s 试听样音</span>
+</div>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-[#059669] font-medium">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              已绑定
+            </span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>重抽形象</span>
+</button>
+<button class="font-label-sm text-label-sm text-primary hover:text-secondary font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>生成盛装变体</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Borderline Role - Zhao Tianhao (Warning State) -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_rgba(186,26,26,0.08)] flex flex-col justify-between group ring-2 ring-error/40 relative">
+<!-- Floating Red Alert Banner -->
+<div class="absolute -top-3 left-4 right-4 bg-error text-on-error px-3 py-1 rounded-full text-center font-label-sm text-label-sm font-semibold shadow-md flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span>
+<span>相似度临界 (阈值 0.80) · 侧脸向量漂移，需人工介入</span>
+</div>
+<div class="pt-2">
+<!-- Card Header & Identity Specs -->
+<div class="flex items-start justify-between mb-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">赵天豪</h2>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">反派贵胄</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">京城第一巨贾之子 · 戏份权重 18%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-timecode text-headline-sm font-bold text-error">0.814</span>
+<span class="font-label-sm text-label-sm text-error font-medium">⚠ 踩线预警</span>
+</div>
+</div>
+<!-- Night Window: Generative Display with Warning Glow -->
+<div class="relative w-full h-72 rounded-xl bg-[#0a0a12] p-2 shadow-[0_0_24px_rgba(186,26,26,0.25)] overflow-hidden mb-4">
+<div class="w-full h-full rounded-lg bg-cover bg-center relative" data-alt="Cinematic portrait of arrogant ancient villain Zhao Tianhao wearing luxurious golden and black fur-trimmed mantle, sinister smirking expression, harsh dramatic high-contrast lighting, cold cyan shadow" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-sNQGVKOcwmvOnPwwubVGxEQKHbSs8Rhkz3rZ6HtRFdEOCuretoOvEIp-baM_2TapiuoYmwShRNYk6C7PomZBsdXFxgZyd3BbHGrbbj6ffVKcHgZdcqsWVc8LkayARAPcHGc6z4hOrDhJUNftcXPfr__fYb4anu4AmLTAtkTAKgGjRh9kGZETTXd8Q6RNeSmyfH_aJZul0PduMAGUJFwC7ST6QvW0lOLPh_EyXuMw8U0RKLlU6B2rrg')">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[#dcd6fa] font-code-timecode text-label-sm">ASSET_ID: CH_003</span>
+<span class="px-2 py-0.5 rounded bg-error text-white font-label-sm text-label-sm">侧颜余弦偏角超 14°</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[#c4bee2] font-code-timecode text-label-sm">
+<span class="text-error font-medium">建议增加鼻骨权重微调</span>
+<span>Seed: 30192842</span>
+</div>
+</div>
+</div>
+<!-- 3-View Strip with Warning Callout -->
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">正交三视图基准 (3-View)</span>
+<span class="font-code-timecode text-label-sm text-error font-bold">WARNING (均值 0.836)</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Front view of villain Zhao Tianhao looking arrogant, front angle character sheet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEuv2dg6UcaSvPrpXeQ7RsiYDpu-AUwudaT412VKTczIFsEn_Wc1ByozUKc0ff-H3iiGaMwbpio-iX2mYoOOD0WM0VKbf6s0B9y-5-E18y2RjQxlrI0dl8-Fz1aF83w6bsz2GBBxGfMNsKiSnqNgzhe-FdLCu49wOmiTSEnReRu_NW6DeKv0twgvSBNdOo5Qta_u8vY0h-zHXTKAdRQkAAYhzycyT3tZjb2dLcpvoZKJDEI8pqCMdr2w')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">正视</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.86</span>
+</div>
+</div>
+<!-- Drifting Side View -->
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden ring-2 ring-error">
+<div class="w-full h-full bg-cover bg-center" data-alt="Side profile of Zhao Tianhao where nose bridge appears slightly inconsistent with front view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4dJOknaeg9D789rjidlBQBLY4WwgFdpJiZ7FLa2ICwnTBu4TJ_ssJzUtgOk3eD64QlhhAE7vL8K7OoyaSqbbrKNkI43778ZgROjDJH90HY_8LhtQMaf27LV7ZNN0nTsFWUzIXfX5GFoMFIhf6kPdYrGX3pcKHx5ris-9CnpWBFJ1n6Rnp3S9lmA1_V5ptzSqw3iQTKIrQlQQKprFBB9jN93gvRbsKUsdHIXP67xweXtLiCsxOwqrLuw')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-error/90 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white font-bold">侧面 ⚠</span>
+<span class="font-code-timecode text-[10px] text-white font-bold">0.81</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Back silhouette of Zhao Tianhao wearing bulky aristocratic fur collar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC20CuNyy98eEWzGYND_XszeR0o8bq6yRC5iNHhMYudS-oNYgb4QKEdTLHKcjlXg6pTSRnsIJXXDJgBiWEda7g5iqGNYcUsslIjUK34gMfA7cRtsn7IJ6BD0KSRaP1Nbb4QXXEHhi6S5lKSVHt6BJ5TGU5Jm_gAwvnbcUzvt8IDt4Zp7JrGsPMAv1sg1QSEXaSQTjsDiXnw7jmQUH6WAqJeYXRmDtEc2SdgtxEndp301Z_U5ruJyuGFNA')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">背视</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.84</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TTS Binding -->
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm hover:scale-105 transition-transform" type="button">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">张狂跋扈 · 阴鸷反派音 (修远 V1)</span>
+<span class="font-code-timecode text-[10px] text-outline">TTS-ID: XIUYUAN_V1 · 30s 试听样音</span>
+</div>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-[#059669] font-medium">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              已绑定
+            </span>
+</div>
+</div>
+<!-- High-Impact Action Bar for Warning Asset -->
+<div class="pt-3 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between gap-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-error hover:bg-[#991b1b] text-on-error font-label-md text-label-md font-semibold text-center shadow-sm transition-all duration-150" type="button">
+              带反馈重抽 (45积分 / 累计135)
+            </button>
+<button class="py-1.5 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-medium transition-all duration-150" type="button">
+              人工放行并锁定
+            </button>
+</div>
+</div>
+</article>
+<!-- CARD 4: Real-Person Custom Character - Ah Jiu (Compliance Showcase) -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_rgba(35,23,10,0.04)] flex flex-col justify-between group hover:shadow-[0_8px_30px_rgba(84,62,204,0.08)] transition-all duration-300">
+<div>
+<!-- Compliance Verification Banner -->
+<div class="p-2.5 rounded-lg bg-[#f0fdf4] text-[#166534] font-label-sm text-label-sm mb-3 flex items-start gap-2 ring-1 ring-[#bbf7d0]">
+<span class="material-symbols-outlined text-[16px] text-[#16a34a] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col min-w-0">
+<span class="font-semibold">真人照片定制 · 已完成电子授权留痕</span>
+<span class="font-code-timecode text-[10px] truncate text-[#15803d]">IP: 114.248.89.21 | HASH: a9f83c18b76e2098...</span>
+</div>
+</div>
+<div class="flex items-start justify-between mb-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">随从阿九</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">特约副角</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">誓死追随的暗卫忠仆 · 戏份权重 12%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-timecode text-headline-sm font-bold text-[#059669]">0.940</span>
+<span class="font-label-sm text-label-sm text-[#059669] font-medium">一致性达标</span>
+</div>
+</div>
+<!-- Night Window -->
+<div class="relative w-full h-72 rounded-xl bg-[#0a0a12] p-2 shadow-[0_0_24px_rgba(124,92,255,0.18)] overflow-hidden mb-4">
+<div class="w-full h-full rounded-lg bg-cover bg-center relative" data-alt="Cinematic portrait of young brave loyal ancient guard Ah Jiu in practical leather and steel armor, earnest eyes, subtle rain droplets, dusk blue lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVnvlkHL4Qd5WE6jYr7N785aCvhxFeqhT5Y0w9LSKtaWm6A9uUlZ0W9HVgLZp2hmAYo_A85ovRh1LZv5qX9c-XSiKdja5XYMd8GTGs032rXh3pm65udEonUU2f64tORaEFbIeZn2ke0AQQ_C5j9y_JeGZ2o1TeEUj3-0iF_BryJdVQ0CUdbsaEJ1DzduSMeTkHJcN9y9zStpeMGtona-QpwJa_WN0uwy3mkUu57tkzKAxgPryH-uo4Ow')">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[#dcd6fa] font-code-timecode text-label-sm">ASSET_ID: CH_004</span>
+<span class="px-2 py-0.5 rounded bg-[#16a34a] text-white font-label-sm text-label-sm">合规绿标认证</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[#c4bee2] font-code-timecode text-label-sm">
+<span>Face Embedding: Locked</span>
+<span>Source: Cast Actor Ref-A</span>
+</div>
+</div>
+</div>
+<!-- 3-View Strip -->
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">正交三视图基准</span>
+<span class="font-code-timecode text-label-sm text-[#059669]">PASS (0.942)</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Guard Ah Jiu front view with leather chestplate and humble loyal stance" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPhqh7-sshM4B61Y8ZRbA2-FPV_PtDAFxAJng2SgVnBd2jkCBVGaXZgoaUQ8INendoNFBW_XgR7EO2IRqp4jz8vM3ISXzHzMLx4-GolnDunMLlEpP4f3Hd1MUMOCDm-DwzSKHRo8TLwInXGWh1S-6TCI49hcbmtYoJ6KwgcwiGz2vTkcmOMTIZkjNNzetHjpAdUWRDnqsyPaJ-4iGdDiMKiXZEeHD1Wqmw4iEj3qtoxPvCMa_R1vPvIg')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">正视</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.95</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Side profile of ancient warrior guard Ah Jiu" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfSqJj9CTStgzquCaxw_6h-hKzQ-NM2IFqd2OKiLR5zC60nANCvz7JAHj_v5eDH3J08rWIOzRBQt9eMx05uQ2I7JxirVxp5KWAruwUZ0Xeb8fQ__9tAVBEIsGqacbDD5_cSx1uJ5pdSjDLc6KXaaPSVBhHBYGb6MZHaCdmo4teEAF_b3wLhvwBdJviMEDocxMxhBtkh81c6FlXWoSn_-BiLTaceXrp4ZmLL6kfh0sV6mnPL4A7bBd5HA')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">侧面</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.93</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Back view of guard Ah Jiu with leather belt and short sword sheath on waist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBO6pcfj7G--EY78XCKG_qTCXUf_cHg2mXhfqVBSTMYzAltCmJcFdY2kxIjOezfIKAj63Tn4IYoYzDSg9UTuaTgDgzdtzhgK5zuq6WeU_RLJefjYYbWgzIEYqPfmn4OIG6QXx_kLEi-Rn_Sf2jVvwoUCZYLgXnKkvx04AsH0VqNxRh5XboRVITu8AzdsFwgAx_W_SWA-03XdiLfzw9qshrnlqd3ETbtt8bzP25hhnuKAfWR8NeaPZhMZw')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">背视</span>
+<span class="font-code-timecode text-[10px] text-[#34d399] font-bold">0.94</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TTS Binding -->
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm hover:scale-105 transition-transform" type="button">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">忠勇果敢 · 青年侍从音</span>
+<span class="font-code-timecode text-[10px] text-outline">TTS-ID: YONG_GUARD · 30s 试听样音</span>
+</div>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-[#059669] font-medium">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              已绑定
+            </span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" type="button">
+            查看授权签署协议原件 (PDF)
+          </button>
+<button class="font-label-sm text-label-sm text-primary font-semibold" type="button">
+            更新面部特征码
+          </button>
+</div>
+</article>
+<!-- CARD 5: Core Environment - Mansion Courtyard with Weather Matrix -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_rgba(35,23,10,0.04)] flex flex-col justify-between group hover:shadow-[0_8px_30px_rgba(84,62,204,0.08)] transition-all duration-300">
+<div>
+<!-- Card Header & Identity Specs -->
+<div class="flex items-start justify-between mb-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">陆府主庭院</h2>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">核心场景</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">内外景: 外景 | 时代: 架空古风 | 关联: 8 场</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-timecode text-headline-sm font-bold text-primary">3 / 4</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">变体就绪</span>
+</div>
+</div>
+<!-- Night Window: Active Weather Variant (Rainy Night) -->
+<div class="relative w-full h-72 rounded-xl bg-[#0a0a12] p-2 shadow-[0_0_24px_rgba(124,92,255,0.18)] overflow-hidden mb-4">
+<div class="w-full h-full rounded-lg bg-cover bg-center relative" data-alt="Cinematic shot of ancient East Asian grand courtyard during heavy midnight rainstorm, dramatic lightning flashes, wet stone pavement reflections, dark tiled roofs, authentic architectural details" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuew5qR7CS2kqP3xuYXgJLkf2OVQ66qQiYD5c4LqWc8zSZ9QTTyDuUJgqy0x_z2kvPc0gLREuPIUA5HfGKqTKFyGhM8lNz4w3_ZHrLFFUnRkLdK1VjF8pqzEjJEcIgz5vFVmCOnb5X5zqLpXq9iSs58hpB7uoEkQ7b53HnZLvUTtmhs6zbqDNdDc5MgDwwquLqXs86hGWB4IjCgu5cIkYKxQiV33ZKWzQr6_Kczq0JaPZ4g5UomalLWQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[#dcd6fa] font-code-timecode text-label-sm">SCENE_001_VAR_C</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-white font-label-sm text-label-sm">剧本 Ep.02 当前引用</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[#c4bee2] font-code-timecode text-label-sm">
+<span>环境: 夜 · 暴雨风暴</span>
+<span>空间一致性: 0.968</span>
+</div>
+</div>
+</div>
+<!-- Weather & Time of Day Variant Chips -->
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">光影与气候变体矩阵 (Variant Matrix)</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">支持无缝衔接</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">昼 · 晴朗无云</span>
+<span class="font-code-timecode text-label-sm text-[#059669]">✓ 就绪</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">黄昏 · 阴霾斜阳</span>
+<span class="font-code-timecode text-label-sm text-[#059669]">✓ 就绪</span>
+</div>
+<div class="p-2 rounded-lg bg-primary-fixed/40 ring-1 ring-primary flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">夜 · 暴雨狂飙 (激活)</span>
+<span class="font-code-timecode text-label-sm text-primary font-bold">● 当前</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-medium flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>冬 · 覆雪残枝</span>
+</button>
+</div>
+</div>
+<!-- Camera Anchor Angles -->
+<div class="p-2.5 rounded-lg bg-surface-container mb-4 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">固定摄像机机位锚点:</span>
+<div class="flex items-center gap-2">
+<span class="font-code-timecode bg-surface-container-highest px-2 py-0.5 rounded text-on-surface">CAM-A (长廊俯角)</span>
+<span class="font-code-timecode bg-surface-container-highest px-2 py-0.5 rounded text-on-surface">CAM-B (正殿仰角)</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span>三维体素空间拓扑查看</span>
+</button>
+<button class="font-label-sm text-label-sm text-primary font-semibold" type="button">
+            添加新时序变体
+          </button>
+</div>
+</article>
+<!-- CARD 6: Key Prop - Black Gold Dragon Crest Token -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_rgba(35,23,10,0.04)] flex flex-col justify-between group hover:shadow-[0_8px_30px_rgba(84,62,204,0.08)] transition-all duration-300">
+<div>
+<!-- Card Header & Identity Specs -->
+<div class="flex items-start justify-between mb-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">黑金龙纹令</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">关键道具</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">调兵信物 · 特写镜头权重高 · 贯穿全剧</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-timecode text-headline-sm font-bold text-[#059669]">0.991</span>
+<span class="font-label-sm text-label-sm text-[#059669] font-medium">极致纹理锁</span>
+</div>
+</div>
+<!-- Night Window: High Detail Metallic Prop -->
+<div class="relative w-full h-72 rounded-xl bg-[#0a0a12] p-2 shadow-[0_0_24px_rgba(124,92,255,0.18)] overflow-hidden mb-4">
+<div class="w-full h-full rounded-lg bg-cover bg-center relative" data-alt="Extreme macro close-up of an ancient black obsidian and gold inlaid imperial token, intricate dragon relief engraving, cold lustrous metallic sheen, soft studio rim light, 8k macro photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUfrVG4DH7uBJ3JKtS45KHOBdkRcODqgvCau7yqCkLc2C1evSoLJM8VZMrepbzSZtUwT3WpDzuKWrdRHPBPChNW9IKlXOhdn1eONW-2ZnSyDANhctLBpLNVK70bttERLyTXnqO-F4jCVnbqYCsFGQXbYsfyWcWFB5kO4KdN59NI8nKut2POIym1FQu_482Re1_rVNy0kXtvuxPZ63tTklvOf2CtqGf5imiMrdiwKRmkb45KO-gLJKiAQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[#dcd6fa] font-code-timecode text-label-sm">PROP_001_HERO</span>
+<span class="px-2 py-0.5 rounded bg-primary text-white font-label-sm text-label-sm">微距级纹理贴图</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[#c4bee2] font-code-timecode text-label-sm">
+<span>法线贴图 + 粗糙度: 就绪</span>
+<span>特写渲染 Pass: 100%</span>
+</div>
+</div>
+</div>
+<!-- Dual Texture Spec Breakdown -->
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold uppercase">包含特写贴图 (Texture Maps)</span>
+<span class="font-code-timecode text-label-sm text-primary">2 Maps Active</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Macro texture map showing fine scratches on dark gold metal surface" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaeD1vZvMCP8g5wvwqQHcVLGqjzgW7snO_KO_qrSArNR8aqjVFVKyW-swA0-XTGtc5iCorKW11pPhZlM3Hxq0MM8rP5Q96BI3Q1b-M-KnmpOf8K3NRzcFYnXfUM9MdSv-OwTKRuPtmqJAZriTna58hSWRHPFXhrwpIcsiao544WN5GDUhE7ChM07S08egk-B3zyflwB-IJYdaPoSN6nY-L4SW9U96Lcjp107z3r_l9MaEGuvUFZuyFuw')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">金属磨损纹理</span>
+<span class="font-code-timecode text-[10px] text-[#34d399]">4K PBR</span>
+</div>
+</div>
+<div class="relative h-20 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Embossed relief normal map of ancient Chinese dragon pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC10XQAoOysvHL20KOOflxGt1iB6rQUvP-EbuYAr3gvgO1xKUoJxZGYiWvBunIhoxmXsB1kKSM5qns2DjIDavbgfxlfaolBMWxaPIpJdhBF1RmeTcA40wlVieMy7LtXlkDKWgumF9-P8sN-e5c-FC8Ajl4EP2L4s67jdtROpgAsRzTLUz48kQH62jZ4nJja8JTUaONzvTq6K0ctGLNi-BHKym448He3pygI4plUeHrRqww2GK6JI2kQXQ')"></div>
+<div class="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-sm px-1.5 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-[10px] text-white/90">龙纹法线拓扑</span>
+<span class="font-code-timecode text-[10px] text-[#34d399]">Normal</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container mb-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">手部交互物理约束:</span>
+<span class="font-code-timecode text-label-sm text-primary font-medium">Hand-Hold Rig v2 绑定</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" type="button">
+            导出 3D 资产包 (.obj / .gltf)
+          </button>
+<button class="font-label-sm text-label-sm text-primary font-semibold" type="button">
+            重置高光反光率
+          </button>
+</div>
+</article>
+</div>
+</main>
+<!-- HITL Gate 02 Approval Suspended Bar (Fixed Bottom Control Bar above Footer) -->
+<aside class="fixed bottom-8 left-60 right-0 bg-surface-container-lowest/95 backdrop-blur-lg shadow-[0_-4px_24px_rgba(35,23,10,0.08)] z-40 px-8 py-3.5 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+<!-- Left Status & Overview -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-[0_2px_8px_rgba(84,62,204,0.3)]">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">HITL 关口二 · 视觉资产锚点锁定审批</span>
+<span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant px-2 py-0.5 rounded-full font-semibold">前置阻塞关口</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          全剧资产: <strong class="text-on-surface font-code-timecode">6/6 已达标</strong> · 预估渲染镜头覆盖率: <strong class="text-[#059669] font-code-timecode">100%</strong> · 踩线待人工核准: <strong class="text-error font-code-timecode">1 项 (赵天豪)</strong>
+</span>
+</div>
+</div>
+<!-- Right Decision Buttons -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-medium transition-colors" type="button">
+        单项退回重抽 (附带质检反馈)
+      </button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-medium flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">radar</span>
+<span>人脸向量比对雷达图</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md font-semibold shadow-[0_4px_16px_rgba(84,62,204,0.35)] transition-all duration-150 active:scale-98" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>批准全部资产并锁定 (进入 F4 分镜拆解)</span>
+</button>
+</div>
+</aside>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-8 bg-surface-container-lowest shadow-[0_-1px_6px_rgba(0,0,0,0.02)] z-50 flex items-center justify-between px-4 font-code-timecode text-[11px] text-on-surface-variant"><div class="flex items-center gap-4"><div class="flex items-center gap-1.5"><span class="inline-block w-2 h-2 rounded-full bg-[#10b981] animate-ping opacity-75"></span><span class="inline-block w-2 h-2 rounded-full bg-[#10b981] -ml-3.5"></span><span class="font-medium text-on-surface">SSE / Celery 24ms</span></div><span class="text-outline-variant">|</span><div class="font-medium text-primary tracking-wide">[PROJECT_ACTIVE: ASSET_INSPECTION]</div><span class="text-outline-variant">|</span><div class="text-outline">Snapshot v12.4_rc3</div></div><div class="flex items-center gap-4"><div class="flex items-center gap-1"><span>算力消耗:</span><span class="font-semibold text-on-surface">1,900</span><span class="text-outline">/ 2,500 Credits</span></div><span class="text-outline-variant">|</span><div class="text-outline">浮光造梦引擎 3.8-turbo</div></div></footer></body></html>

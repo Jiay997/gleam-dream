@@ -1,0 +1,8 @@
+{
+  "name": "gleam-dream",
+  "private": true,
+  "description": "AI 短剧全自动生产工具。根 package.json 仅承载第 5 阶段 Playwright 回归测试依赖（tests/regression）。",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}

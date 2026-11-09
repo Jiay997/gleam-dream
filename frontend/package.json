@@ -1,0 +1,39 @@
+{
+  "name": "gleam-dream-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "浮光造梦 · AI 短剧创作工具（GleamDream Studio）前端脚手架",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@phosphor-icons/vue": "^2.2.1",
+    "axios": "^1.7.7",
+    "konva": "^9.3.22",
+    "pinia": "^2.2.6",
+    "vue": "^3.4.38",
+    "vue-konva": "^3.2.0",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.11",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/test-utils": "^2.5.1",
+    "autoprefixer": "^10.4.20",
+    "jsdom": "^25.0.1",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "~5.5.4",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.9",
+    "vue-tsc": "^2.1.6"
+  },
+  "overrides": {
+    "esbuild": "0.24.2"
+  }
+}

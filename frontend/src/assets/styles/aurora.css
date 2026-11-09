@@ -1,0 +1,1842 @@
+/* ══════════════════════════════════════════════════════════════════════
+   浮光造梦 GleamDream Studio · 视觉设计系统 v1.3
+   主题：极夜 · 极光（Aurora Night Sky）
+   文件：gleamdream-aurora.css
+   v1.3：按钮改为彩色泡泡玻璃（四色斑 + 基底彩虹 + 中心通透 + 双球面高光 + 泡壁彩环），
+   v1.2：按钮改为彩色玻璃材质（白面 / 色层 / 白底 三层 + 四笔厚度），
+         文字色由白度决定，表面明度 ≥3:1、文字 ≥4.5:1 全部实测通过；
+   v1.1：字体改为「午夜首映」三族（衬线刊头 / 无衬线正文 / DIN 数字），
+         新增统一图标语言（.gd-icon 与 .gd-icon-chip），组件向玻璃 + 发光语言收敛
+   ──────────────────────────────────────────────────────────────────────
+   引入方式：
+     <link rel="stylesheet" href="gleamdream-aurora.css">
+   依赖：无（字体由使用方通过 <link> 或本地字体提供，见 01-设计系统规范.md §4）
+   约束：本文件只提供令牌、氛围层、排版与组件；不包含任何业务布局
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────
+   1. 令牌层 · Tokens
+   命名规则：--gd-<类别>-<语义>-<强度>
+   禁止在业务代码中出现字面色值，一律引用令牌
+   ───────────────────────────────────────────────────────────────────── */
+:root {
+  color-scheme: dark;
+
+  /* 1.1 画布与表面 ─────────────────────────────────────────────── */
+  --gd-canvas: #04070f;              /* 极夜底 · 全局唯一底色，非纯黑，带蓝相 */
+  --gd-canvas-top: #0a1020;          /* 夜空顶部渐层起点 */
+  --gd-canvas-mid: #070b16;          /* 夜空渐层中段 */
+  --gd-surface: #111a2c;             /* 卡片基色 */
+  --gd-surface-rgb: 17 26 44;        /* 供 rgb(var(--gd-surface-rgb) / α) 使用 */
+  --gd-surface-glass: rgba(17, 26, 44, 0.76);   /* 玻璃卡面（配 backdrop-filter） */
+  --gd-panel: #16203a;               /* 卡内分组 / 表头 / 次级容器 */
+  --gd-panel-raised: #1a2540;        /* 抬升分组（弹窗内区块、选中行） */
+  --gd-panel-sunken: #0d1526;        /* 下沉槽位（输入区、代码块、媒体底） */
+  --gd-scrim: rgba(4, 7, 15, 0.72);  /* 遮罩层（弹窗 / 抽屉 / 渐变上的文字底） */
+
+  /* 1.2 文字 ──────────────────────────────────────────────────── */
+  --gd-ink: #edf3ff;                 /* 正文主色 · 对画布 18.1:1 */
+  --gd-ink-2: #aab9d6;               /* 次级文字 · 对画布 10.2:1 */
+  --gd-ink-3: #7d8fb3;               /* 三级 / 注释 / 占位 · 对画布 6.2:1 */
+  --gd-ink-brand: #a99bff;           /* 品牌色文字 · 对卡片 6.3:1 */
+  --gd-ink-on-accent: #f6f4ff;       /* 高饱和实心块上的文字 */
+
+  /* 1.2.1 刊头色（v1.1 新增，取自「午夜首映」）
+     标题是全站唯一的暖色。冷色界面里出现一小块奶油色衬线字，
+     会立刻产生「放映机打在深色幕布上」的联想，这是整套气质的来源。
+     对画布 17.9:1，对卡片 15.4:1，远高于 AAA。 */
+  --gd-cream: #f0ead8;               /* 刊头 / 强调标题 */
+  --gd-cream-dim: #d9d2bf;           /* 刊头的次级一行（副题） */
+  --gd-ink-heading: var(--gd-cream);
+  /* 刊头辉光：两层，近场奶油 + 远场星紫。只用两层，避免霓虹感 */
+  --gd-glow-type:
+    0 0 14px rgba(240, 234, 216, 0.26),
+    0 0 44px rgba(139, 124, 255, 0.20);
+  --gd-glow-type-strong:
+    0 0 16px rgba(240, 234, 216, 0.34),
+    0 0 34px rgba(167, 139, 250, 0.30),
+    0 0 72px rgba(124, 92, 255, 0.22);
+
+  /* 1.3 极光五义（只做强调，不做大面积铺色） ────────────────────── */
+  --gd-mint: #3ee8b8;                /* 成功 / 通过 / 正向指标 */
+  --gd-cyan: #38d9f0;                /* 信息 / 遥测 / 数据链路 */
+  --gd-violet: #8b7cff;              /* 品牌 / 主操作 / 选中态 */
+  --gd-magenta: #f07be0;             /* AI 生成 / 算力 / 创作态 */
+  --gd-amber: #ffc46b;               /* 待处理 / 配额 / 警示 */
+  --gd-rose: #ff6e86;                /* 失败 / 危险 / 删除 */
+
+  /* 1.4 五义的低透明洗色（徽章底、状态底、悬浮底） ───────────────── */
+  --gd-mint-wash: rgba(62, 232, 184, 0.12);
+  --gd-cyan-wash: rgba(56, 217, 240, 0.12);
+  --gd-violet-wash: rgba(139, 124, 255, 0.14);
+  --gd-magenta-wash: rgba(240, 123, 224, 0.12);
+  --gd-amber-wash: rgba(255, 196, 107, 0.13);
+  --gd-rose-wash: rgba(255, 110, 134, 0.12);
+
+  /* 1.5 线 ────────────────────────────────────────────────────── */
+  --gd-line: rgba(255, 255, 255, 0.09);        /* 卡片 / 控件描边（冷光细线） */
+  --gd-line-strong: rgba(255, 255, 255, 0.16); /* 强调描边 */
+  --gd-line-soft: rgba(255, 255, 255, 0.05);   /* 表格分隔 / 极弱分隔 */
+  --gd-line-brand: rgba(139, 124, 255, 0.34);  /* 品牌描边（选中 / hover） */
+  --gd-divider: rgba(255, 255, 255, 0.07);
+
+  /* 1.6 渐变 ──────────────────────────────────────────────────── */
+  /* 主操作：135° 星紫渐变 + 暗色遮罩（保证白字 ≥4.5:1，见 §9.3） */
+  --gd-grad-brand:
+    linear-gradient(180deg, rgba(6, 8, 22, 0.08), rgba(6, 8, 22, 0.20)),
+    linear-gradient(135deg, #5b47e6 0%, #6a55f0 54%, #7e63ff 100%);
+  /* 数据条：紫 → 青 → 薄荷（唯一允许的三色渐变，只用于进度） */
+  --gd-grad-data: linear-gradient(90deg, #6a55f0 0%, #38d9f0 62%, #3ee8b8 100%);
+  /* 品牌签名线：五色全谱，2px，只出现在页面顶边 */
+  --gd-grad-spectrum: linear-gradient(
+    90deg, #3ee8b8 0%, #38d9f0 26%, #8b7cff 56%, #f07be0 82%, #ffc46b 100%);
+  /* 光谱细线（1px，用于卡片分隔与导航选中指示） */
+  --gd-grad-hairline: linear-gradient(
+    90deg, rgba(62, 232, 184, 0.55), rgba(56, 217, 240, 0.45) 32%,
+    rgba(139, 124, 255, 0.55) 64%, rgba(240, 123, 224, 0.45));
+
+  /* 1.7 光与投影（暗域里，层次靠光不靠影） ───────────────────────── */
+  --gd-elev-1: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --gd-elev-2: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+               0 20px 44px -30px rgba(4, 7, 15, 0.95),
+               0 0 46px -16px rgba(139, 124, 255, 0.5);
+  --gd-elev-overlay: 0 32px 80px -32px rgba(4, 7, 15, 0.95),
+                     inset 0 1px 0 rgba(255, 255, 255, 0.08),
+                     0 0 90px -40px rgba(139, 124, 255, 0.6);
+  --gd-glow-brand:
+    0 0 34px -8px rgba(139, 124, 255, 0.48),
+    0 0 78px -22px rgba(124, 92, 255, 0.42),
+    0 12px 30px -18px rgba(4, 7, 15, 0.9);
+  --gd-glow-brand-strong:
+    0 0 30px -6px rgba(167, 139, 250, 0.55),
+    0 0 72px -16px rgba(139, 124, 255, 0.45),
+    0 0 130px -34px rgba(124, 92, 255, 0.4),
+    0 16px 38px -20px rgba(4, 7, 15, 0.85);
+  --gd-glow-focus: 0 0 0 3px rgba(139, 124, 255, 0.20), 0 0 22px -6px rgba(139, 124, 255, 0.55);
+
+  /* 1.8 形状锁 · 只允许这六档 ────────────────────────────────────── */
+  --gd-r-1: 6px;      /* 进度槽 / 键帽 / 微标签 */
+  --gd-r-2: 8px;      /* 分段控件外框 / 小标签 / 表格容器（默认档） */
+  --gd-r-3: 14px;     /* 按钮 / 输入框 / 卡内分组 / 媒体框 / 图标容器 */
+  --gd-r-4: 18px;     /* 主卡 / 面板（最常用） */
+  --gd-r-5: 22px;     /* 大容器 / 弹层 / 播放器外框 */
+  --gd-r-full: 9999px;/* 状态胶囊 / 头像 / 进度条 / 时间线轨道 */
+
+  /* 1.9 间距 · 4px 基准 ────────────────────────────────────────── */
+  --gd-s-1: 4px;
+  --gd-s-2: 8px;
+  --gd-s-3: 12px;
+  --gd-s-4: 16px;
+  --gd-s-5: 20px;
+  --gd-s-6: 24px;
+  --gd-s-8: 32px;
+  --gd-s-10: 40px;
+  --gd-s-12: 48px;
+  --gd-s-16: 64px;
+  --gd-s-20: 80px;
+  --gd-s-24: 96px;
+
+  /* 1.10 字体族 · 与「02-午夜首映」同源 ───────────────────────────
+     display：中文衬线。标题不再是「更大号的无衬线」，而是另一种材料。
+              衬线在暗场上有「幕布上的片名」气质，是整套系统唯一的暖色载体。
+     body   ：无衬线。界面密度靠它守住，衬线只做标题，绝不进入控件。
+     mono   ：DIN 系窄体（Bahnschrift 为 Windows 内置），数字比等宽代码体
+              更「仪表」，且中文字符缺字时回落 Roboto Mono / JetBrains Mono。
+     ＊ 顺序即优先级，前一项缺字由后一项补齐，不改变字号与行高。 */
+  --gd-font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC",
+    "STSong", "SimSun", serif;
+  --gd-font-body: "MiSans", "Noto Sans SC", "PingFang SC",
+    "HarmonyOS Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --gd-font-mono: "Bahnschrift", "DIN Alternate", "Roboto Mono",
+    "JetBrains Mono", "SF Mono", ui-monospace, "Cascadia Mono", "Consolas",
+    monospace;
+
+  /* 1.11 字号阶梯 ─────────────────────────────────────────────── */
+  --gd-fs-display: 48px;  --gd-lh-display: 58px;
+  --gd-fs-h1: 36px;       --gd-lh-h1: 46px;
+  --gd-fs-h2: 28px;       --gd-lh-h2: 38px;
+  --gd-fs-h3: 22px;       --gd-lh-h3: 32px;
+  --gd-fs-h4: 18px;       --gd-lh-h4: 27px;
+  --gd-fs-lead: 20px;     --gd-lh-lead: 34px;
+  --gd-fs-body: 15px;     --gd-lh-body: 26px;
+  --gd-fs-read: 16px;     --gd-lh-read: 30px;
+  --gd-fs-sm: 12px;       --gd-lh-sm: 19px;
+  --gd-fs-caps: 11px;     --gd-lh-caps: 14px;
+
+  /* 1.11.1 图标刻度 · 只允许四档 ───────────────────────────────── */
+  --gd-icon-sm: 14px;   /* 行内、徽章内、键帽内 */
+  --gd-icon-md: 16px;   /* 按钮、导航项、Toast（默认） */
+  --gd-icon-lg: 18px;   /* 卡片标题、工具栏 */
+  --gd-icon-xl: 20px;   /* 空状态、图标容器内 */
+
+  /* 1.12 动效 ─────────────────────────────────────────────────── */
+  --gd-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --gd-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --gd-dur-1: 120ms;
+  --gd-dur-2: 200ms;
+  --gd-dur-3: 320ms;
+  --gd-dur-4: 560ms;
+
+  /* 1.13 层级 ─────────────────────────────────────────────────── */
+  --gd-z-ambient: -1;
+  --gd-z-sticky: 40;
+  --gd-z-nav: 50;
+  --gd-z-modal: 100;
+  --gd-z-toast: 110;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   2. 基座 · Base
+   ───────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--gd-canvas);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+/* 2.1 顶部 2px 光谱签名线 · 全站唯一一处五色同现 */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: var(--gd-z-toast);
+  pointer-events: none;
+  background: var(--gd-grad-spectrum);
+  opacity: 0.92;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: transparent; /* 让极光透出 */
+  color: var(--gd-ink);
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-body);
+  line-height: var(--gd-lh-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* 2.2 极光环境光 · 五层径向辉光 + 夜空渐层
+   固定定位：光属于「空间」，不属于「内容」，滚动时不重绘、不抖动 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: var(--gd-z-ambient);
+  pointer-events: none;
+  background:
+    /* 上方偏右 · 星紫主光 */
+    radial-gradient(58% 44% at 62% -10%, rgba(139, 124, 255, 0.42), transparent 62%),
+    /* 右上 · 洋红 */
+    radial-gradient(46% 34% at 100% 2%, rgba(240, 123, 224, 0.32), transparent 64%),
+    /* 左上 · 极青 */
+    radial-gradient(40% 30% at 26% -6%, rgba(56, 217, 240, 0.22), transparent 66%),
+    /* 左侧 · 薄荷 */
+    radial-gradient(44% 30% at -4% -8%, rgba(62, 232, 184, 0.15), transparent 68%),
+    /* 右下 · 星紫回光 */
+    radial-gradient(50% 36% at 98% 56%, rgba(93, 74, 224, 0.2), transparent 70%),
+    /* 左下 · 洋红微光（避免底部死黑） */
+    radial-gradient(42% 30% at 4% 92%, rgba(240, 123, 224, 0.1), transparent 72%),
+    /* 夜空本体 */
+    linear-gradient(180deg, var(--gd-canvas-top) 0%, var(--gd-canvas-mid) 44%, var(--gd-canvas) 100%);
+}
+
+/* 2.3 顶部极光光幕：把签名线「拉」成一片向下衰减的光，制造空气感 */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 420px;
+  z-index: var(--gd-z-ambient);
+  pointer-events: none;
+  opacity: 0.8;
+  background:
+    radial-gradient(42% 100% at 28% 0%, rgba(56, 217, 240, 0.16), transparent 70%),
+    radial-gradient(52% 100% at 58% 0%, rgba(139, 124, 255, 0.2), transparent 70%),
+    radial-gradient(44% 100% at 92% 0%, rgba(240, 123, 224, 0.18), transparent 72%),
+    radial-gradient(24% 100% at 2% 0%, rgba(62, 232, 184, 0.1), transparent 74%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+}
+
+/* 2.4 颗粒（可选）：极暗渐变的色带在 8bit 面板上会出现「环」，叠一层 2.8% 噪点
+   可以把色带打散，同时给暗场一点胶片质感。整层 fixed + pointer-events:none，
+   不参与布局、不影响点击与选中。不需要时删掉这一个元素即可。 */
+.gd-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* 2.5 焦点可见 · 键盘可达性的最低保证 */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid rgba(139, 124, 255, 0.85);
+  outline-offset: 2px;
+  border-radius: var(--gd-r-2);
+}
+
+/* 2.6 滚动条（Chromium / WebKit） */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 124, 255, 0.22);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: var(--gd-r-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 124, 255, 0.38);
+  background-clip: padding-box;
+}
+
+::selection {
+  background: rgba(139, 124, 255, 0.34);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   3. 排版 · Typography
+   标题族 / 正文族 / 数字族 三族职能互斥，不得跨族使用
+   ───────────────────────────────────────────────────────────────────── */
+
+/* 3.1 标题族 · 衬线刊头（Noto Serif SC 600）
+   与「午夜首映」同源：奶油色 + 双层辉光。这是全站唯一的暖色材料，
+   界面越冷，这一小片暖光越显得像「打在幕布上的片名」。
+   · 字距归零：中文衬线的横画密集，负字距会让笔画粘连，是明确错误。
+   · 辉光只给 display / h1 / h2：h3 以下不发光，否则处处在亮，光就失效。
+   · 斜体禁用：中文衬线没有真斜体，浏览器合成斜体会破坏字形。 */
+.gd-display,
+.gd-title-1,
+.gd-title-2,
+.gd-title-3,
+.gd-title-4 {
+  margin: 0;
+  font-family: var(--gd-font-display);
+  font-weight: 600;
+  color: var(--gd-ink-heading);
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+.gd-display,
+.gd-title-1,
+.gd-title-2 {
+  text-shadow: var(--gd-glow-type);
+}
+.gd-display em,
+.gd-title-1 em,
+.gd-title-2 em {
+  font-style: normal;
+  color: #fffaf0;
+  text-shadow: var(--gd-glow-type-strong);
+}
+
+.gd-display {
+  font-size: var(--gd-fs-display);
+  line-height: var(--gd-lh-display);
+}
+.gd-title-1 {
+  font-size: var(--gd-fs-h1);
+  line-height: var(--gd-lh-h1);
+}
+.gd-title-2 {
+  font-size: var(--gd-fs-h2);
+  line-height: var(--gd-lh-h2);
+}
+.gd-title-3 {
+  font-size: var(--gd-fs-h3);
+  line-height: var(--gd-lh-h3);
+  color: var(--gd-cream-dim);
+}
+.gd-title-4 {
+  font-size: var(--gd-fs-h4);
+  line-height: var(--gd-lh-h4);
+  color: var(--gd-cream-dim);
+}
+
+/* 3.2 正文族 · MiSans / PingFang，无衬线 400 */
+.gd-lead {
+  margin: 0;
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-lead);
+  line-height: var(--gd-lh-lead);
+  font-weight: 400;
+  color: var(--gd-ink-2);
+  letter-spacing: -0.005em;
+}
+.gd-body {
+  margin: 0;
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-body);
+  line-height: var(--gd-lh-body);
+  color: var(--gd-ink-2);
+}
+.gd-read {
+  margin: 0;
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-read);
+  line-height: var(--gd-lh-read);
+  color: var(--gd-ink-2);
+}
+.gd-body-sm {
+  margin: 0;
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-sm);
+  line-height: var(--gd-lh-sm);
+  color: var(--gd-ink-3);
+}
+.gd-caption {
+  margin: 0;
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-sm);
+  line-height: var(--gd-lh-sm);
+  color: var(--gd-ink-3);
+}
+
+/* 3.3 角标 · 11/14 大写 · 数字族 + 宽字距
+   角标是「场记板上的字」：窄体、字距拉开、全大写，与正文形成材质差。
+   宽字距是这套系统里唯一允许的「松」，只给角标，不给正文。 */
+.gd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gd-s-2);
+  font-family: var(--gd-font-mono);
+  font-size: var(--gd-fs-caps);
+  line-height: var(--gd-lh-caps);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gd-ink-3);
+}
+
+/* 3.4 数字 / 时间码 / 遥测 · DIN 窄体 + 表格数字 */
+.gd-num,
+.gd-mono {
+  font-family: var(--gd-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: 0.01em;
+}
+.gd-num {
+  font-weight: 600;
+  color: var(--gd-ink);
+}
+.gd-timecode {
+  font-family: var(--gd-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--gd-ink-3);
+}
+
+/* 3.5 文本色工具 */
+.gd-t-ink { color: var(--gd-ink); }
+.gd-t-ink-2 { color: var(--gd-ink-2); }
+.gd-t-ink-3 { color: var(--gd-ink-3); }
+.gd-t-brand { color: var(--gd-ink-brand); }
+.gd-t-mint { color: #7defc9; }
+.gd-t-cyan { color: #86e9f8; }
+.gd-t-magenta { color: #f7a8ee; }
+.gd-t-amber { color: #ffd79a; }
+.gd-t-rose { color: #ffb3be; }
+
+/* ─────────────────────────────────────────────────────────────────────
+   4. 布局 · Layout
+   ───────────────────────────────────────────────────────────────────── */
+.gd-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--gd-s-8);
+}
+.gd-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gd-s-4);
+}
+.gd-row {
+  display: flex;
+  align-items: center;
+  gap: var(--gd-s-3);
+  flex-wrap: wrap;
+}
+.gd-grid {
+  display: grid;
+  gap: var(--gd-s-5); /* 卡片间距 ≥ 20px */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+.gd-divider {
+  height: 1px;
+  border: 0;
+  margin: var(--gd-s-6) 0;
+  background: var(--gd-line-soft);
+}
+/* 光谱细线：1px 的五色分隔，用于章节之间，不用于正文区 */
+.gd-aurora-line {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: var(--gd-grad-hairline);
+  opacity: 0.7;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   4B. 图标 · Icon Language
+   为什么不用图标库：本系统以「单文件 + 零依赖」交付，图标必须能离线渲染。
+   因此图标为内联 SVG，但受同一套几何约束，等价于一套自建图标字体：
+     网格 24×24 · 描边 1.5 · 圆头圆角 · 只描边不填充 · 视觉重心居中
+   规则违反任何一条，图标就会和文字「不是同一个次元」。
+   ───────────────────────────────────────────────────────────────────── */
+
+/* 4B.1 基础图标 · 尺寸越小的描边要略粗，否则在高 DPI 下发虚 */
+.gd-icon {
+  display: inline-block;
+  width: var(--gd-icon-md);
+  height: var(--gd-icon-md);
+  flex: none;
+  vertical-align: -0.16em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+.gd-icon--sm { width: var(--gd-icon-sm); height: var(--gd-icon-sm); stroke-width: 1.7; }
+.gd-icon--lg { width: var(--gd-icon-lg); height: var(--gd-icon-lg); stroke-width: 1.45; }
+.gd-icon--xl { width: var(--gd-icon-xl); height: var(--gd-icon-xl); stroke-width: 1.35; }
+
+/* 4B.2 图标容器 · 把「符号」变成「光源」
+   极光主题里，图标是除数据条之外唯一允许高饱和的地方。
+   容器提供：玻璃底 + 1px 冷光边 + 顶部内高光 + 图标自身的色晕。
+   只用一档尺寸差异表达层级，不叠加阴影层数。 */
+.gd-icon-chip {
+  --_chip: 38px;
+  --_ico: 18px;
+  --_chip-tint: rgba(255, 255, 255, 0.045);
+  --_chip-line: var(--gd-line);
+  --_chip-ink: var(--gd-ink-2);
+  --_chip-halo: transparent;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: var(--_chip);
+  height: var(--_chip);
+  flex: none;
+  border-radius: var(--gd-r-3);
+  color: var(--_chip-ink);
+  background-color: var(--_chip-tint);
+  background-image: radial-gradient(
+    80% 80% at 30% 10%, rgba(255, 255, 255, 0.13), transparent 62%);
+  border: 1px solid var(--_chip-line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.gd-icon-chip > .gd-icon,
+.gd-icon-chip > svg {
+  width: var(--_ico);
+  height: var(--_ico);
+}
+.gd-icon-chip--sm { --_chip: 30px; --_ico: 16px; }
+.gd-icon-chip--lg { --_chip: 46px; --_ico: 22px; }
+
+/* 语义色：底是 12% 洗色，边是 30% 描边，图标发光由 filter 提供 */
+.gd-icon-chip--violet,
+.gd-icon-chip--mint,
+.gd-icon-chip--cyan,
+.gd-icon-chip--magenta,
+.gd-icon-chip--amber,
+.gd-icon-chip--rose {
+  background-image: radial-gradient(
+    80% 80% at 30% 10%, rgba(255, 255, 255, 0.18), transparent 60%);
+}
+.gd-icon-chip--violet {
+  --_chip-tint: var(--gd-violet-wash); --_chip-line: rgba(139, 124, 255, 0.32);
+  --_chip-ink: #c6baff;
+}
+.gd-icon-chip--mint {
+  --_chip-tint: var(--gd-mint-wash); --_chip-line: rgba(62, 232, 184, 0.3);
+  --_chip-ink: #7defc9;
+}
+.gd-icon-chip--cyan {
+  --_chip-tint: var(--gd-cyan-wash); --_chip-line: rgba(56, 217, 240, 0.3);
+  --_chip-ink: #86e9f8;
+}
+.gd-icon-chip--magenta {
+  --_chip-tint: var(--gd-magenta-wash); --_chip-line: rgba(240, 123, 224, 0.3);
+  --_chip-ink: #f7a8ee;
+}
+.gd-icon-chip--amber {
+  --_chip-tint: var(--gd-amber-wash); --_chip-line: rgba(255, 196, 107, 0.3);
+  --_chip-ink: #ffd79a;
+}
+.gd-icon-chip--rose {
+  --_chip-tint: var(--gd-rose-wash); --_chip-line: rgba(255, 110, 134, 0.3);
+  --_chip-ink: #ffb3be;
+}
+/* 色晕：只加在语义容器上，中性容器保持安静 */
+.gd-icon-chip--violet > .gd-icon { filter: drop-shadow(0 0 6px rgba(139, 124, 255, 0.55)); }
+.gd-icon-chip--mint > .gd-icon { filter: drop-shadow(0 0 6px rgba(62, 232, 184, 0.5)); }
+.gd-icon-chip--cyan > .gd-icon { filter: drop-shadow(0 0 6px rgba(56, 217, 240, 0.5)); }
+.gd-icon-chip--magenta > .gd-icon { filter: drop-shadow(0 0 6px rgba(240, 123, 224, 0.5)); }
+.gd-icon-chip--amber > .gd-icon { filter: drop-shadow(0 0 6px rgba(255, 196, 107, 0.5)); }
+.gd-icon-chip--rose > .gd-icon { filter: drop-shadow(0 0 6px rgba(255, 110, 134, 0.5)); }
+
+/* 实心版：只给「主操作旁边的唯一图标」用，一屏最多一处。
+   与按钮同一块玻璃：白底 + 色层 + 白面，图标随之翻成深墨——
+   否则一颗白箭头压在浅紫玻璃上会直接消失。 */
+.gd-icon-chip--solid {
+  --_chip-tint: transparent;
+  --_chip-line: rgba(255, 255, 255, 0.72);
+  --_chip-ink: #0b0a1e;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07)),
+    linear-gradient(180deg, rgb(124 96 255 / 0.58), rgb(124 96 255 / 0.66)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.26));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.3),
+    0 8px 22px -12px rgba(139, 124, 255, 0.75);
+}
+
+/* 4B.3 图标与文字 / 控件的关系 */
+.gd-btn .gd-icon,
+.gd-btn > svg { width: 16px; height: 16px; stroke-width: 1.75; }
+.gd-badge .gd-icon,
+.gd-tag .gd-icon { width: var(--gd-icon-sm); height: var(--gd-icon-sm); stroke-width: 1.8; }
+.gd-toast__icon .gd-icon { width: var(--gd-icon-lg); height: var(--gd-icon-lg); }
+/* 与文字并排时，图标不参与换行，也不吃掉中文的行间呼吸 */
+.gd-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gd-s-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   5. 组件 · Components
+   ───────────────────────────────────────────────────────────────────── */
+
+/* 5.1 按钮 ───────────────────────────────────────────────────────
+   材质 v2「暗心彩边」（用户拍板：乙方案全站统一 + 2px 边 + 灯管感）。
+
+   v1.5 的彩光玻璃是「亮面 + 深墨字」；v2 反转成「暗心 + 彩边 + 同族亮字」：
+   中心退到夜色（#04070F，与画布同色，按钮读作「从底色里凹进去的一块」），
+   身份全部交给一圈 2px 的受光边。环 = 水平五色渐变 × 垂直亮度权重
+   （顶部最盛、向下化进夜色，底部留 26% 亮度让「四周」成立）。
+
+   环与面之间没有硬分界，靠三笔缝起来：
+     ① 顶雾：一团同色薄雾从环的顶部渗进中心（radial，画在 padding-box）
+     ② 内缘反光：inset box-shadow 从环内侧向内晕开 14px
+     ③ 环外 3px 近距光 + 18px 环境晕 —— 「灯管感」的来源，但都给得克制
+
+   文字：暗心上必须是亮字，取同族亮色（沿用「同色洗底 + 亮字」纪律，
+   只把洗底换成了暗心）。层级由「边的色相 + 光的强度」表达。
+
+   实现不动 DOM：border 2px transparent，background 用
+   border-box（权重+环）/ padding-box（顶雾+暗心）双裁剪分层，
+   直接写 class="gd-btn" 的原生按钮同样生效。
+   ::before 退役为占位（仍保留给忙碌态转圈），::after 整体休眠——
+   白核 / 光束 / 焦散是亮玻璃材质的语言，暗心材质里不再成立。
+
+   色相分工（乙方案）：
+     primary  光谱签名款（环横跨极光五义）—— 全站只此一档，最该被点的那一个
+     secondary 极青（承接原湖蓝档的冷侧语义：信息 / 链路 / 查看类）
+     danger   玫红（暖侧三色，不掺青绿——红一脏语义就糊）
+     ghost    不发光的白描边（材质链里必须留一个不发光的档，否则一屏全是灯管）
+     另有 mint / violet / magenta / amber / neutral 五个 tone 类做语义扩展，
+     与 variant 正交（只换 --_ring / --_glow / --_g-ink，几何不动）。
+
+   两条硬约束（不随风格变）：
+   · 边界对比 ≥ 3:1（WCAG 1.4.11）：环在 #04070F 底上的亮度差远超此线。
+   · 文字对比 ≥ 4.5:1：全系亮字压在 #04070F 上，最低的中性档也 > 7:1。
+
+   三态分工：
+     常态  灯管微亮 ——「待命」
+     悬停  环与近距光一起提亮（brightness 1.12，黑心乘系数还是黑）——「通电」
+     按下  光收一档、内暗加深、落 1px ——「按下去，光被压扁」
+   ────────────────────────────────────────────────────────────────── */
+.gd-btn {
+  /* —— 几何 —— */
+  --_h: 40px;
+  --_px: 18px;
+  --_rim: 2px;            /* 边宽：md/lg 2px；sm 1.5px（32px 高的按钮 2px 偏重） */
+  /* —— 色族：变体只覆写这四个 —— */
+  --_ring: linear-gradient(96deg, #2FA8CC, #5FDCEE 22%, #38D9F0 50%, #4FA8F0 78%, #2FA8CC);
+  --_glow: 56 217 240;
+  --_halo: rgba(56, 217, 240, 0.38);
+  --_g-ink: #8FE6F5;
+
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gd-s-2);
+  height: var(--_h);
+  padding: 0 var(--_px);
+  border: var(--_rim) solid transparent;
+  border-radius: var(--gd-r-3);
+  font-family: var(--gd-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.005em;
+  color: var(--_g-ink);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  /* 四层，从上往下盖：
+     ① 顶雾 ② 暗心 → 只画在 padding-box（环的内侧）
+     ③ 垂直权重 ④ 五色环 → 画满 border-box，只有 2px 边缘露出来。
+     ⚠ 渐变到透明一律 rgb(... / 0)，transparent 会挂灰边（v1.5 踩过的坑）。
+     ⚠ 每层的 padding-box / border-box 裁剪只能写在 background 简写里，
+       写在 background-image 里整条声明非法、会被浏览器静默丢弃。 */
+  background:
+    radial-gradient(124% 150% at 50% -42%,
+      rgb(var(--_glow) / 0.13), rgb(var(--_glow) / 0.035) 46%, rgb(4 7 15 / 0) 72%) padding-box,
+    linear-gradient(#04070F, #04070F) padding-box,
+    linear-gradient(180deg,
+      rgb(4 7 15 / 0) 0%,
+      rgb(4 7 15 / 0.02) 16%,
+      rgb(4 7 15 / 0.26) 46%,
+      rgb(4 7 15 / 0.62) 82%,
+      rgb(4 7 15 / 0.74) 100%) border-box,
+    var(--_ring) border-box;
+
+  box-shadow:
+    /* 内缘反光：把「线」缝进「面」—— 环与中心之间没有硬分界 */
+    inset 0 0 14px -3px rgb(var(--_glow) / 0.46),
+    inset 0 1px 0 rgb(var(--_glow) / 0.14),
+    /* 灯管感：近距 3px 的「管壁光」+ 18px 的环境晕，两层缺一不可 */
+    0 0 3px rgb(var(--_glow) / 0.38),
+    0 0 18px -6px var(--_halo);
+
+  transition:
+    transform var(--gd-dur-2) var(--gd-ease),
+    filter var(--gd-dur-2) var(--gd-ease),
+    box-shadow var(--gd-dur-3) var(--gd-ease),
+    color var(--gd-dur-2) var(--gd-ease);
+}
+
+/* 伪元素退役：白核 / 光束 / 焦散是亮玻璃材质的语言，暗心里不再成立。
+   ::before 清空占位（忙碌态的转圈仍在它身上，见本节末尾）；::after 整体休眠。 */
+.gd-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: none;
+  opacity: 0;
+}
+.gd-btn::after { content: none; }
+
+/* 高光：球体的证据。
+   双高光 + 底反射 + 斜切，缺一个就成了玻璃板。
+   这一版每颗高光都带「色差」：白核两侧各压一枚青 / 紫的错位副本，
+   模拟真实镜头与棱镜的色散——白点边缘有一圈很淡的彩，才是光。 */
+.gd-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    /* ① 主高光白核：左上偏内。位置必须「偏」，正中的高光是平板反光 */
+    radial-gradient(30% 40% at 17% 30%,
+      rgba(255, 255, 255, 0.92) 0 20%,
+      rgba(255, 255, 255, 0.40) 52%,
+      rgba(255, 255, 255, 0) 82%),
+    /* ①b 色差副本：青偏左 1.6%、紫偏右 1.6%，只给 0.35 左右——
+          再多就成两只眼睛了 */
+    radial-gradient(24% 32% at 14.6% 32%,
+      rgb(var(--_g-bub-4) / 0.34), rgb(var(--_g-bub-4) / 0) 72%),
+    radial-gradient(22% 30% at 19.6% 28.4%,
+      rgb(var(--_g-bub-1) / 0.3), rgb(var(--_g-bub-1) / 0) 72%),
+    /* ② 次高光：右侧一颗小亮点。双高光是球体的核心线索 */
+    radial-gradient(5% 12% at 72% 22%,
+      rgba(255, 255, 255, 0.82) 0 30%,
+      rgb(var(--_g-bub-3) / 0.28) 62%,
+      rgba(255, 255, 255, 0) 100%),
+    /* ③ 底部反射：光穿过泡体在底壁弹回来的亮带 */
+    radial-gradient(60% 44% at 50% 108%,
+      rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 72%),
+    /* ④ 斜切光带：给扁条一点方向感 */
+    linear-gradient(102deg,
+      rgba(255, 255, 255, 0.22) 0 8%,
+      rgba(255, 255, 255, 0) 38% 76%,
+      rgba(255, 255, 255, 0.12) 96%);
+  opacity: var(--_g-spec);
+}
+
+/* 光层：这一版的主角。单独一层，才能只动它、不动体面。
+   screen 混合 = 加光。它只会把下面提亮，不会盖住体面的层次，
+   所以颜色可以给得比颜料层浓得多，而画面依然干净。
+   三态只改 opacity 与 transform，不做渐变节点的跳变。 */
+.gd-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background:
+    /* ① 斜向光束：白核 + 两侧色翼。
+          核是光本身（近白），翼是棱镜分出来的色（紫 / 青）。
+          顺序不能反：先有白核，彩才有「被劈开」的意思。 */
+    linear-gradient(103deg,
+      rgb(var(--_g-bub-1) / 0) 26%,
+      rgb(var(--_g-bub-1) / calc(var(--_g-beam-a) * 0.95)) 30.5%,
+      rgba(255, 255, 255, calc(var(--_g-beam-a) * 1.35)) 34%,
+      rgba(255, 255, 255, calc(var(--_g-beam-a) * 1.05)) 36%,
+      rgb(var(--_g-bub-4) / calc(var(--_g-beam-a) * 0.85)) 40.5%,
+      rgb(var(--_g-bub-4) / 0) 45%),
+    /* ①b 第二道光：更细、更淡、错开 9%，是光在玻璃里来回反射的那一道 */
+    linear-gradient(103deg,
+      rgb(var(--_g-bub-4) / 0) 55%,
+      rgb(var(--_g-bub-4) / calc(var(--_g-beam-a) * 0.42)) 58%,
+      rgba(255, 255, 255, calc(var(--_g-beam-a) * 0.55)) 60%,
+      rgb(var(--_g-bub-1) / calc(var(--_g-beam-a) * 0.34)) 62%,
+      rgb(var(--_g-bub-1) / 0) 66%),
+    /* ② 底部焦散：光穿过玻璃、在底壁聚成的一摊亮斑。
+          位置偏左（30%），因为光束从左上打进来；偏中就成了「底边高光」。 */
+    radial-gradient(20% 34% at 31% 103%,
+      rgba(255, 255, 255, calc(var(--_g-caustic-a) * 0.5)) 0 18%,
+      rgb(var(--_g-bub-2) / var(--_g-caustic-a)) 40%,
+      rgb(var(--_g-bub-2) / 0) 76%),
+    radial-gradient(18% 32% at 74% 98%,
+      rgb(var(--_g-bub-4) / calc(var(--_g-caustic-a) * 0.82)),
+      rgb(var(--_g-bub-4) / 0) 72%),
+    /* ②b 两侧色晕：紫在左、青在右。
+          screen 下这两个「加色」而不「压暗」，所以浓一点也不会脏——
+          这正是光与颜料的区别：颜料越多越暗，光越多越亮。 */
+    radial-gradient(46% 130% at 6% 34%,
+      rgb(var(--_g-bub-1) / calc(var(--_g-beam-a) * 0.9)),
+      rgb(var(--_g-bub-1) / 0) 72%),
+    radial-gradient(44% 120% at 94% 68%,
+      rgb(var(--_g-bub-4) / calc(var(--_g-beam-a) * 0.8)),
+      rgb(var(--_g-bub-4) / 0) 72%),
+    /* ③ 顶部反光弧：光贴着上缘滑过去的一层薄光 */
+    radial-gradient(120% 58% at 50% -12%,
+      rgba(255, 255, 255, calc(var(--_g-beam-a) * 0.55)),
+      rgba(255, 255, 255, 0) 62%),
+    /* ④ 顶部光谱线：1.5px 的色散带，从紫到青。
+          它不是「彩色描边」——screen 混合下它只是把上缘照亮，
+          所以读起来是「光被棱镜摊开」，而不是「画了一条彩虹」。 */
+    linear-gradient(90deg,
+      rgb(var(--_g-bub-1) / calc(var(--_g-disp) * 0.9)) 0%,
+      rgb(var(--_g-bub-2) / calc(var(--_g-disp) * 0.75)) 38%,
+      rgb(var(--_g-bub-3) / calc(var(--_g-disp) * 0.8)) 68%,
+      rgb(var(--_g-bub-4) / calc(var(--_g-disp) * 0.85)) 100%)
+      top left / 100% 1.5px no-repeat;
+  opacity: 0.86;
+  transition:
+    opacity var(--gd-dur-2) var(--gd-ease),
+    transform var(--gd-dur-3) var(--gd-ease);
+}
+
+/* 悬停：通电。环与近距光一起提亮，暗心不动（黑乘系数还是黑）。
+   用 brightness 而不是换背景：五个色点同走一档，不引入第二套渐变。 */
+.gd-btn:hover,
+.gd-btn.is-hover {
+  transform: translateY(-1px);
+  filter: brightness(1.12) saturate(1.06);
+  box-shadow:
+    inset 0 0 16px -2px rgb(var(--_glow) / 0.58),
+    inset 0 1px 0 rgb(var(--_glow) / 0.20),
+    0 0 4px rgb(var(--_glow) / 0.52),
+    0 0 24px -5px var(--_halo),
+    0 10px 24px -16px rgba(4, 7, 15, 0.5);
+}
+
+/* 按下：光被压扁。灯管收一档、内暗加深、落 1px。 */
+.gd-btn:active,
+.gd-btn.is-active {
+  transform: translateY(1px);
+  filter: brightness(0.97);
+  box-shadow:
+    inset 0 2px 8px rgba(4, 7, 15, 0.5),
+    inset 0 0 10px -3px rgb(var(--_glow) / 0.38),
+    inset 0 1px 0 rgb(var(--_glow) / 0.10),
+    0 0 2px rgb(var(--_glow) / 0.30);
+}
+
+.gd-btn:focus-visible {
+  outline: 2px solid rgb(var(--_glow) / 0.6);
+  outline-offset: 2px;
+}
+.gd-btn:disabled,
+.gd-btn[aria-disabled="true"] {
+  opacity: 0.4;
+  filter: saturate(0.35);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.gd-btn:focus-visible {
+  outline: 2px solid rgba(190, 178, 255, 0.95);
+  outline-offset: 3px;
+}
+.gd-btn:disabled,
+.gd-btn[aria-disabled="true"] {
+  opacity: 0.4;
+  filter: saturate(0.5);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+.gd-btn:disabled::after,
+.gd-btn[aria-disabled="true"]::after { opacity: 0; }
+.gd-btn--sm {
+  --_h: 32px;
+  --_px: 12px;
+  --_rim: 1.5px;
+  font-size: 12.5px;
+}
+.gd-btn--lg {
+  --_h: 48px;
+  --_px: 24px;
+  font-size: 15px;
+  border-radius: var(--gd-r-3);
+}
+.gd-btn--block {
+  display: flex;
+  width: 100%;
+}
+.gd-btn--icon {
+  --_px: 0;
+  width: var(--_h);
+}
+
+/* 主操作：光谱签名款。环横跨极光五义 —— 全站只此一档（乙方案），
+   它就是「最该被点的那一个」；禁止在其他按钮上复用，否则五义的语义分工
+   会被它自己稀释掉。 */
+.gd-btn--primary {
+  --_ring: linear-gradient(96deg, #3EE8B8 0%, #38D9F0 24%, #8B7CFF 50%, #F07BE0 74%, #FFC46B 100%);
+  --_glow: 150 160 240;
+  --_halo: rgba(150, 160, 240, 0.40);
+  --_g-ink: #E3EBFF;
+}
+
+/* 次要：极青。承接原湖蓝档的冷侧语义（信息 / 链路 / 查看类）。 */
+.gd-btn--secondary {
+  --_ring: linear-gradient(96deg, #2FA8CC, #5FDCEE 22%, #38D9F0 50%, #4FA8F0 78%, #2FA8CC);
+  --_glow: 56 217 240;
+  --_halo: rgba(56, 217, 240, 0.38);
+  --_g-ink: #8FE6F5;
+}
+
+/* 幽灵：无填充、白描边、不发光。材质链里必须留一个不发光的档，
+   否则一屏全是灯管，「次级但需要强调」就没了退路。 */
+.gd-btn--ghost {
+  --_rim: 1px;
+  --_g-ink: #e4ebfa;
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.44);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.gd-btn--ghost:hover {
+  filter: none;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.54);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 8px 20px -12px rgba(150, 180, 255, 0.5);
+}
+.gd-btn--ghost:active {
+  filter: none;
+  background-color: rgba(255, 255, 255, 0.11);
+  box-shadow: inset 0 2px 6px rgba(8, 10, 26, 0.4);
+}
+
+/* 危险：玫红。暖侧三色，不掺青绿 —— 红一脏语义就糊。 */
+.gd-btn--danger {
+  --_ring: linear-gradient(96deg, #C4475C, #FF95A8 22%, #FF6E86 50%, #E86488 78%, #C4475C);
+  --_glow: 255 110 134;
+  --_halo: rgba(255, 110, 134, 0.38);
+  --_g-ink: #FFAABB;
+}
+
+/* 语义 tone 扩展：与 variant 正交，叠加在任意档上换色族。
+   只换三个变量，几何与状态全部继承。同族跨度 ≤60°，越族就成彩虹。 */
+.gd-btn--mint {
+  --_ring: linear-gradient(96deg, #2CB98F, #5CDDB4 22%, #3EE8B8 50%, #35C9D8 78%, #2CB98F);
+  --_glow: 62 232 184;
+  --_halo: rgba(62, 232, 184, 0.38);
+  --_g-ink: #7DEFC9;
+}
+.gd-btn--violet {
+  --_ring: linear-gradient(96deg, #6352D8, #9F92FF 22%, #8B7CFF 50%, #6274E8 78%, #6352D8);
+  --_glow: 139 124 255;
+  --_halo: rgba(139, 124, 255, 0.40);
+  --_g-ink: #B4A9FF;
+}
+.gd-btn--magenta {
+  --_ring: linear-gradient(96deg, #A844A0, #F292E6 22%, #F07BE0 50%, #A855E8 78%, #A844A0);
+  --_glow: 240 123 224;
+  --_halo: rgba(240, 123, 224, 0.38);
+  --_g-ink: #F6A6EC;
+}
+.gd-btn--amber {
+  --_ring: linear-gradient(96deg, #B87A28, #FFD68F 22%, #FFC46B 50%, #F08540 78%, #B87A28);
+  --_glow: 255 196 107;
+  --_halo: rgba(255, 196, 107, 0.36);
+  --_g-ink: #FFD79A;
+}
+.gd-btn--neutral {
+  --_ring: linear-gradient(96deg, #333D52, #6E7C96 22%, #8E9CB6 50%, #66748E 78%, #333D52);
+  --_glow: 170 185 210;
+  --_halo: rgba(170, 185, 210, 0.18);
+  --_g-ink: #A9B8D4;
+}
+
+/* 忙碌态：转圈描边取深墨——浅玻璃上用白圈等于没有。
+   转圈改由 ::before 承担（::after 已经是光层），并清掉高光的背景。 */
+.gd-btn[aria-busy="true"] {
+  pointer-events: none;
+  color: transparent;
+}
+.gd-btn[aria-busy="true"]::after { opacity: 0; }
+.gd-btn[aria-busy="true"]::before {
+  inset: 0;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  background: none;
+  box-shadow: none;
+  border-radius: var(--gd-r-full);
+  border: 2px solid color-mix(in srgb, var(--_g-ink) 26%, transparent);
+  border-top-color: var(--_g-ink);
+  opacity: 1;
+  animation: gd-spin 720ms linear infinite;
+}
+@keyframes gd-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 5.2 输入框 ─────────────────────────────────────────────────────
+   下沿不加粗线，用「底色 + 1px 细线 + 聚焦光晕」表达层级
+   圆角 14px 与按钮同档：一行里并排的按钮与输入框必须同一个手感的圆角，
+   否则会出现「一个硬、一个软」的错位感。
+   ────────────────────────────────────────────────────────────────── */
+.gd-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gd-s-2);
+  min-width: 0;
+}
+.gd-label {
+  font-family: var(--gd-font-body);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--gd-ink-2);
+}
+.gd-label__req {
+  color: var(--gd-rose);
+  margin-left: 2px;
+}
+.gd-input,
+.gd-textarea,
+.gd-select {
+  width: 100%;
+  min-width: 0;
+  font-family: var(--gd-font-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--gd-ink);
+  background-color: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    border-color var(--gd-dur-2) var(--gd-ease),
+    box-shadow var(--gd-dur-2) var(--gd-ease),
+    background-color var(--gd-dur-2) var(--gd-ease);
+}
+.gd-input,
+.gd-select {
+  height: 40px;
+  padding: 0 var(--gd-s-3);
+}
+.gd-textarea {
+  min-height: 96px;
+  padding: 10px var(--gd-s-3);
+  resize: vertical;
+}
+.gd-input::placeholder,
+.gd-textarea::placeholder {
+  color: var(--gd-ink-3);
+}
+.gd-input:hover,
+.gd-textarea:hover,
+.gd-select:hover {
+  border-color: var(--gd-line-strong);
+}
+.gd-input:focus,
+.gd-textarea:focus,
+.gd-select:focus {
+  outline: none;
+  border-color: rgba(139, 124, 255, 0.55);
+  background-color: rgba(139, 124, 255, 0.06);
+  box-shadow: var(--gd-glow-focus);
+}
+.gd-input:disabled,
+.gd-textarea:disabled,
+.gd-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.gd-input--error,
+.gd-textarea--error {
+  border-color: rgba(255, 110, 134, 0.5);
+}
+.gd-input--error:focus,
+.gd-textarea--error:focus {
+  border-color: rgba(255, 110, 134, 0.75);
+  box-shadow: 0 0 0 3px rgba(255, 110, 134, 0.16);
+  background-color: rgba(255, 110, 134, 0.05);
+}
+.gd-hint {
+  font-family: var(--gd-font-body);
+  font-size: var(--gd-fs-sm);
+  line-height: var(--gd-lh-sm);
+  color: var(--gd-ink-3);
+}
+.gd-hint--error {
+  color: #ffb3be;
+}
+/* 带前缀图标的输入容器 */
+.gd-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.gd-input-group > .gd-input {
+  padding-left: 38px;
+}
+.gd-input-group__icon {
+  position: absolute;
+  left: 12px;
+  display: inline-flex;
+  color: var(--gd-ink-3);
+  pointer-events: none;
+}
+.gd-input-group__suffix {
+  position: absolute;
+  right: 10px;
+  font-family: var(--gd-font-mono);
+  font-size: 11px;
+  color: var(--gd-ink-3);
+  pointer-events: none;
+}
+
+/* 5.3 卡片 ───────────────────────────────────────────────────────
+   玻璃拟态：76% 表面 + blur16 + saturate125 + 1px 冷光细线 + 顶部内高光
+   额外一层「右上极光辉光」：模拟环境光掠过卡片边缘，给平铺的卡片阵列
+   一点方向感。10% 是上限——再高就会变成发光的塑料板。
+   阴影极弱：暗域里靠「光的边缘」分层，不靠黑投影
+   ────────────────────────────────────────────────────────────────── */
+.gd-card {
+  position: relative;
+  background-color: var(--gd-surface-glass);
+  background-image:
+    radial-gradient(120% 92% at 100% 0%, rgba(139, 124, 255, 0.1), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 46%);
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-4);
+  box-shadow: var(--gd-elev-1);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  backdrop-filter: blur(16px) saturate(125%);
+  overflow: hidden;
+}
+.gd-card--flat {
+  background-color: var(--gd-panel);
+  background-image: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.gd-card--sunken {
+  background-color: var(--gd-panel-sunken);
+  background-image: none;
+  border-color: var(--gd-line-soft);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+/* 可交互卡片：只有这类卡片才允许悬浮位移 */
+.gd-card--interactive {
+  cursor: pointer;
+  transition:
+    transform var(--gd-dur-3) var(--gd-ease),
+    border-color var(--gd-dur-3) var(--gd-ease),
+    box-shadow var(--gd-dur-3) var(--gd-ease);
+}
+.gd-card--interactive:hover {
+  transform: translateY(-2px);
+  border-color: var(--gd-line-brand);
+  box-shadow: var(--gd-elev-2);
+}
+.gd-card--interactive:focus-visible {
+  outline: 2px solid rgba(139, 124, 255, 0.85);
+  outline-offset: 2px;
+}
+.gd-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gd-s-3);
+  padding: var(--gd-s-5) var(--gd-s-5) 0;
+}
+.gd-card__title {
+  margin: 0;
+  font-family: var(--gd-font-display);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--gd-cream-dim);
+}
+.gd-card__sub {
+  margin: 2px 0 0;
+  font-size: var(--gd-fs-sm);
+  line-height: var(--gd-lh-sm);
+  color: var(--gd-ink-3);
+}
+.gd-card__body {
+  padding: var(--gd-s-4) var(--gd-s-5) var(--gd-s-5);
+}
+.gd-card__foot {
+  display: flex;
+  align-items: center;
+  gap: var(--gd-s-2);
+  padding: var(--gd-s-3) var(--gd-s-5);
+  border-top: 1px solid var(--gd-line-soft);
+  background-color: rgba(255, 255, 255, 0.015);
+}
+/* 卡内分组：14px 圆角 + 内层面板色 */
+.gd-inset {
+  background-color: var(--gd-panel);
+  border: 1px solid var(--gd-line-soft);
+  border-radius: var(--gd-r-3);
+  padding: var(--gd-s-4);
+}
+/* 媒体框 */
+.gd-media {
+  position: relative;
+  border-radius: var(--gd-r-3);
+  overflow: hidden;
+  background-color: var(--gd-panel-sunken);
+  border: 1px solid var(--gd-line-soft);
+}
+.gd-media > img,
+.gd-media > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 5.4 标签 / 徽章 ──────────────────────────────────────────────── */
+.gd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 9px;
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-full);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--gd-ink-2);
+  font-family: var(--gd-font-body);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.gd-badge--mint {
+  color: #7defc9;
+  background-color: var(--gd-mint-wash);
+  border-color: rgba(62, 232, 184, 0.3);
+}
+.gd-badge--cyan {
+  color: #86e9f8;
+  background-color: var(--gd-cyan-wash);
+  border-color: rgba(56, 217, 240, 0.3);
+}
+.gd-badge--violet {
+  color: #c6baff;
+  background-color: var(--gd-violet-wash);
+  border-color: rgba(139, 124, 255, 0.34);
+}
+.gd-badge--magenta {
+  color: #f7a8ee;
+  background-color: var(--gd-magenta-wash);
+  border-color: rgba(240, 123, 224, 0.3);
+}
+.gd-badge--amber {
+  color: #ffd79a;
+  background-color: var(--gd-amber-wash);
+  border-color: rgba(255, 196, 107, 0.3);
+}
+.gd-badge--rose {
+  color: #ffb3be;
+  background-color: var(--gd-rose-wash);
+  border-color: rgba(255, 110, 134, 0.3);
+}
+.gd-badge--solid {
+  color: #08111c;
+  background-color: var(--gd-mint);
+  border-color: transparent;
+}
+.gd-badge__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: var(--gd-r-full);
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  flex: none;
+}
+.gd-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--gd-r-1);
+  border: 1px solid var(--gd-line-soft);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--gd-ink-2);
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* 5.5 进度条 ─────────────────────────────────────────────────────
+   槽 6px 圆角 6；填充为唯一允许的三色数据渐变，末端带辉光
+   ────────────────────────────────────────────────────────────────── */
+.gd-progress {
+  position: relative;
+  height: 6px;
+  width: 100%;
+  border-radius: var(--gd-r-full);
+  background-color: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+.gd-progress__bar {
+  height: 100%;
+  border-radius: inherit;
+  background-image: var(--gd-grad-data);
+  box-shadow:
+    0 0 16px rgba(62, 232, 184, 0.42),
+    0 0 34px rgba(139, 124, 255, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform-origin: left center;
+  transition: width var(--gd-dur-4) var(--gd-ease);
+}
+/* 运行中：一道极慢的低亮度扫光，暗示「正在生成」而不抢注意力 */
+.gd-progress--live .gd-progress__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, transparent 0%, rgba(255, 255, 255, 0.28) 50%, transparent 100%);
+  animation: gd-sheen 2.8s var(--gd-ease) infinite;
+}
+@keyframes gd-sheen {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.gd-progress--sm { height: 4px; }
+.gd-progress--lg { height: 8px; }
+
+/* 5.6 表格 ───────────────────────────────────────────────────────
+   表头压暗 + 数字族 11px 大写宽字距（像一张场记表）
+   数字列等宽右对齐；行 hover 为极淡紫洗色 + 左侧 2px 光谱条
+   ────────────────────────────────────────────────────────────────── */
+.gd-table-wrap {
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-3);
+  overflow: auto;
+  background-color: rgba(17, 26, 44, 0.6);
+}
+.gd-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--gd-font-body);
+  font-size: 13px;
+  line-height: 20px;
+}
+.gd-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 10px 14px;
+  text-align: left;
+  font-family: var(--gd-font-mono);
+  font-size: 10.5px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gd-ink-3);
+  background-color: var(--gd-panel);
+  border-bottom: 1px solid var(--gd-line);
+  white-space: nowrap;
+}
+.gd-table tbody td {
+  padding: 12px 14px;
+  color: var(--gd-ink-2);
+  border-bottom: 1px solid var(--gd-line-soft);
+  vertical-align: middle;
+}
+.gd-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.gd-table tbody tr {
+  transition: background-color var(--gd-dur-1) linear;
+}
+/* hover 的左条用 inset 阴影画，不占布局、不改变列宽 */
+.gd-table tbody tr:hover td {
+  background-color: rgba(139, 124, 255, 0.07);
+  color: var(--gd-ink);
+}
+.gd-table tbody tr:hover td:first-child {
+  box-shadow: inset 2px 0 0 rgba(167, 139, 250, 0.75);
+}
+.gd-table .gd-num,
+.gd-table .gd-timecode {
+  color: var(--gd-ink);
+}
+.gd-table .gd-num {
+  text-align: right;
+}
+.gd-table__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* 5.7 侧边导航 ───────────────────────────────────────────────────
+   选中态：星紫 1px 描边 + 左侧 2px 光谱条 + 内部微光晕，不填满高饱和底
+   ────────────────────────────────────────────────────────────────── */
+.gd-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--gd-s-3);
+  background-color: rgba(8, 13, 26, 0.6);
+  border: 1px solid var(--gd-line-soft);
+  border-radius: var(--gd-r-4);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  min-width: 208px;
+}
+.gd-nav__group {
+  padding: var(--gd-s-3) 10px var(--gd-s-2);
+  font-family: var(--gd-font-mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gd-ink-3);
+}
+.gd-nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: var(--gd-r-2);
+  color: var(--gd-ink-2);
+  font-size: 13.5px;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    color var(--gd-dur-2) var(--gd-ease),
+    background-color var(--gd-dur-2) var(--gd-ease),
+    border-color var(--gd-dur-2) var(--gd-ease);
+}
+.gd-nav__item:hover {
+  color: var(--gd-ink);
+  background-color: rgba(255, 255, 255, 0.045);
+}
+.gd-nav__item[aria-current="page"],
+.gd-nav__item.is-active {
+  color: #fffaf0;
+  font-weight: 600;
+  border-color: var(--gd-line-brand);
+  background-image: linear-gradient(
+    135deg,
+    rgba(139, 124, 255, 0.30) 0%,
+    rgba(167, 139, 250, 0.14) 58%,
+    rgba(139, 124, 255, 0.05) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    0 0 30px -12px rgba(139, 124, 255, 0.95);
+}
+/* 选中项的图标跟文字一起「被点亮」，这是判断选中态最省力的视觉线索 */
+.gd-nav__item[aria-current="page"] .gd-nav__icon,
+.gd-nav__item.is-active .gd-nav__icon {
+  color: #d8d0ff;
+  filter: drop-shadow(0 0 7px rgba(167, 139, 250, 0.65));
+}
+.gd-nav__item[aria-current="page"]::before,
+.gd-nav__item.is-active::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: var(--gd-r-full);
+  background: var(--gd-grad-hairline);
+  box-shadow: 0 0 10px rgba(139, 124, 255, 0.8);
+}
+.gd-nav__icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: currentColor;
+}
+.gd-nav__trail {
+  margin-left: auto;
+  font-family: var(--gd-font-mono);
+  font-size: 10.5px;
+  color: var(--gd-ink-3);
+}
+
+/* 5.8 弹窗 ───────────────────────────────────────────────────────
+   使用原生 <dialog>：自带焦点陷阱、Esc 关闭、::backdrop
+   ────────────────────────────────────────────────────────────────── */
+.gd-modal {
+  width: calc(100% - 40px);
+  max-width: 560px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--gd-ink);
+}
+.gd-modal::backdrop {
+  background: var(--gd-scrim);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.gd-modal__panel {
+  position: relative;
+  background-color: rgba(22, 32, 58, 0.96);
+  background-image: linear-gradient(
+    180deg, rgba(255, 255, 255, 0.06), transparent 40%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--gd-r-5);
+  box-shadow: var(--gd-elev-overlay);
+  overflow: hidden;
+}
+/* 弹层顶边一条 1px 光谱：不是装饰，是告诉用户「这是叠加在当前场景之上的另一层」。
+   用 1px 而非页面顶部的 2px，层级因此可比。 */
+.gd-modal__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--gd-grad-hairline);
+  opacity: 0.92;
+  pointer-events: none;
+}
+.gd-modal__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gd-s-3);
+  padding: var(--gd-s-5) var(--gd-s-6) var(--gd-s-4);
+  border-bottom: 1px solid var(--gd-line-soft);
+}
+.gd-modal__title {
+  margin: 0;
+  font-family: var(--gd-font-display);
+  font-size: 19px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--gd-ink-heading);
+}
+.gd-modal__close {
+  margin-left: auto;
+}
+.gd-modal__body {
+  padding: var(--gd-s-5) var(--gd-s-6);
+  color: var(--gd-ink-2);
+  font-size: 14px;
+  line-height: 22px;
+}
+.gd-modal__foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gd-s-2);
+  padding: var(--gd-s-4) var(--gd-s-6);
+  border-top: 1px solid var(--gd-line-soft);
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* 5.9 Toast ──────────────────────────────────────────────────────
+   左侧 2px 语义色条 + 玻璃底；不居中遮挡，固定在右下
+   ────────────────────────────────────────────────────────────────── */
+.gd-toast {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 340px;
+  max-width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-3);
+  background-color: rgba(22, 32, 58, 0.94);
+  background-image:
+    radial-gradient(130% 170% at 0% 0%, var(--_toast-glow, rgba(62, 232, 184, 0.1)), transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 60%);
+  box-shadow: var(--gd-elev-overlay);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  overflow: hidden;
+}
+.gd-toast::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: var(--gd-mint);
+  box-shadow: 0 0 14px var(--gd-mint);
+}
+.gd-toast--info { --_toast-glow: rgba(56, 217, 240, 0.12); }
+.gd-toast--pending { --_toast-glow: rgba(255, 196, 107, 0.12); }
+.gd-toast--error { --_toast-glow: rgba(255, 110, 134, 0.12); }
+.gd-toast--ai { --_toast-glow: rgba(240, 123, 224, 0.13); }
+.gd-toast--info::before { background: var(--gd-cyan); box-shadow: 0 0 14px var(--gd-cyan); }
+.gd-toast--pending::before { background: var(--gd-amber); box-shadow: 0 0 14px var(--gd-amber); }
+.gd-toast--error::before { background: var(--gd-rose); box-shadow: 0 0 14px var(--gd-rose); }
+.gd-toast--ai::before { background: var(--gd-magenta); box-shadow: 0 0 14px var(--gd-magenta); }
+.gd-toast__icon {
+  display: inline-flex;
+  flex: none;
+  margin-top: 1px;
+  color: var(--gd-mint);
+}
+.gd-toast--info .gd-toast__icon { color: var(--gd-cyan); }
+.gd-toast--pending .gd-toast__icon { color: var(--gd-amber); }
+.gd-toast--error .gd-toast__icon { color: var(--gd-rose); }
+.gd-toast--ai .gd-toast__icon { color: var(--gd-magenta); }
+.gd-toast__title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--gd-ink);
+}
+.gd-toast__text {
+  margin: 2px 0 0;
+  font-size: var(--gd-fs-sm);
+  line-height: var(--gd-lh-sm);
+  color: var(--gd-ink-2);
+}
+.gd-toast__close {
+  margin: -4px -6px 0 auto;
+}
+
+/* 5.10 辅助组件 ────────────────────────────────────────────────── */
+/* 状态点 */
+.gd-dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: var(--gd-r-full);
+  background: var(--gd-mint);
+  box-shadow: 0 0 0 3px rgba(62, 232, 184, 0.12), 0 0 10px rgba(62, 232, 184, 0.75);
+}
+.gd-dot--cyan { background: var(--gd-cyan); box-shadow: 0 0 0 3px rgba(56,217,240,.12), 0 0 10px rgba(56,217,240,.75); }
+.gd-dot--violet { background: var(--gd-violet); box-shadow: 0 0 0 3px rgba(139,124,255,.14), 0 0 10px rgba(139,124,255,.8); }
+.gd-dot--magenta { background: var(--gd-magenta); box-shadow: 0 0 0 3px rgba(240,123,224,.12), 0 0 10px rgba(240,123,224,.75); }
+.gd-dot--amber { background: var(--gd-amber); box-shadow: 0 0 0 3px rgba(255,196,107,.12), 0 0 10px rgba(255,196,107,.7); }
+.gd-dot--rose { background: var(--gd-rose); box-shadow: 0 0 0 3px rgba(255,110,134,.12), 0 0 10px rgba(255,110,134,.75); }
+
+/* 分段控件 */
+.gd-seg {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border: 1px solid var(--gd-line);
+  border-radius: var(--gd-r-2);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+.gd-seg__item {
+  height: 28px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--gd-r-1);
+  background: transparent;
+  color: var(--gd-ink-3);
+  font-family: var(--gd-font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--gd-dur-2) var(--gd-ease);
+}
+.gd-seg__item:hover { color: var(--gd-ink); }
+.gd-seg__item[aria-pressed="true"],
+.gd-seg__item.is-active {
+  color: #fff;
+  background-color: rgba(139, 124, 255, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 14px -6px rgba(139, 124, 255, 0.9);
+}
+
+/* 键帽 */
+.gd-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid var(--gd-line);
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  border-radius: var(--gd-r-1);
+  background-color: rgba(255, 255, 255, 0.05);
+  font-family: var(--gd-font-mono);
+  font-size: 10.5px;
+  color: var(--gd-ink-2);
+}
+
+/* 头像 */
+.gd-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--gd-r-full);
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, #6a55f0, #f07be0);
+}
+.gd-avatar--sm { width: 24px; height: 24px; }
+.gd-avatar--lg { width: 44px; height: 44px; }
+
+/* 统计块：等宽数字 + 角标 */
+.gd-stat__label {
+  font-family: var(--gd-font-mono);
+  font-size: 10.5px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gd-ink-3);
+}
+.gd-stat__value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 6px;
+  font-family: var(--gd-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--gd-ink);
+}
+.gd-stat__delta {
+  font-family: var(--gd-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* 渐变上的文字遮罩（用于封面、缩略图叠字） */
+.gd-scrim {
+  position: relative;
+}
+.gd-scrim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg, rgba(4, 7, 15, 0.1) 0%, rgba(4, 7, 15, 0.55) 62%, rgba(4, 7, 15, 0.86) 100%);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   6. 动效纪律 · Motion
+   只允许：位移 ≤ 2px、透明度、颜色、宽度、微弱辉光
+   禁止：缩放超过 1.02、旋转（loading 除外）、视差
+   ───────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   7. 响应式 · Responsive
+   断点：480 / 768 / 1024 / 1280
+   触控目标 ≥ 44×44（视觉尺寸可小，热区不可小）
+   ───────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .gd-container { padding-inline: var(--gd-s-5); }
+  .gd-display { font-size: 30px; line-height: 40px; letter-spacing: 0; }
+  .gd-title-1 { font-size: 25px; line-height: 34px; letter-spacing: 0; }
+  .gd-title-2 { font-size: 21px; line-height: 30px; }
+  .gd-title-3 { font-size: 18px; line-height: 26px; }
+  .gd-title-4 { font-size: 16px; line-height: 24px; }
+  /* 衬线字重在小尺寸下会「糊」，手机端统一退一档到 500 */
+  .gd-display, .gd-title-1, .gd-title-2 { font-weight: 500; }
+}
+@media (max-width: 480px) {
+  .gd-btn { --_h: 44px; }
+  .gd-toast { width: 100%; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   8. 打印（用于设计稿归档，不做产品内使用）
+   ───────────────────────────────────────────────────────────────────── */
+@media print {
+  body::before,
+  body::after,
+  html::before { display: none; }
+  body { background: #fff; color: #111; }
+}

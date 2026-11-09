@@ -1,0 +1,16 @@
+{
+  /**
+   * 工程/工具链配置文件（vite.config.ts、tailwind.config.ts）的 TypeScript 配置。
+   * 独立于应用源码配置，供编辑器与工具链使用。
+   */
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["vite.config.ts", "tailwind.config.ts"]
+}
