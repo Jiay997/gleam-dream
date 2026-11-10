@@ -18,7 +18,8 @@ const route = useRoute()
 
 <template>
   <div class="gd-grain" aria-hidden="true" />
-  <AppShell v-if="!route.meta.bare" />
+  <!-- 路由解析完成前不挂壳：否则首屏会误挂 AppShell 并触发未登录请求 -->
+  <AppShell v-if="route.matched.length > 0 && !route.meta.bare" />
   <router-view v-else />
   <ToastHost />
 </template>
