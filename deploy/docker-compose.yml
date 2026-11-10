@@ -1,0 +1,123 @@
+# =============================================================================
+# 浮光造梦生产编排
+#
+# 拓扑：
+#   frontend(nginx:80) --/api、/files 反代--> backend(uvicorn:8000) --> postgres(pg16)
+#
+# 使用（在 deploy/ 目录）：
+#   docker compose up -d --build
+#   docker compose run --rm backend python scripts/init_db.py   # 首次初始化库
+#
+# 端口：宿主机 8003 -> frontend:80
+# =============================================================================
+
+name: gleam
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: gleam-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?请在 deploy/.env 中设置 DB_PASSWORD}
+      POSTGRES_DB: gleam-dream
+      TZ: Asia/Shanghai
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d gleam-dream"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 384M
+
+  backend:
+    build:
+      context: ..
+      dockerfile: deploy/backend.Dockerfile
+    image: gleam-backend:${IMAGE_TAG:-latest}
+    container_name: gleam-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - ../.env
+    environment:
+      # 容器内数据库地址指向 postgres 服务，覆盖 .env 中的 localhost
+      DATABASE_URL: postgresql+asyncpg://postgres:${DB_PASSWORD}@postgres:5432/gleam-dream
+      STORAGE_DIR: /app/storage
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://82.156.128.172:8003}
+      TZ: Asia/Shanghai
+    volumes:
+      - storagedata:/app/storage
+      - logsdata:/app/logs
+    expose:
+      - "8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=4).status == 200 else 1)",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/frontend.dockerfile
+    image: gleam-frontend:${IMAGE_TAG:-latest}
+    container_name: gleam-frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_started
+    ports:
+      - "${APP_PORT:-8003}:80"
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+volumes:
+  pgdata:
+    name: gleam_pgdata
+  storagedata:
+    name: gleam_storage
+  logsdata:
+    name: gleam_logs
